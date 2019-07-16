@@ -1,0 +1,842 @@
+@charset "utf-8";
+
+.top_banner {position: relative; background: #082753}
+.top_banner a {display: block}
+.top_banner img {display: none; width: 100%}
+.top_banner .top_ban_m {display: block}
+.top_banner .ban_form_wrap {display: none; position: absolute; bottom: 7%; right: 3%; z-index:1}
+.top_banner .ban_form_wrap input {vertical-align: middle;}
+.top_banner .ban_form_wrap label {display: inline-block; color: #fff;}
+.top_banner .btn_top_close {display: none; position: absolute; top: 10%; right: 3%; width: 26px; height: 26px; background: url(../images/common/btn_top_close.png) no-repeat; background-size: 100%; font-size: 0; text-indent: -9999px; z-index:1}
+.main .top_banner .ban_form_wrap, .main .top_banner .btn_top_close {display: block}
+body {font-size: 13px}
+select, input, textarea {font-size: 12px}
+label {vertical-align: middle; display: inline-block}
+.blind {position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+.m_content {display: block}
+.pc_content {display: none}
+.color_red {color: #ca420d !important}
+.color_blue {color: #0d79c2 !important}
+.txt_left {text-align: left !important}
+.txt_right {text-align: right !important}
+.txt_center {text-align: center !important}
+.fw500 {font-weight: 500 !important}
+.fl {float: left !important}
+.fr {float: right !important}
+.fn {float: none !important}
+.fn:after {content: ''; display: block; clear: both}
+.c_both:after {content: ''; display: block; clear: both}
+.mt0{margin-top:0 !important}
+.ellipsis_v1 {overflow: hidden; text-overflow: ellipsis; word-break: break-all}
+.ellipsis_v2 {display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-overflow: ellipsis; word-break: break-all}
+.bdr {border-right: 1px solid #dee3eb}
+
+.skip_nav a {position: fixed; top: -40px; left: 0; width: 100%; height: 40px; background: #333; color: #fff; line-height: 40px; text-align: center; z-index: 999}
+.skip_nav a:focus {top: 0}
+
+.wrap {position: relative; height: 100%;}
+.inner, .content {width: 100%; margin: 0 auto}
+.content {padding-bottom: 70px; width:1500px;}
+
+.header {position: fixed; top: 0; left: 0; width: 100%; z-index: 99; background: #fff; border-bottom: 1px solid #0162b1}
+.header.fixed {}
+.wrap.pd {padding-top: 46px}
+.header:before {content: ''; position: fixed; top: 0; right: 0; left: 0; bottom: 0; background: rgba(0,0,0,0.8); display: none; z-index: 1}
+.header.gnb_active:before {display: block}
+.header_main {position: relative; height: 45px; width: auto; background: #fff; z-index: 100}
+.header .logo a {display: block; width: 116px; margin: 0 auto; height: 45px; font-size: 0; background:url(../images/common/logo_m.jpg) no-repeat 50% 50%; background-size: 100%; text-indent: -9999px}
+.header .btn_search {position: absolute; top: 0; left: 0; width: 19px; height: 20px; padding: 12px 3% 13px; font-size: 0; background: url(../images/common/icon_search.jpg) no-repeat 50% 50%; background-size: 19px 20px; text-indent: -9999px; box-sizing: content-box}
+.header .btn_gnb {position: absolute; top: 0; right: 0; width: 23px; height: 14px; padding: 15px 3% 16px; font-size: 0; background: url(../images/common/icon_gnb.jpg) no-repeat 50% 50%; background-size: 23px 14px; text-indent: -9999px; box-sizing: content-box}
+.header .search_wrap {display: none; position: absolute; top: 0; left: 0; width: 100%; padding: 10px 0 11px 0; background: #1c457b; z-index: 100; text-align: center}
+.header .search_wrap form {display: none;}
+.header .search_wrap form + p {display: none;}
+.header .search_wrap span {display: inline-block; font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.05em; vertical-align: middle}
+.header .search_wrap .search_field {position: relative; display: inline-block; width: 74%; height: 25px; margin: 0 6px 0 10px; vertical-align: middle}
+.header .search_wrap .txt_search {width: 100%; height: 100%; padding: 0 30px 0 10px; border: 0; font-weight: 300}
+.header .search_wrap .txt_search::-webkit-input-placeholder {color: #b0aeae !important}
+.header .search_wrap .txt_search:-moz-placeholder {color: #b0aeae !important}
+.header .search_wrap .txt_search::-moz-placeholder {color: #b0aeae !important}
+.header .search_wrap .txt_search:-ms-input-placeholder {color: #b0aeae !important}
+
+.header .search_wrap .btn {position: absolute; top: 0; right: 0; width: 34px; height: 100%; background: url(../images/common/icon_search_m.jpg) no-repeat 50% 50%; background-size: 50%; font-size: 0; text-indent: -9999px}
+.header .search_wrap .btn_search_close {display: inline-block; width: 17px; height: 17px; font-size: 0; background: url(../images/common/icon_search_close.png) no-repeat; background-size: 100%; text-indent: -9999px; vertical-align: middle}
+.header_ban {position: fixed; bottom: 10px; right: 10px; display: block; z-index: 100}
+.header_ban img {width: 100px}
+.pc_gnb_wrap {display: none}
+.m_gnb_wrap .gnb_wrap {overflow-y: scroll; display: none; position: fixed; width: 100%; top: 46px; right: -100%; bottom: 0; z-index: 110}
+.m_gnb_wrap .gnb_wrap.open {display: block}
+.m_gnb_wrap .gnb_wrap .gnb {float: right; width: 82%; min-height: 100%; min-width: 290px; max-width: 370px; background: #0162b1}
+.m_gnb_wrap .gnb_wrap .gnb_top {border-bottom: 1px solid #0c315f; background: #f1f1f1; padding: 7px 13px}
+.m_gnb_wrap .gnb_wrap .gnb_top:after {content: ''; display: block; clear: both}
+.m_gnb_wrap .gnb_wrap .gnb_top .user {float: left; width: calc(50% - 5px); height: 33px; margin-right: 10px; margin-bottom: 10px; line-height: 32px}
+.m_gnb_wrap .gnb_wrap .gnb_top .user .user_cate {font-size: 15px; font-weight: 500; color: #0062b1}
+.m_gnb_wrap .gnb_wrap .gnb_top .user .user_name {font-size: 16px; font-weight: 700; color: #333}
+.m_gnb_wrap .gnb_wrap .gnb_top a {float: left; display: block; width: calc(50% - 5px); padding: 6px 0 6px 47px; border: 1px solid #999; background: #fff; box-sizing: border-box; color: #333}
+.m_gnb_wrap .gnb_wrap .gnb_top .btn_login {background: #fff url(../images/common/icon_header01.png) no-repeat 10px 50%; background-size: 14px}
+.m_gnb_wrap .gnb_wrap .gnb_top .btn_join {background: #fff url(../images/common/icon_header04.png) no-repeat 10px 50%; background-size: 23px}
+.m_gnb_wrap .gnb_wrap .gnb_top .btn_scrap {background: #fff url(../images/common/icon_header03.png) no-repeat 10px 50%; background-size: 17px}
+.m_gnb_wrap .gnb_wrap .gnb_top .btn_manage {background: #fff url(../images/common/icon_header05.png) no-repeat 10px 50%; background-size: 21px}
+.m_gnb_wrap .gnb_wrap .gnb_top a:first-child {margin-right: 10px}
+.m_gnb_wrap .gnb_wrap .gnb_top .btn_scrap {margin-right: 10px}
+.m_gnb_wrap .gnb_wrap .gnb_list .gnb01 > a {background: #1b457b url(../images/common/icon_gnb01.png) no-repeat 12px 50%; background-size: 19px}
+.m_gnb_wrap .gnb_wrap .gnb_list .gnb02 > a {background: #1b457b url(../images/common/icon_gnb02.png) no-repeat 12px 50%; background-size: 16px}
+.m_gnb_wrap .gnb_wrap .gnb_list .gnb03 > a {background: #1b457b url(../images/common/icon_gnb03.png) no-repeat 14px 50%; background-size: 17px}
+.m_gnb_wrap .gnb_wrap .gnb_list .gnb04 > a {background: #1b457b url(../images/common/icon_gnb04.png) no-repeat 13px 50%; background-size: 15px}
+.m_gnb_wrap .gnb_wrap .gnb_list .gnb05 > a {background: #1b457b url(../images/common/icon_gnb05.png) no-repeat 15px 50%; background-size: 16px}
+.m_gnb_wrap .gnb_wrap .gnb_list .gnb06 > a {background: #1b457b url(../images/common/icon_gnb06.png) no-repeat 14px 50%; background-size: 13px}
+.m_gnb_wrap .gnb_wrap .gnb_list > li {border-bottom: 1px solid #0c315f}
+.m_gnb_wrap .gnb_wrap .gnb_list > li:last-child {border-bottom: 0}
+.m_gnb_wrap .gnb_wrap .gnb_list > li > a {position: relative; padding: 10px 0 10px 39px}
+.m_gnb_wrap .gnb_wrap .gnb_list > li > a:after {content: ''; position: absolute; top: 50%; right: 20px; width: 12px; height: 7px; margin-top: -4px; background: url(../images/common/arrow_dep1_off.png) no-repeat; background-size: 100%;  -webkit-transition: transform 0.5s; -moz-transform: transform 0.5s;-o-transform: transform 0.5s;transition: transform 0.5s}
+.m_gnb_wrap .gnb_wrap .gnb_list > li > a.on:after {-webkit-transform: rotate(-180deg);-moz-transform: rotate(-180deg);-o-transform: rotate(-180deg);transform: rotate(-180deg)}
+.m_gnb_wrap .gnb_wrap .gnb_list > li > a.on + ul {display: block}
+.m_gnb_wrap .gnb_wrap .gnb_list li a {display: block; font-size: 16px; font-weight: 500; color: #fff}
+.m_gnb_wrap .gnb_wrap .gnb_list .dep2 {display: none; padding: 8px 0}
+.m_gnb_wrap .gnb_wrap .gnb_list .dep2 li a {position: relative; padding: 3px 0 3px 36px; font-size: 14px; background: url(../images/common/arrow_dep2_off.png) no-repeat 25px 50%; background-size: 4px}
+.m_gnb_wrap .gnb_wrap .gnb_list .dep2 li a:focus {color: #69cfff; background: url(../images/common/arrow_dep2_on.png) no-repeat 25px 50%; background-size: 4px}
+.header .utill_list {display: none}
+.header .btn_allmenu {display: none}
+.header .btn_close {display: none; position: absolute; top: 0; right: 0; width: 17px; height: 17px; padding: 14px 3%; font-size: 0; background: #fff url(../images/common/icon_close.jpg) no-repeat 50% 50%; background-size: 16px 17px; z-index: 109; box-sizing: content-box}
+
+.footer {padding: 16px 0 25px; background: #444}
+.footer .f_logo, .footer .f_sns {display: none}
+.footer .f_tit {padding-bottom: 11px; font-size: 16px; color: #fff; font-weight: 700; letter-spacing: 0}
+.footer .f_contact p.txt {color: #ccc; font-weight: 300}
+.footer .f_utill ul {margin: 19px 0}
+.footer .f_utill ul:after {content:''; display: block; clear: both}
+.footer .f_utill li {float: left; margin-top: 3px; text-align: center}
+.footer .f_utill li a {position: relative; display: inline-block; padding-right: 26px; font-weight: 700; color: #fff; width: 100%; box-sizing: border-box}
+.footer .f_utill li a:before {content: ''; position: absolute; top: 50%; right: 13px; width: 1px; height: 12px; margin-top: -6px; background: #a2a2a2}
+.footer .f_utill li:last-child a:before {display: none}
+.footer .dropdown_m {display: block; width: 100%; height: 32px; padding-left: 15px; color: #fff; font-weight: 300; border: 1px solid #777; background: url(../images/common/arrow_family.gif) no-repeat right 15px bottom 50%; background-size: 10px}
+.footer .dropdown_pc {display: none}
+.footer .f_contact .txt a {color: #ccc}
+
+.location {position: relative; border-bottom: 1px solid #dee3eb; height: 35px}
+.location a {display: block}
+.location p.go_home {float: left; width: 36px; height: 100%}
+.location p.go_home a {height: 100%; background: #1c457b url(../images/common/icon_home_m.png) no-repeat 50% 50%; background-size: 14px 12px; font-size: 0; text-indent: -9999px}
+.location .inner {width: 100%; height: 100%; margin: 0}
+.location .inner:after {content: ''; display: block; clear: both}
+.location .inner > ul:after {content: ''; display: block; clear: both}
+.location .inner .location_list {height: 100%}
+.location .inner .location_list > li {position: relative; float: left; width: calc(50% - 18px); height: 100%}
+.location .inner .location_list > li:first-child > button {border-right: 1px solid rgba(255,255,255,0.5)}
+.location .inner .location_list > li:last-child ul {left: -1px; width: calc(100% + 1px)}
+.location .inner .location_list > li > button {width: 100%; height: 100%; padding: 0 10px; font-size: 13px; color: #fff; background: #0162b1 url(../images/common/arrow_location_m_off.png) no-repeat right 10px bottom 50%; background-size: 9px; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.location .inner .location_list > li > button.active {background: #0162b1 url(../images/common/arrow_location_m_on.png) no-repeat right 10px bottom 50%; background-size: 9px}
+.location .inner .location_list > li ul {display: none; position: absolute; top: 36px; left: -1px; width: calc(100% + 1px); padding: 5px 10px;  border: 1px solid #dee3eb; border-top: 0; z-index: 9; background: #fff; box-sizing: border-box}
+.location .inner .location_list > li ul li a {position: relative; padding: 2px 0 2px 5px}
+.location .inner .location_list > li ul li a:before {content: ''; position: absolute; top: 50%; left: 0; margin-top: -1px; width: 2px; height: 2px; background: #666; border-radius: 2px}
+.location .inner .location_list > li ul li a.active {color: #0062b1}
+.location .inner .location_list > li ul li a.active:before {background: #0062b1}
+.location .inner .location_list > li ul li a:hover, .location .inner .location_list > li ul li a:focus {font-weight: 500; color: #0062b1; text-decoration: underline}
+
+.container {position: relative; height:100%;}
+
+.share {position: absolute; top: 12px; right: 3%; z-index: 1}
+.share li {float: left; margin-left: 8px}
+.share li:first-child {margin-left: 0}
+.share li a {display: block; width: 24px; height: 24px; font-size: 0; text-indent: -9999px}
+.share li .facebook {background: url(../images/common/icon_facebook.jpg) no-repeat 0 0; background-size: 100%}
+.share li .twitter {background: url(../images/common/icon_twitter.jpg) no-repeat 0 0; background-size: 100%}
+.share li .kakao {background: url(../images/common/icon_kakao.jpg) no-repeat 0 0; background-size: 100%}
+.share li .bookmark {background: url(../images/common/icon_bookmark.jpg) no-repeat 0 0; background-size: 100%}
+.share li .bookmark.active {background: url(../images/common/icon_bookmark_on.jpg) no-repeat 0 0; background-size: 100%}
+
+/* form */
+select, input[type="text"], input[type="password"] {height: 24px; padding: 0 10px; border: 1px solid #b8b8b8; background: #fff; color: #666; font-size: 12px; vertical-align: top}
+select {background: #fff url(../images/common/arrow_select.gif) no-repeat right 10px bottom 50%; background-size: 10px; padding: 5px 8px 5px 10px \0/9 !important}
+textarea {border: 1px solid #b8b8b8; color: #666}
+.ui-datepicker-trigger {display: inline-block; width: 19px; height: 22px; margin-left: 5px; vertical-align: middle}
+.ui-datepicker-trigger img {width: 100%; height: 100%}
+
+/* title */
+h2.doc_tit01 {padding: 55px 0 25px; font-size: 21px; font-family: 'BMDOHYEON'; font-weight: 400; color: #333; text-align: center; letter-spacing: -0.05em}
+h3.doc_tit02 {position: relative; padding: 0 0 13px 18px; font-weight: 500; font-size: 16px; color: #333; letter-spacing: -0.05em}
+h3.doc_tit02:before {content: ''; position: absolute; top: 6px; left: 0; width: 13px; height: 13px; background: url(../images/common/bul01.gif) no-repeat 0 0; background-size: 100%}
+h4.doc_tit03 {position: relative; padding: 0 0 10px 21px; font-weight: 500; font-size: 14px; color: #333}
+h4.doc_tit03:before {content: ''; position: absolute; top: 4px; left: 0; width: 12px; height: 12px; background: url(../images/common/bul02.gif) no-repeat 0 0; background-size: 100%}
+
+/* list */
+.notice_wrap {margin-top: 15px;}
+.notice_wrap .bul01 {font-size: 14px; font-weight: 500}
+.notice_wrap .bul01:before {top: 4px}
+.notice_wrap + h3.doc_tit02 {margin-top: 20px}
+
+/* button */
+button, a {font-size: 13px}
+.btn_wrap {text-align: center; font-size: 0}
+.btn_wrap:after {content: ''; display: block; clear: both}
+.btn_wrap a, .btn_wrap button {box-sizing: border-box; text-align: center; vertical-align: top}
+.btn_wrap .fl {float: left}
+.btn_wrap .fr {float: right}
+.btn_normal {display: inline-block; min-width: 65px; height: 32px; padding: 0 20px; margin-right: 10px; font-size: 13px; font-weight: 500; color: #fff; background: #717171; border: 1px solid #4a4a4a; line-height: 31px}
+.btn_normal:last-child {margin-right: 0}
+.btn_normal.blue {background: #0d79c2; border-color: #235596}
+.btn_normal.red {background: #c20d0d; border-color: #7d0c0c}
+.btn_s_gray {display: inline-block; min-width: 69px; height: 24px; padding: 0 11px; font-size: 12px; font-weight: 500; color: #333; background: #f8f8f8; border: 1px solid #666; line-height: 23px; box-sizing: border-box; text-align: center}
+.btn_s_red {display: inline-block; min-width: 69px; height: 24px; padding: 0 11px; font-size: 12px; font-weight: 500; color: #fff; background: #c20d0d; border: 1px solid #7d0c0c; line-height: 23px; box-sizing: border-box; text-align: center}
+.btn_s_blue {display: inline-block; min-width: 69px; height: 24px; padding: 0 11px; font-size: 12px; font-weight: 500; color: #fff; background: #0d79c2; border: 1px solid #235596; line-height: 23px; box-sizing: border-box; text-align: center}
+.btn_pop {display: inline-block; min-width: 65px; height: 30px; padding: 0 11px; margin-right: 5px; font-size: 12px; font-weight: 500; color: #333; background: #f2f4f7; border: 1px solid #333; text-align: center; line-height: 29px; border-radius: 3px}
+.btn_pop.blue {color: #fff; background: #0d79c2; border: 1px solid #235596}
+.btn_check {display: inline-block; height: 30px; padding: 0 17px 0 30px; border: 1px solid #333; border-radius: 3px; background: url(../images/common/btn_check.gif) no-repeat 16px 50%; background-size: 8px; vertical-align: middle}
+.btn_normal02 {display: inline-block; height: 30px; margin-right: 5px; padding: 0 17px; border: 1px solid #333; border-radius: 3px; line-height: 29px; background: #f5f5f5}
+.btn_normal02:last-child {margin-right: 0}
+.btn_search02 {display: inline-block; padding: 0 10px 0 25px; height: 22px; line-height: 22px; color: #333; border: 1px solid #333; border-radius: 3px; background: url(/images/sub/coun/icon_my_coun.png) no-repeat 10px 50%; background-size: 12px; letter-spacing: -0.05em}
+.btn_link2 {display: inline-block; height: 28px; border: 1px solid #333; border-radius: 3px; line-height: 27px; font-weight: 500; color: #333; padding: 0 23px 0 15px; background: url(../images/common/btn_next.gif) no-repeat right 12px bottom 50%; background-size: 4px}
+.btn_link2 + .btn_link2 {margin-left: 5px}
+
+/* bullet */
+.bul01 {position: relative; padding-left: 14px; color: #333}
+.bul01:before {content: '※'; position: absolute; top: 3px; left: 0; font-size: 12px; line-height: 1}
+
+/* paging */
+.paging {margin-top: 20px; font-size: 0; text-align: center}
+.paging a {display: inline-block; width: 26px; height: 26px; margin-right: 4px; font-size: 13px; color: #666; line-height: 26px; border: 1px solid #ccc; vertical-align: top}
+.paging a:last-child {margin-right: 0}
+.paging a.active {font-weight: 500; color: #fff; background: #0d79c2; border-color: #0d79c2; text-decoration: underline}
+.paging .btn_first {background: url(../images/common/paging_first.gif) no-repeat 50% 50%; background-size: 100%; border-color: #aaa}
+.paging .btn_prev {margin-right: 12px; background: url(../images/common/paging_prev.gif) no-repeat 50% 50%; background-size: 100%; border-color: #aaa}
+.paging .btn_next {margin-left: 7px; background: url(../images/common/paging_next.gif) no-repeat 50% 50%; background-size: 100%; border-color: #aaa}
+.paging .btn_last {background: url(../images/common/paging_last.gif) no-repeat 50% 50%; background-size: 100%; border-color: #aaa}
+
+/* table */
+.must_write {margin-bottom: 6px; font-weight: 500; color: #333; text-align: right}
+.must_write:before {content: ''; display: inline-block; width: 10px; height: 10px; margin-right: 5px; background: url(../images/common/icon_must.png) no-repeat; background-size: 10px}
+
+.table_wrap {overflow-y: auto; border-top: 1px solid #333; border-bottom: 1px solid #333; background: #fff}
+.table_wrap .list_tit.must:after {content: ''; display: inline-block; width: 10px; height: 10px; margin-left: 5px; background: url(../images/common/icon_must.png) no-repeat; background-size: 10px}
+.table_wrap .input_wrap {overflow: hidden; vertical-align: middle}
+.table_wrap .list_tit label {vertical-align: baseline}
+.table_wrap .list_cont label {color: #333}
+.table_wrap .list_cont:after {content: ''; display: block; clear: both}
+.table_wrap .list_tit, .table_wrap .list_cont {box-sizing: border-box}
+.radio_wrap {float: left; box-sizing: border-box; margin-right: 15px; vertical-align: middle}
+.radio_wrap.last {margin-right: 0}
+.table_wrap .list_cont input[type="text"], .table_wrap .list_cont select, .table_wrap .list_cont .input_wrap > div, .table_wrap .list_cont .input_wrap button, .input_wrap .date_wrap{float: left}
+.table_caution {margin-top: 5px}
+.table_wrap + .table_wrap {margin-top: 15px}
+
+.common_table01 {}
+.common_table01 .input_wrap {margin: -2px 0}
+.common_table01 .list_tit {padding: 7px 0 7px 16px; font-weight: 500; color: #333; text-align: left; background: #f8f8f8; border-bottom: 1px solid #dee3eb}
+.common_table01 .list_cont {padding: 8px 11px; border-bottom: 1px solid #dee3eb}
+.common_table01 .dep2_list > .list_tit {border-bottom: 1px solid #dee3eb !important}
+.common_table01 > li:last-child > .list_cont {border-bottom: 0}
+
+.common_table01.v2 .dep2_list {}
+.common_table01.v2 .dep2_list .table > ul {width: 100%; display: table}
+.common_table01.v2 .dep2_list .table > ul > li {border-bottom: 1px solid #ccc; display: table-row}
+.common_table01.v2 .dep2_list .table > ul > li > div {vertical-align: middle}
+.common_table01.v2 .dep2_list .table > ul > li .list_tit {display: table-cell; width: 100px; padding: 8px 0 8px 15px; background: #e8e8e8; border-color: #ccc}
+.common_table01.v2 .dep2_list .table > ul > li .list_cont {display: table-cell; width: calc(100% - 100px); padding: 8px 11px}
+.common_table01.v2 .dep2_list .table > ul > li:last-child .list_tit {}
+
+.common_table02 {display: table; width: 100%}
+.common_table02 .input_wrap {margin: -2px 0}
+.common_table02 > li {border-bottom: 1px solid #ccc;display: table-row}
+.common_table02 > li:last-child {border-bottom: 0}
+.common_table02 > li > div {display: table-cell; font-size: 13px; vertical-align: middle}
+.common_table02 .list_tit {width: 100px; padding: 8px 0 8px 15px; background: #f8f8f8; font-weight: 500; color: #333; border-bottom: 1px solid #dee3eb}
+.common_table02 .list_cont {width: calc(100% - 100px); padding: 8px 11px; border-left: 1px solid #dee3eb; background: #fff; border-bottom: 1px solid #dee3eb}
+
+.common_table03 {background: #f8f8f8}
+.common_table03 table, .common_table03 thead, .common_table03 tbody, .common_table03 colgroup, .common_table03 tfoot, .common_table03 tr, .common_table03 th, .common_table03 td {display: block}
+.common_table03 th {position: absolute; top: -9999px; left: -9999px}
+.common_table03 td {position: relative; padding: 8px 11px 8px 111px; border-bottom: 1px solid #ccc; background: #fff; text-align: left; min-height: 19px}
+.common_table03 td.no_content {padding: 8px 0}
+.common_table03 td span {position: absolute; top: 0; left: 0; width: 100px; height: 100%; padding: 8px 0; background: #f8f8f8; text-align: center; font-weight: 500; color: #333; box-sizing: border-box}
+.common_table03 tr{border-bottom:1px solid #333}
+
+.table01 {text-align: center}
+.table01 th, .table01 td {border-right: 1px solid #dee3eb; border-bottom: 1px solid #dee3eb}
+.table01 .brn {border-right: 0 !important}
+.table01 .bbn {border-bottom: 0 !important}
+.table01 tbody tr:last-child td, .table01 tbody tr:last-child th {border-bottom: 0}
+.table01 thead tr th:last-child {border-right: 0}
+.table01 th {padding: 8px 0; font-size: 14px; font-weight: 500; color: #333; background: #f8f8f8}
+.table01 td {padding: 8px 5px}
+.table01 .txt_left {padding: 8px 10px}
+.pop_wrap .compare .table01 thead th a {font-size: 14px}
+.pop_wrap .compare .table01 tbody th {padding: 8px 5px; font-size: 14px; background: #fff; font-weight: 400}
+
+/* popup */
+.pop_tit {padding: 8px 40px 8px 17px; font-size: 15px; font-weight: 500; background: #0d79c2; color: #fff}
+.pop_close {position: absolute; top: 0; right: 0; width: 38px; height: 38px; background: url(../images/common/icon_pop_close.jpg) no-repeat 50% 50%; background-size: 15px; font-size: 0; text-indent: -9999px}
+.pop_cont {padding: 15px}
+
+.pop_wrap .table_wrap {border-top: 1px solid #333; border-bottom: 1px solid #333}
+.pop_wrap .paging + .btn_wrap {margin-top: 20px}
+
+/* search_area */
+.search_area {margin-bottom: 15px; padding: 7px 10px; border: 1px solid #dee3eb; background: #f8f8f8}
+.search_area:after {content: ''; display: block; clear: both}
+.search_area .btn {display: inline-block; width: 40px; height: 24px; line-height: 23px; font-size: 12px; color: #fff; font-weight: 500; border: 1px solid #444; background: #666; box-sizing: border-box}
+.search_area div, .search_area select, .search_area input, .search_area button, .search_area a, .search_area label {float: left}
+
+/* tab */
+.normal_tab {margin-bottom: 20px}
+.normal_tab:after {content: ''; display: block; clear: both}
+.normal_tab li {float: left; text-align: center; width: 50%}
+.normal_tab li a {display: block; padding: 6px 0; font-size: 14px; color: #333; background: #fff; border: 1px solid #ccc;  border-bottom-color: #535353; border-right: 0; border-left: 0; border-bottom-width: 2px; box-sizing: border-box}
+.normal_tab li a.current {position: relative; font-weight: 500; color: #333; background: #fff; border-color: #535353; border-bottom-color: #fff; border-left: 2px solid #535353; border-width: 2px}
+.normal_tab li a.current:before {content: ''; position: absolute; top: -2px; right: -1px; width: 2px; height: calc(100% + 3px); background: #535353}
+.normal_tab li a.current:after {content: ''; position: absolute; top: 0; right: -13px; border-bottom: 32px solid #efefef; border-right: 12px solid transparent}
+.normal_tab li:last-child a.current:after {right: auto; left: -14px; border-right: 0; border-left: 12px solid transparent}
+.normal_tab li:last-child a.current:before {right: 0}
+
+.normal_tab li:nth-child(1):nth-last-child(3),
+.normal_tab li:nth-child(3):nth-last-child(1) {
+    width: 33.3%;
+}
+.normal_tab li:nth-child(2):nth-last-child(2) {
+    width: 33.4%
+}
+.normal_tab li:nth-child(1):nth-last-child(4),
+.normal_tab li:nth-child(2):nth-last-child(3),
+.normal_tab li:nth-child(3):nth-last-child(2),
+.normal_tab li:nth-child(4):nth-last-child(1) {
+    width: 25%;
+}
+.normal_tab li:nth-child(1):nth-last-child(5),
+.normal_tab li:nth-child(2):nth-last-child(4),
+.normal_tab li:nth-child(3):nth-last-child(3),
+.normal_tab li:nth-child(4):nth-last-child(2),
+.normal_tab li:nth-child(5):nth-last-child(1) {
+    width: 20%;
+}
+
+.pop_wrap .btn_wrap {margin-top: 15px}
+.pop_wrap .normal_tab li a {padding: 6px 0}
+
+@media screen and (min-width: 768px){
+
+	body {font-size: 15px}
+	select, input, textarea {font-size: 14px}
+	.m_content {display: none}
+	.pc_content {display: block}
+	.content {padding-bottom: 130px}
+
+	.top_banner .top_ban_m {display: none}
+	.top_banner .top_ban_t {display: block}
+	.top_banner .ban_form_wrap label {font-size: 14px;}
+
+	.wrap.pd {padding-top: 90px}
+    .header_main {height: 90px}
+	.header_ban img {width: 120px}
+    .header .logo a {position: absolute; top: 0; left: 3%; width: 160px; height: 90px; margin: 0; background:url(../images/common/logo.jpg) no-repeat 50% 50%; background-size: 100%}
+	.header .btn_gnb {width: 32px; height: 20px; padding: 35px 3%; background-size: 32px 20px}
+    .header .btn_search {display: none}
+    .header .search_wrap {display: block !important; position: relative; top: 26px !important; overflow: hidden; width: 45%; height: 38px; margin: 0 auto; padding: 0; border-radius: 22px; border: 2px solid #222; background: none}
+	.header .search_wrap .search_field {margin: 0}
+    .header .search_wrap .txt_search {width: 100%; height: 100%; padding: 0 45px 0 15px; border: 0}
+	.header .search_wrap .btn {position: absolute; top: 0; right: 6px; width: 38px; height: 100%; background: url(../images/common/icon_search.png) no-repeat 50% 50%; background-size: 50%}
+	.header .search_wrap span {display: none}
+	.header .search_wrap .search_field {width: 100%; height: 100%; padding: 0}
+	.header .search_wrap .btn_search_close {display: none}
+	.m_gnb_wrap .gnb_wrap {top: 91px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .user {height: 40px; line-height: 39px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .user .user_cate {font-size: 16px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .user .user_name {font-size: 17px}
+	.m_gnb_wrap .gnb_wrap .gnb_top a {width: calc(50% - 5px); padding: 8px 0 8px 53px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .btn_login {background: #fff url(../images/common/icon_header01.png) no-repeat 14px 50%; background-size: 18px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .btn_join {background: #fff url(../images/common/icon_header04.png) no-repeat 14px 50%; background-size: 27px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .btn_scrap {background: #fff url(../images/common/icon_header03.png) no-repeat 14px 50%; background-size: 20px}
+	.m_gnb_wrap .gnb_wrap .gnb_top .btn_manage {background: #fff url(../images/common/icon_header05.png) no-repeat 14px 50%; background-size: 24px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .gnb01 > a {background: #1b457b url(../images/common/icon_gnb01.png) no-repeat 14px 50%; background-size: 23px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .gnb02 > a {background: #1b457b url(../images/common/icon_gnb02.png) no-repeat 14px 50%; background-size: 20px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .gnb03 > a {background: #1b457b url(../images/common/icon_gnb03.png) no-repeat 16px 50%; background-size: 21px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .gnb04 > a {background: #1b457b url(../images/common/icon_gnb04.png) no-repeat 15px 50%; background-size: 19px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .gnb05 > a {background: #1b457b url(../images/common/icon_gnb05.png) no-repeat 17px 50%; background-size: 20px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .gnb06 > a {background: #1b457b url(../images/common/icon_gnb06.png) no-repeat 16px 50%; background-size: 17px}
+	.m_gnb_wrap .gnb_wrap .gnb_list li a {font-size: 17px}
+	.m_gnb_wrap .gnb_wrap .gnb_list > li > a {padding: 14px 0 14px 50px}
+	.m_gnb_wrap .gnb_wrap .gnb_list > li > a:after {right: 20px; width: 16px; height: 9px; margin-top: -5px; background-size: 100%}
+	.m_gnb_wrap .gnb_wrap .gnb_list .dep2 {padding: 12px 0}
+	.m_gnb_wrap .gnb_wrap .gnb_list .dep2 li a {padding: 6px 0 6px 40px; font-size: 16px; background: url(../images/common/arrow_dep2_off.png) no-repeat 25px 50%; background-size: 6px}
+	.m_gnb_wrap .gnb_wrap .gnb_list .dep2 li a:focus {background: url(../images/common/arrow_dep2_on.png) no-repeat 25px 50%; background-size: 6px}
+	.m_gnb_wrap .gnb_wrap + .btn_close {width: 24px; height: 25px; padding: 32px 33px 33px; background-size: 24px 25px; }
+	
+	.footer {padding: 30px 0; font-size: 0}
+	.footer:after {content: ''; display: block; clear: both}
+	.footer .f_tit {font-size: 19px}
+	.footer .f_box {font-size: 15px; display: inline-block; vertical-align: top}
+	.footer .f_box:last-child {margin-right: 0}
+	.footer .f_contact {width: 40%; padding-right: 10px; box-sizing: border-box}
+	.footer .f_sns {display: none}
+	.footer .f_utill ul {margin: 0; }
+	.footer .f_utill li {float: none; margin: 0; width: auto; text-align: left}
+	.footer .f_utill li a {padding: 5px 0 5px 0}
+	.footer .f_utill li a:before {display: none}
+	.footer .f_utill {width: 25%}
+	.footer .f_utill li a {font-weight: 400}
+	.footer .f_utill li:first-child a {padding-top: 0}
+	.footer .f_utill li:last-child a {padding-bottom: 0}
+	.footer .family_site {width: 35%}
+	.footer .dropdown_m {height: 36px}
+
+	.location {height: 46px}
+	.location p.go_home {width: 46px}
+	.location p.go_home a {background-size: 14px 12px}
+	.location .inner .location_list > li {width: calc(50% - 23px)}
+	.location .inner .location_list > li > button {padding: 0 20px; background: #0162b1 url(../images/common/arrow_location_m_off.png) no-repeat right 20px bottom 50%; background-size: 11px; font-size: 15px}
+	.location .inner .location_list > li > button.active {background: #0162b1 url(../images/common/arrow_location_m_on.png) no-repeat right 20px bottom 50%; background-size: 11px}
+	.location .inner .location_list > li ul {display: none; top: 46px; padding: 5px 10px}
+	.location .inner .location_list > li ul li a {position: relative; padding: 4px 0 4px 5px}
+
+	.share {position: absolute; top: 15px}
+	.share li {float: left; margin-left: 10px}
+	.share li:first-child {margin-left: 0}
+	.share li a {width: 28px; height: 28px}
+	.share li .facebook {background-size: 100%}
+	.share li .twitter {background-size: 100%}
+	.share li .kakao {background-size: 100%}
+	.share li .bookmark {background-size: 100%}
+	.share li .bookmark.active {background-size: 100%}
+
+	/* form */
+	select, input[type="text"], input[type="password"] {height: 31px; padding: 0 10px; font-size: 14px}
+	.ui-datepicker-trigger {width: 21px; height: 24px; margin-left: 10px}
+	
+	/* title */
+	h2.doc_tit01 {padding: 56px 0; font-size: 30px}
+	h3.doc_tit02 {padding: 0 0 17px 26px; font-size: 20px}
+	h3.doc_tit02:before {top: 8px; left: 0; width: 16px; height: 16px; background-size: 100%}
+	h4.doc_tit03 {padding: 0 0 14px 24px; font-size: 17px}
+	h4.doc_tit03:before {top: 7px; left: 0; width: 13px; height: 13px; background-size: 100%}
+
+	/* list */
+	.notice_wrap {margin-top: 20px}
+	.notice_wrap .bul01 {margin-bottom: 3px; font-size: 16px}
+	.notice_wrap .bul01:before {top: 5px}
+	.notice_wrap + h3.doc_tit02 {margin-top: 40px}
+
+	/* button */
+	button, a {font-size: 15px}
+	.btn_normal {min-width: 90px; height: 52px; margin-right: 20px; padding: 0 32px; font-size: 17px; line-height: 51px}
+	.btn_normal02 {height: 38px; margin-right: 10px; padding: 0 17px; line-height: 37px}
+	.btn_s_gray {min-width: 79px; height: 31px; padding: 0 15px; font-size: 14px; line-height: 30px}
+	.btn_s_red {min-width: 79px; height: 31px; padding: 0 15px; font-size: 14px; line-height: 30px}
+	.btn_s_blue {min-width: 79px; height: 31px; padding: 0 15px; font-size: 14px; line-height: 30px}
+	.btn_check {height: 41px; padding: 0 17px 0 48px; background: url(../images/common/btn_check.gif) no-repeat 19px 50%; background-size: 15px}
+	.btn_search02 {padding: 0 10px 0 32px; height: 29px; line-height: 29px; background: url(/images/sub/coun/icon_my_coun.png) no-repeat 10px 50%}
+	.btn_link2 {height: 34px; line-height: 33px; padding: 0 27px 0 18px; background: url(../images/common/btn_next.gif) no-repeat right 13px bottom 50%; background-size: 6px}
+	.btn_link2 + .btn_link2 {margin-left: 8px}
+
+	/* bullet */
+	.bul01 {padding-left: 16px}
+	.bul01:before {position: absolute; top: 3px; left: 0; font-size: 14px}
+
+	/* paging */
+	.paging {margin-top: 30px}
+	.paging a {width: 34px; height: 34px; font-size: 15px; line-height: 34px}
+	.paging .btn_first {background: url(../images/common/paging_first.gif) no-repeat; background-size: 100%}
+	.paging .btn_prev {margin-right: 15px; background: url(../images/common/paging_prev.gif) no-repeat; background-size: 100%}
+	.paging .btn_next {margin-left: 10px; background: url(../images/common/paging_next.gif) no-repeat; background-size: 100%}
+	.paging .btn_last {background: url(../images/common/paging_last.gif) no-repeat; background-size: 100%}
+
+	/* table */
+	.must_write:before {width: 11px; height: 11px; margin-left: 5px; background-size: 11px}
+	.table_wrap .list_tit.must:after {width: 11px; height: 11px; margin-left: 5px; background-size: 11px}
+	.table_wrap li > div {min-height: 46px}
+	.table_wrap + .table_wrap {margin-top: 20px}
+	.radio_wrap {margin-right: 30px}
+	.radio_wrap.mt {margin-top: 4px}
+
+	.common_table01 {display: table; width: 100%}
+	.common_table01 .input_wrap {margin: -5px 0}
+	.common_table01 > li {display: table-row}
+	.common_table01 > li > div {display: table-cell; vertical-align: middle; font-size: 14px}
+	.common_table01 > li:last-child > .list_tit, .common_table01 > li:last-child > .list_cont {border-bottom: 0}
+	.common_table01 .list_tit {width: 190px; padding: 12px 0 12px 20px; font-size: 15px}
+	.common_table01 .list_cont {width: calc(100% - 19px); padding: 14px; border-left: 1px solid #dee3eb}
+
+	.common_table01.v2 .list_tit {width: 230px}
+	.common_table01.v2 .list_cont {width: calc(100% - 230px)}
+	.common_table01.v2 .dep2_list {width: calc(100% + 100px)}
+	.common_table01.v2 .dep2_list > .list_tit {width: 130px}
+	.common_table01.v2 .dep2_list .table > ul {margin-left: -100px; display: table; table-layout: fixed; width: calc(100% + 100px); vertical-align: middle; background: #fff}
+	.common_table01.v2 .dep2_list .table > ul > li > div {}
+	.common_table01.v2 .dep2_list .table > ul > li .list_tit {width: 100px; padding: 12px 0 12px 15px}
+	.common_table01.v2 .dep2_list .table > ul > li .list_cont {width: calc(100% - 100px); padding: 12px 14px}
+
+	.common_table02 .input_wrap {margin: -5px 0}
+	.common_table02 > li > div {font-size: 14px}
+	.common_table02 .list_tit {width: 120px; padding: 9px 0 9px 20px; font-size: 15px}
+	.common_table02 .list_cont {width: calc(100% - 120px); padding: 9px 10px}
+
+	.common_table03 table {display: table}
+	.common_table03 thead {display: table-header-group}
+	.common_table03 tbody {display: table-row-group}
+	.common_table03 tfoot {display: table-footer-group}
+	.common_table03 colgroup {display: table-column-group}
+	.common_table03 tr {display: table-row}
+	.common_table03 tr:last-child td {border-bottom: 0}
+	.common_table03 th, .common_table03 td {display: table-cell; text-align: center}
+	.common_table03 th {position: static; top: auto; left: auto; padding: 9px 0; border-bottom: 1px solid #dee3eb; border-right: 1px solid #dee3eb; color: #333; font-size: 16px; font-weight: 500}
+	.common_table03 th:last-child {border-right: 0}
+	.common_table03 td {padding: 10px 10px; border-right: 1px solid #dee3eb; min-height: auto}
+	.common_table03 td:last-child {border-right: 0}
+	.common_table03 td span {display: none}
+	.common_table03 td .btn_s_gray {margin: -4px 0}
+
+	.table01 th {padding: 9px 0; font-size: 16px}
+	.table01 td {padding: 11px 20px}
+	.table01 .txt_left {padding-left: 15px}
+
+	/* search_area */
+	.search_area {margin-bottom: 20px}
+	.search_area {padding: 10px 13px}
+	.search_area .btn {width: 60px; height: 31px; line-height: 31px; font-size: 13px}
+
+	/* tab */
+	.normal_tab {margin-bottom: 30px}
+	.normal_tab li a {padding: 13px 0; font-size: 18px}
+	.normal_tab li a.current:after {right: -21px; border-bottom: 52px solid #efefef; border-right: 20px solid transparent}
+	.normal_tab li:last-child a.current:after {left: -22px; border-left: 20px solid transparent}
+
+	.ui-datepicker-trigger img {margin-top: 2px}
+
+}
+
+@media screen and (min-width: 1500px){
+
+	body {font-size: 16px}
+	select, input, textarea {font-size: 15px}
+	.content {padding-bottom: 180px}
+	.wrap {padding-top: 0}
+
+	.top_banner .top_ban_m {display: none}
+	.top_banner .top_ban_t {display: none}
+	.top_banner .top_ban_pc {display: block}
+    
+	.header {}
+	.header:before {display: none}
+    .header_main {height: 107px}
+	.header_ban {position: absolute; bottom: 0; right: 0}
+	.header_ban img {width: auto}    
+    .header .logo a {width: 186px; height: 107px}
+	.header .btn_gnb {display: none}
+    .header .search_wrap {top: 33px !important; width: 37%; height: 40px; border-radius: 22px}
+    .header .search_wrap .txt_search {width: 100%; height: 100%; padding: 0 50px 0 20px; border: 0}
+	.header .search_wrap .btn {width: 42px}
+	.header .utill_list {position: absolute; top: 25px; right: 0; display: block}
+	.header .utill_list:after {content: ''; display: block; clear: both}
+	.header .utill_list li {float: left}
+	.header .utill_list li a {display: block; min-width: 72px; padding-top: 39px; font-size: 15px; color: #333; text-align: center}
+	.header .utill_list li .utill01 {background: url(../images/common/icon_header01.png) no-repeat 50% 0}
+	.header .utill_list li .utill02 {background: url(../images/common/icon_header02.png) no-repeat 50% 0}
+	.header .utill_list li .utill03 {background: url(../images/common/icon_header03.png) no-repeat 50% 0}
+	.header .utill_list li .utill04 {background: url(../images/common/icon_header04.png) no-repeat 50% 0}
+	.header .utill_list li .utill05 {background: url(../images/common/icon_header05.png) no-repeat 50% 0}
+	.header .utill_list li.user {margin: 20px 15px 0 0}
+	.header .utill_list li.user span {font-weight: 500}
+	.header .utill_list li.user .user_name {color: #333}
+	.pc_gnb_wrap {display: block}
+	.m_gnb_wrap {display: none}
+	.pc_gnb_wrap .gnb_wrap {overflow: visible; padding-top: 0; background: #fff}
+	.pc_gnb_wrap .gnb_wrap .pc_bg {display: none; content: ''; position: absolute; top: 59px; left: 0; width: 100%; height: 300px; background: #0162b1; z-index: 98}
+	.pc_gnb_wrap .gnb_wrap {position: relative}
+	.pc_gnb_wrap .gnb_wrap .gnb {position: relative; width: 100%; height: 58px; border-top: 1px solid #e1e2e6; background: #fff}
+	.pc_gnb_wrap .gnb_wrap .gnb_top {display: none}
+	.pc_gnb_wrap .gnb_wrap .gnb_list {position: relative; padding-right: 59px; margin: 0 auto; font-size: 0; text-align: center}
+	.pc_gnb_wrap .gnb_wrap .gnb_list:after {content: ''; display: block; clear: both}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li {position: relative; display: inline-block; width: 16.66666%; border-bottom: 0}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li > a {display: block; position: relative; height: 58px; padding: 0; font-size: 19px; color: #666; font-weight: 400; background: #fff; text-align: center; line-height: 58px}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li > a:before {content: ''; display: none; position: absolute; top: -1px; left: 0; width: 100%; height: 2px; background: #0162b1}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li > a:hover {color: #0062b1; font-weight: 700}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li > a:hover:before {display: block}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li > a.current {color: #0062b1; font-weight: 700}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li > a.current:before {display: block}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li.over > a {color: #0062b1; font-weight: 700}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li.over > a:before {display: block}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li.over .dep2 {background: #1b4d8e}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li:last-child .dep2 {width: calc(100% + 59px); border-right: 1px solid #3481c1}
+	.pc_gnb_wrap .gnb_wrap .gnb .dep2 {display: none; position: absolute; top: 59px; left: 0; width: 100%; height:300px; padding: 16px 0 0 21px; text-align: left; box-sizing: border-box; z-index: 99; border-left: 1px solid #3481c1}
+	.pc_gnb_wrap .gnb_wrap .gnb .dep2 li a {position: relative; display: inline-block; padding: 5px 0; font-size: 16px; font-weight: 400; color: #fff; word-break: break-all}
+	.pc_gnb_wrap .gnb_wrap .gnb .dep2 li a:after {content: ''; position: absolute; top: 16px; left: -8px; width: 3px; height: 3px; background: #fff; border-radius: 3px}
+	.pc_gnb_wrap .gnb_wrap .gnb .dep2 li a:before {display: none; content: ''; position: absolute; bottom: 1px; width: 100%; height: 1px; background: #fff}
+	.pc_gnb_wrap .gnb_wrap .gnb .dep2 li a:hover, .pc_gnb_wrap .gnb_wrap .gnb .dep2 li a:focus {color: #fff}
+	.pc_gnb_wrap .gnb_wrap .gnb .dep2 li a:hover:before, .pc_gnb_wrap .gnb_wrap .gnb .dep2 li a:focus:before {display: block}
+
+	.allmenu_wrap {position: relative}
+	.allmenu_wrap .btn_allmenu, .allmenu_wrap .btn_allmenu_close {display: block; position: absolute; top: -59px; right: 0; width: 59px; height: 59px; background: #0062b1; z-index: 99}
+	.allmenu_wrap .btn_allmenu_close {display: none; text-indent: -9999px; font-size: 0; background: none}
+	.allmenu_wrap .btn_allmenu strong {font-size: 0; text-indent: -9999px}
+	.allmenu_wrap .btn_allmenu span {right: 12px; display: block;position: absolute;height: 4px;width: 35px;background: #fff;border-radius: 2px;opacity: 1;-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-o-transition: .25s ease-in-out;transition: .25s ease-in-out}
+	.allmenu_wrap .btn_allmenu span.line01 {top: 17px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;transform-origin: left center}
+	.allmenu_wrap .btn_allmenu span.line02 {top: 29px;width: 27px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;transform-origin: left center}
+	.allmenu_wrap .btn_allmenu span.line03 {top: 41px;-webkit-transform-origin: left center;-moz-transform-origin: left center;-o-transform-origin: left center;transform-origin: left center}
+	.allmenu_wrap .btn_allmenu.open span.line01 {-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);top: 15px;right: 7px;background: #fff}
+	.allmenu_wrap .btn_allmenu.open span.line02 {width: 0%;opacity: 0}
+	.allmenu_wrap .btn_allmenu.open span.line03 {-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);top: 40px;right:7px;background: #fff}
+	.allmenu {position: absolute; top: 0; left: 0; width: 100%; display: none; background: #0162b1; z-index: 98}
+	.allmenu > ul {padding-right: 59px; font-size: 0; border-right: 1px solid #3481c1; box-sizing: border-box}
+	.allmenu > ul > li {position: relative; display: inline-block; width: 16.66666%; vertical-align: top}
+	.allmenu > ul > li > a {position: absolute; top: -58px; left: 0px; width: 100%; height: 58px; font-size: 19px; color: #666; font-weight: 400; background: #fff; text-align: center; line-height: 58px; z-index: 98}
+	.allmenu > ul > li > a:before {content: ''; display: none; position: absolute; top: -1px; left: 0; width: 100%; height: 2px; background: #0162b1}
+	.allmenu > ul > li.over > a {color: #0062b1; font-weight: 700}
+	.allmenu > ul > li.over > a:before {display: block}
+	.allmenu > ul > li.over > ul {background: #1b4d8e}
+	.allmenu > ul > li > ul {width: 100%; height: 300px; padding: 16px 0 0 21px; border-left: 1px solid #3481c1; text-align: left; box-sizing: border-box; z-index: 99}
+	.allmenu > ul > li:last-child ul {width: calc(100% + 59px); border-left: 1px solid #3481c1}
+	.allmenu > ul > li > ul li a {position: relative; display: inline-block; padding: 5px 0; font-size: 16px; font-weight: 400; color: #fff; word-break: break-all}
+	.allmenu > ul > li > ul li a:after {content: ''; position: absolute; top: 16px; left: -8px; width: 3px; height: 3px; background: #fff; border-radius: 3px}
+	.allmenu > ul > li > ul li a:before {display: none; content: ''; position: absolute; bottom: 1px; width: 100%; height: 1px; background: #fff}
+	.allmenu > ul > li > ul li a:hover, .allmenu > ul > li > ul li a:focus {color: #fff}
+	.allmenu > ul > li > ul li a:hover:before, .allmenu > ul > li > ul li a:focus:before {display: block}
+	.allmenu > ul > li.over .dep2 {background: #1b4d8e}
+	
+	.footer {padding: 36px 0 42px}
+	.footer .f_tit {font-size: 25px}
+	.footer .f_logo {display: inline-block; width: 20%; margin-top: 5px; padding-right: 20px; vertical-align: top; box-sizing: border-box}
+	.footer .f_logo img {width: 90%}
+	.footer .f_box {font-size: 17px; width: 20%; padding-right: 15px; box-sizing: border-box}
+	.footer .f_contact {width: 25%; box-sizing: border-box}
+	.footer .f_contact strong {font-weight: 300}
+	.footer .f_contact .txt {font-size: 14px}
+	.footer .f_contact .txt.pb {padding-bottom: 16px}
+	.footer .f_sns {display: inline-block; margin-top: -2px; vertical-align: top}
+	.footer .f_sns ul:after {content: ''; display: block; clear: both}
+	.footer .f_sns ul li {float: left; margin-right: 9px}
+	.footer .f_sns ul li:last-child {margin-right: 0}
+	.footer .f_sns ul li a {display: block; font-size: 0; text-indent: -9999px}
+	.footer .f_sns ul li.sns01 a {width: 38px; height: 37px; background: url(../images/common/sns01.png) no-repeat}
+	.footer .f_sns ul li.sns02 a {width: 38px; height: 38px; background: url(../images/common/sns02.png) no-repeat}
+	.footer .f_sns ul li.sns03 a {width: 38px; height: 38px; background: url(../images/common/sns03.png) no-repeat}
+	.footer .f_sns ul li.sns04 a {width: 39px; height: 38px; background: url(../images/common/sns04.png) no-repeat}
+	.footer .open_api {margin-top: 36px; color: #fff}
+	.footer .f_utill {width: 15%}
+	.footer .f_utill ul {margin: 0}
+	.footer .f_utill li {float: none}
+	.footer .f_utill li a {padding: 8px 0}
+	.footer .f_utill li a:before {display: none}
+	.footer .family_site {width: 20%}
+	.footer .family_site .f_tit {font-size: 20px}
+	.footer .dropdown_m {display: none}
+	.footer .dropdown_pc {position: relative; display: block}
+	.footer .dropdown_pc a {height: 41px; padding-left: 15px; line-height: 41px; font-size: 15px; color: #fff}
+	.footer .dropdown_pc > p a {position: relative; display: block; border: 1px solid #777}
+	.footer .dropdown_pc > p a:before {content: ''; position: absolute; top: 50%; right: 20px; margin-top: -3px; border-bottom: 6px solid #fff; border-left: 3px solid transparent; border-right: 3px solid transparent}
+	.footer .dropdown_pc > p a.open:before { border-top: 6px solid #fff; border-bottom: 0}
+	.footer .dropdown_pc ul {display: none; position: absolute; bottom: 43px; left: 0; width: 100%; border: 1px solid #777; border-bottom: 0; box-sizing: border-box; z-index: 1}
+	.footer .dropdown_pc ul li {border-bottom: 1px solid #c6c6c6}
+	.footer .dropdown_pc ul li:last-child {border-bottom: 0}
+	.footer .dropdown_pc ul li a {display: block; color: #444; background: #e8e8e8}
+
+	.btn_page_top {position: fixed; bottom: 70px; right: 50%; display: block; width: 47px; height: 47px; margin-right: -694px; background: url(../images/common/btn_top.png) no-repeat; font-size: 0; text-indent: -9999px}
+	.btn_page_top.position {position: absolute; bottom: 320px}
+
+	.location {height: 50px}
+	.location .inner {position: relative}
+	.location p.go_home {width: 58px; border-right: 1px solid #dee3eb; border-left: 1px solid #dee3eb}
+	.location p.go_home a {background: #fafafa url(../images/common/icon_home_pc.png) no-repeat 50% 50%}
+	.location .inner .location_list > li {width: 230px}
+	.location .inner .location_list > li > button {font-size: 16px; color: #666; padding: 0 20px; background: #fafafa url(../images/common/arrow_location_pc_off.png) no-repeat right 15px bottom 50%; border-right: 1px solid #dee3eb}
+	.location .inner .location_list > li > button.active {font-weight: bold; color: #333; background: #fafafa url(../images/common/arrow_location_pc_on.png) no-repeat right 15px bottom 50%}
+	.location .inner .location_list > li:first-child > button {border-right: 1px solid #dee3eb}
+	.location .inner .location_list > li ul {display: none; top: 51px; padding: 8px 16px}
+	.location .inner .location_list > li ul li a {position: relative; padding: 3px 0 3px 6px; font-size: 15px}
+
+	.share {top: 20px; right: 15px; display: block}
+	.share li {margin-left: 8px}
+	.share li a {display: block; width: 31px; height: 31px; font-size: 0; text-indent: -9999px}
+
+	/* form */
+	select, input[type="text"], input[type="password"] {height: 31px; padding: 0 10px; font-size: 15px}
+	select {background: #fff url(../images/common/arrow_select.gif) no-repeat right 16px bottom 50%; background-size: 11px}
+	
+	/* title */
+	h2.doc_tit01 {padding: 67px 0 52px; font-size: 40px}
+	h3.doc_tit02 {padding: 0 0 13px 34px; font-size: 25px}
+	h3.doc_tit02:before {top: 10px;  width: 20px; height: 20px; background-size: 100%}
+	h4.doc_tit03 {padding: 0 0 15px 26px; font-size: 20px}
+	h4.doc_tit03:before {top: 8px; width: 15px; height: 15px; background-size: 100%}
+
+	/* list */
+	.notice_wrap {margin-top: 20px}
+	.notice_wrap .bul01 {margin-bottom: 6px; font-size: 18px}
+	.notice_wrap .bul01:before {top: 6px}
+	.notice_wrap + h3.doc_tit02 {margin-top: 50px}
+	
+	/* button */
+	.btn_normal {min-width: 130px; height: 65px; margin-right: 20px; padding: 0 48px; font-size: 20px; font-weight: 500; line-height: 64px}
+	.btn_normal02 {height: 42px; padding: 0 20px; line-height: 41px}
+	.btn_s_gray {min-width: 79px; height: 31px; padding: 0 15px; font-size: 15px; line-height: 30px}
+	.btn_s_red {min-width: 79px; height: 31px; padding: 0 15px; font-size: 15px; line-height: 30px}
+	.btn_s_blue {min-width: 79px; height: 31px; padding: 0 15px; font-size: 15px; line-height: 30px}
+	.btn_search02 {padding: 0 14px 0 42px; height: 40px; line-height: 39px; background: url(/images/sub/coun/icon_my_coun.png) no-repeat 14px 50%; font-size: 16px}
+	.btn_link2 {height: 40px; line-height: 39px; padding: 0 29px 0 18px; background: url(../images/common/btn_next.gif) no-repeat right 11px bottom 50%; background-size: 8px}
+	
+	/* paging */
+	.paging {margin-top: 40px}
+	.paging a {width: 34px; height: 34px; font-size: 15px; line-height: 34px}
+	.paging .btn_first {background: url(../images/common/paging_first.gif) no-repeat; background-size: 100%}
+	.paging .btn_prev {margin-right: 20px; background: url(../images/common/paging_prev.gif) no-repeat; background-size: 100%}
+	.paging .btn_next {margin-left: 15px; background: url(../images/common/paging_next.gif) no-repeat; background-size: 100%}
+	.paging .btn_last {background: url(../images/common/paging_last.gif) no-repeat; background-size: 100%}
+	
+	/* table */
+	.must_write {margin-bottom: 7px; font-size: 15px}
+	.table_wrap {font-size: 15px}
+	.table_wrap .list_tit.must:after {width: 11px; height: 11px; margin-left: 5px; background-size: 11px}
+	.table_wrap > ul > li > div {}
+	.radio_wrap {margin-right: 0}
+
+	.common_table01 .input_wrap {margin: -4px 0}
+	.common_table01 > li > div {font-size: 15px}
+	.common_table01 .list_tit {width: 190px; padding: 12px 0 12px 26px; font-size: 17px}
+	.common_table01 .list_cont {width: calc(100% - 190px); padding: 14px 17px}
+
+	.common_table01.v2 .list_tit {width: 300px}
+	.common_table01.v2 .list_cont {width: calc(100% - 300px)}
+	.common_table01.v2 .dep2_list > .list_tit {width: 190px}
+	.common_table01.v2 .dep2_list .table > ul {margin-left: -110px}
+	.common_table01.v2 .dep2_list .table > ul > li .list_tit {width: 110px; padding: 12px 0 12px 15px}
+	.common_table01.v2 .dep2_list .table > ul > li .list_cont {width: calc(100% - 110px); padding: 14px 17px}
+
+	.common_table02 > li > div {font-size: 15px; min-height: 40px}
+	.common_table02 .list_tit {width: 120px; padding: 9px 0 9px 20px; font-size: 15px}
+	.common_table02 .list_cont {width: calc(100% - 120px); padding: 9px 10px}
+
+	.common_table03 th {padding: 12px 0; font-size: 17px}
+	.common_table03 td {padding: 9px 10px}
+	.common_table03 td .btn_s_gray {margin: -4px 0}
+
+	.table01 th {font-size: 17px}
+
+	/* popup */
+	.pop_tit {padding: 11px 55px 11px 26px; font-size: 22px}
+	.pop_close {width: 50px; height: 50px; background-size: 20px}
+	.pop_cont {padding: 30px}
+
+	/* search_area */
+	.search_area {margin-bottom: 20px}
+	.search_area {padding: 10px 13px}
+	.search_area .btn {width: 60px; height: 31px; line-height: 31px; font-size: 13px}
+
+	/* tab */
+	.normal_tab {margin-bottom: 60px}
+	.normal_tab li a {padding: 15px 0;  font-size: 25px}
+	.normal_tab li a.current:after {right: -25px; border-bottom: 67px solid #efefef; border-right: 24px solid transparent}
+	.normal_tab li:last-child a.current:after {left: -26px; border-left: 24px solid transparent}
+
+	/* bullet */
+	.bul01 {font-size: 15px}
+	.bul01:before {top: 3px}
+}
+
+@media screen and (min-width: 1300px){
+
+    .inner, .content {width: 1280px; margin: 0 auto}
+
+    .header_main {width: 1280px; margin: 0 auto}
+    .header .search_wrap {width: 509px}
+    .header .search_wrap .txt_search {padding-left: 34px}
+	.header .logo a {left: 0}
+	.header_ban {right: 50%; margin-right: -874px}
+	.pc_gnb_wrap .gnb_wrap .gnb_list {width: 1213px; padding-right: 67px}
+	.pc_gnb_wrap .gnb_wrap .gnb_list > li:last-child .dep2 {width: calc(100% + 69px)}
+	.allmenu_wrap .btn_allmenu, .allmenu_wrap .btn_allmenu_close {width: 67px; height: 59px; right: 50%; margin-right: -640px}
+	.allmenu_wrap .btn_allmenu span {width: 35px;right: 16px}
+	.allmenu_wrap .btn_allmenu span.line01 {top: 17px}
+	.allmenu_wrap .btn_allmenu span.line02 {top: 29px;width: 27px}
+	.allmenu_wrap .btn_allmenu span.line03 {top: 41px}
+	.allmenu_wrap .btn_allmenu.open span.line01 {top: 15px;right: 11px}
+	.allmenu_wrap .btn_allmenu.open span.line03 {top: 40px;right:11px}
+	.allmenu > ul {width: 1280px; padding-right: 67px; margin: 0 auto}
+	.allmenu > ul > li:last-child ul {width: calc(100% + 67px)}
+	
+	.footer .f_tit {padding-bottom: 13px}
+	.footer .f_logo {width: 265px; padding-right: 0}
+	.footer .f_logo img {width: 188px}
+	.footer .f_box {width: auto; padding-right: 0}
+	.footer .f_contact {width: 298px}
+	.footer .f_sns {width: 246px}
+	.footer .f_utill {width: 242px}
+	.footer .family_site {width: 227px}
+
+	.location .inner {width: 1280px; margin: 0 auto}
+	.share {right: 50%; margin-right: -640px}
+
+}
+
+@media screen and (min-width: 1071px) and (max-width: 1800px){
+	.header_ban {right: 15px; margin-right: 0}
+}
+
+@media screen and (max-width: 599px){
+
+	.pop_wrap {font-size: 13px}
+
+}
+
+@media screen and (min-width: 600px){
+
+	/* popup */
+	.pop_wrap {font-size: 15px}
+	.pop_wrap select,.pop_wrap input[type="text"],.pop_wrap input[type="password"] {font-size: 15px}
+	.pop_wrap input[type="text"], .pop_wrap select {height: 35px}
+	.btn_pop {min-width: 89px; height: 34px; padding: 0 15px; font-size: 16px; line-height: 33px}
+
+	.pop_tit {padding: 11px 40px 11px 26px; font-size: 22px}
+	.pop_close {width: 55px; height: 55px; background: url(../images/common/icon_pop_close_pc.jpg) no-repeat 50% 50%; background-size: 17px}
+	.pop_cont {padding: 20px 20px 30px}
+
+	.pop_wrap .table01 th {padding: 13px 0; font-size: 15px}
+	.pop_wrap .table01 td {padding: 9px 5px; font-size: 15px}
+	.pop_wrap .table01 .txt_left {padding: 9px 10px}
+	.pop_wrap .btn_wrap {margin-top: 20px}
+
+	.pop_wrap .compare .table01 thead th a {font-size: 15px}
+	.pop_wrap .compare .table01 tbody th {padding: 9px 5px; font-size: 15px; background: #fff; font-weight: 400}
+
+	.pop_wrap .common_table02 .input_wrap {margin: -7px 0}
+	.pop_wrap .common_table02 li > div {min-height: 46px; font-size: 14px}
+	.pop_wrap .common_table02 .list_tit {width: 130px; padding: 12px 0 12px 20px; border-bottom: 0; font-size: 15px}
+	.pop_wrap .common_table02 .list_cont {width: calc(100% - 130px); padding: 12px 10px}
+
+	/* search_area */
+	.pop_wrap .search_area {margin-bottom: 20px}
+	.pop_wrap .search_area {padding: 14px 20px}
+	.pop_wrap .search_area .btn {width: 65px; height: 35px; line-height: 34px; font-size: 17px}
+
+	/* tab */
+	.pop_wrap .normal_tab {margin-bottom: 30px}
+	.pop_wrap .normal_tab li a {padding: 11px 0; font-size: 17px}
+	.pop_wrap .normal_tab li a.current:after {right: -17px; border-bottom: 47px solid #efefef; border-right: 16px solid transparent}
+	.pop_wrap .normal_tab li:last-child a.current:after {right: auto; left: -18px; border-right: 0; border-left: 16px solid transparent}
+
+	/* paging */
+	.pop_wrap .paging {margin-top: 20px}
+	.pop_wrap .paging a {width: 34px; height: 34px; font-size: 15px; line-height: 34px}
+	.pop_wrap .paging .btn_first {background: url(../images/common/paging_first.gif) no-repeat; background-size: 100%}
+	.pop_wrap .paging .btn_prev {margin-right: 20px; background: url(../images/common/paging_prev.gif) no-repeat; background-size: 100%}
+	.pop_wrap .paging .btn_next {margin-left: 15px; background: url(../images/common/paging_next.gif) no-repeat; background-size: 100%}
+	.pop_wrap .paging .btn_last {background: url(../images/common/paging_last.gif) no-repeat; background-size: 100%}
+	.pop_wrap .btn_cate {height: 35px}
+
+}
+
+@media screen and (min-width: 1070px) and (max-width: 1280px){
+
+	.normal_tab2 li.current span:before {display: none}
+
+}
+
+@media screen and (max-width: 1069px){
+
+	.btn_page_top {display: none !important}
+
+}
+
+@media screen and (min-width: 1280px){
+	
+	.top_banner .ban_cont {position: relative; width: 1280px; margin: 0 auto}
+	.top_banner .ban_form_wrap input {width: 17px; height: 17px}
+	.top_banner .ban_form_wrap label {margin-left: 6px}
+	.top_banner .btn_top_close {top: 32px; right: 18px; width: 52px; height: 52px}
+
+}
+

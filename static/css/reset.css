@@ -1,0 +1,30 @@
+@charset "utf-8";
+@font-face { 
+     font-family: 'Binggrae-Bold'; 
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); 
+     font-weight: normal; 
+     font-style: normal; 
+}
+
+
+* {margin:0; padding:0}
+html, body {height: 100%}
+body {font-family: 'Binggrae-Bold',BinggraeⅡ-Bold,'BinggraeⅡ-Bold',Binggrae-Bold,Binggrae-Bold; color: #666; font-weight: 400; line-height: 1.53; letter-spacing: -0.025em; -webkit-text-size-adjust: none; word-break: keep-all; word-wrap: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; -webkit-overflow-scrolling:touch;}
+ol, ul, li ,dl, dt, dd {list-style: none outside none}
+hr {display:none}
+fieldset, img, table, caption, tbody, tfoot, thead, tr, th, td, button, hr {border: 0}
+address, caption, cite, code, dfn, em, strong, th, var {font-style: normal}
+blockquote, q {quotes:none}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none}
+table {width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed}
+caption {position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden}
+img {vertical-align: top; max-width: 100%}
+a {text-decoration: none; color: #666}
+select, input, textarea, button {font-family: 'Binggrae-Bold',BinggraeⅡ-Bold,'BinggraeⅡ-Bold', Binggrae-Bold, Binggrae-Bold}
+select, input[type="text"], input[type="password"], textarea {border-radius: 0; box-sizing: border-box}
+button {border-radius: 0; margin: 0; overflow: visible; text-transform: none; -webkit-appearance: button; cursor: pointer; border: 0; background: none}
+input::-ms-clear {display: none}
+select::-ms-expand {display: none}
+select {-webkit-appearance:none; -moz-appearance:none; appearance:none}
+textarea {resize: none}
+label {cursor: pointer}
