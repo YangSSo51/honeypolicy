@@ -1,0 +1,338 @@
+@charset "utf-8";
+
+.main .content {width: 100%; padding: 0; height:100%;} 
+.main .content > div {position: absolute;width: 1000px;}
+.btn_more {display: block; width: 20px; height: 20px; background: url(../images/main/more.png) no-repeat 0 0; background-size: 20px; font-size: 0; color: transparent}
+.btn_more.position {position: absolute; top: 23px; right: 3%}
+.main_tit {padding: 20px 0 18px; font-size: 18px; font-weight: 500; color: #333; font-family: 'BMDOHYEON'; text-align: center; letter-spacing: -0.05em}
+.main_tit span {font-size: 20px}
+.main_board {position: relative; margin-top: 10px; background: #fff; border: 1px solid #ccc}
+.main_board .tit {padding: 8px 0 8px 15px; font-size: 14px; font-weight: 700; color: #333; letter-spacing: -0.05em; border-bottom: 1px solid #ccc}
+.main_board .btn_more {position: absolute; top: 9px; right: 11px}
+.main_board ul {padding: 14px 20px}
+.main_board ul li {margin-bottom: 3px; line-height: 1}
+.main_board ul li:last-child {margin-bottom: 0}
+.main_board ul li {position: relative; padding-left: 8px}
+.main_board ul li:before {content: ''; position: absolute; top: 50%; left: 0; width: 2px; height: 2px; margin-top: -1px; border-radius: 2px; background: #333}
+.main_board ul li a {display: inline-block; height: 13px; max-width: 93%; margin: 5px 0; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0; vertical-align: middle}
+.main_board ul li a:hover, .main_board ul li a:focus {font-weight: 500; color: #333}
+.main_board ul li strong {display: inline-block; width: 15px; height: 16px; margin-left: 3px; background: url(../images/main/icon_new.gif) no-repeat 0 0; background-size: 100%; text-indent: -9999px; vertical-align: middle}
+.main_board ul li .date {display: none}
+.main_board .coming_soon {display: table; width: 100%; padding: 25px 0; text-align: center;}
+.main_board .coming_soon span {display: table-cell; font-family: 'BMDOHYEON'; font-size: 20px; color: #333; vertical-align: middle}
+.main .dots_wrap {text-align: center; line-height: 1}
+.main .slick-dots {display: inline-block; margin-right: 10px; text-align: center; font-size: 0}
+.main .slick-dots li {display: inline-block; margin-right: 8px}
+.main .slick-dots li:last-child {margin-right: 0}
+.main .slick-dots button {width: 12px; height: 12px; background: #b7b7b7; border-radius: 12px; box-sizing: border-box}
+.main .slick-dots .slick-active button {width: 28px; background: #000}
+.main .btn_play {display: inline-block; width: 11px; height: 12px; margin-right: 9px; background: url(../images/main/btn_play.png) no-repeat; background-size: 11px 12px}
+.main .btn_stop {display: inline-block; width: 10px; height: 12px; background: url(../images/main/btn_stop.png) no-repeat; background-size: 10px 12px}
+.main_cont01 .visual_slider img {width: 100%}
+.main_cont01 .visual_slider .m_cont {display: block}
+.main_cont01 .visual_slider .t_cont, .main_cont01 .visual_slider .pc_cont {display: none}
+.main_cont01 .quick_menu {position: absolute; bottom: 0; left: 0; width: 100%}
+.main_cont01 .quick_menu ul {position: relative; left: 17.5%;  width: 65%; font-size: 0}
+.main_cont01 .quick_menu ul:after {content: ''; display: block; clear: both}
+.main_cont01 .quick_menu ul li {position: relative; display: inline-block; width: calc(33.33% - 1px); margin-right: 1px; vertical-align: bottom}
+.main_cont01 .quick_menu ul li a {position: relative; display: block; height: 0; padding-top: 89%; text-align: center; color: #fff; font-weight: 700; letter-spacing: -0.05em}
+.main_cont01 .quick_menu ul li a span {position: absolute; bottom: 8.57%; left: 0; display: block; width: 100%; font-size: 12px; text-align: center; line-height: 1}
+.main_cont01 .quick_menu ul li a span:before {content: ''; position: absolute; top: -5px; left: 50%; display: block; width: 26px; height: 1px; background: #fff; margin-left: -13px}
+.main_cont01 .quick_menu ul li a.active, .main_cont01 .quick_menu ul li a:focus {padding-top: 103%}
+.main_cont01 .quick_menu ul li a.active span, .main_cont01 .quick_menu ul li a:focus span {bottom: 63%}
+.main_cont01 .quick_menu ul li:nth-child(1) a {background-color: #0064b2; background-image: url(../images/main/icon_quick01_m.png); background-repeat: no-repeat; background-position: 50% 23%; background-size: 29.48%}
+.main_cont01 .quick_menu ul li:nth-child(2) a {background-color: #2d7c62; background-image: url(../images/main/icon_quick02_m.png); background-repeat: no-repeat; background-position: 50% 23%; background-size: 25.64%}
+.main_cont01 .quick_menu ul li:nth-child(3) a {background-color: #1a2865; background-image: url(../images/main/icon_quick03_m.png); background-repeat: no-repeat; background-position: 50% 25%; background-size: 35.35%}
+.main_cont01 .quick_menu ul li:nth-child(1) a.active, .main_cont01 .quick_menu ul li:nth-child(1) a:focus {background-position: right 50% bottom 21%; background-size: 29.48%}
+.main_cont01 .quick_menu ul li:nth-child(2) a.active, .main_cont01 .quick_menu ul li:nth-child(2) a:focus {background-position: right 50% bottom 21%; background-size: 25.64%}
+.main_cont01 .quick_menu ul li:nth-child(3) a.active, .main_cont01 .quick_menu ul li:nth-child(3) a:focus {background-position: right 50% bottom 21%; background-size: 35.35%}
+.main_cont01 .quick_menu ul li p {display: none}
+.main_cont01 .dots_wrap {display: none; position: absolute; top: 4.5%; left: 0; width: 100%}
+.main_cont01 .slick-arrow {position: absolute; top: 50%; width: 35px; height: 35px; margin-top: -17px; z-index: 1}
+.main_cont01 .slick-prev {left: 3%; background: url(../images/main/arrow_prev01.png) no-repeat; background-size: 100%}
+.main_cont01 .slick-next {right: 3%; background: url(../images/main/arrow_next01.png) no-repeat; background-size: 100%}
+
+.main_cont04 .main_tit span {color: #33856a}
+.main_cont04 .slick-arrow {display: none !important;}
+.main_cont04 .space_search {position: relative; padding-top: 38px; margin-bottom: 27px}
+.main_cont04 .space_search .tab_btn {display: block; position: absolute; top: 0; width: calc(50% - 5px); padding: 4px 0; font-size: 14px; font-weight: 300; text-align: center; border: 1px solid #e5e5e5; background: #fff; border-radius: 3px}
+.main_cont04 .space_search .tab_btn.active {background: rgb(151, 208, 255); border-color: #0a0b0b; font-weight: 500; color: #0a0b0b}
+.main_cont04 .space_search .tab_btn.active + .tab_cont {display: block}
+.main_cont04 .space_search .tab_cont {display: none; padding: 18px 23px; border: 2px dashed rgb(0, 63, 105); background: #f8f8f8}
+.main_cont04 .space_search .tab_cont form > div:after {content: ''; display: block; clear: both}
+.main_cont04 .space_search .tab_cont form > div:first-child select {width: calc(50% - 4px)}
+.main_cont04 .space_search .tab_cont form > div:first-child select:first-child {margin-right: 8px}
+.main_cont04 .space_search .tab_cont form > div select, .main_cont04 .space_search .tab_cont form > div input {float: left; height: 28px; color: #333}
+.main_cont04 .space_search .tab_cont form > div select::-webkit-input-placeholder, .main_cont04 .space_search .tab_cont form > div input::-webkit-input-placeholder {color: #333 !important}
+.main_cont04 .space_search .tab_cont form > div select:-moz-placeholder, .main_cont04 .space_search .tab_cont form > div input:-moz-placeholder {color: #333 !important}
+.main_cont04 .space_search .tab_cont form > div select::-moz-placeholder, .main_cont04 .space_search .tab_cont form > div input::-moz-placeholder {color: #333 !important}
+.main_cont04 .space_search .tab_cont >form  div select:-ms-input-placeholder, .main_cont04 .space_search .tab_cont form > div input:-ms-input-placeholder {color: #333 !important}
+.main_cont04 .space_search .tab_cont .btn_search {position: relative; display: block; width: 100%; padding: 8px 0; font-size: 18px; font-weight: 500; color: #fff; background: #333; border-radius: 3px}
+.main_cont04 .space_search .tab_cont .btn_search span {position: relative; display: inline-block}
+.main_cont04 .space_search .tab_cont .btn_search span:before {content: ''; position: absolute; top: 4px; left: -27px; width: 20px; height: 20px; background: url(../images/main/icon_search.png) no-repeat; background-size: 20px; vertical-align: -2px}
+.main_cont04 .space_search .tab01 .tab_btn {left: 0; margin-right: 10px;width:500px}
+.main_cont04 .space_search .tab01 .tab_cont form > div {margin-bottom: 15px}
+.main_cont04 .space_search .tab02 .tab_btn {right: 0}
+.main_cont04 .space_search .tab02 .tab_cont .tit {position: relative; padding-left: 9px; margin-bottom: 8px; font-size: 14px; color: #333; letter-spacing: -0.05em}
+.main_cont04 .space_search .tab02 .tab_cont .tit:before {content: '*'; position: absolute; top: 2px; left: 0;}
+.main_cont04 .space_search .tab02 .tab_cont .tit span {font-size: 14px; font-weight: 700}
+.main_cont04 .space_search .tab02 .tab_cont .tit .pc_cont {display: none}
+.main_cont04 .space_search .tab02 .tab_cont ul:after {content: ''; display: block; clear: both}
+.main_cont04 .space_search .tab02 .tab_cont ul li {float: left; width: 50%}
+.main_cont04 .space_search .tab02 .tab_cont ul li a {position: relative; display: block; padding: 3px 0 3px 6px; padding-left: 6px; color: #333}
+.main_cont04 .space_search .tab02 .tab_cont ul li a:before {content: ''; position: absolute; top: 11px; left: 0; width: 2px; height: 2px; background: #333}
+.main_cont04 .space_search .tab02 .tab_cont ul li a:hover, .main_cont04 .space_search .tab02 .tab_cont ul li a:focus {text-decoration: underline}
+.main_cont04 .space_search .tab02 .tab_cont .map_area img {display: none}
+.main_cont04 .space_result .space_slider ul.slide li {height: 134px; margin-bottom: 10px; border: 1px solid #ccc; background: #f2f4f7; cursor: pointer}
+.main_cont04 .space_result .space_slider ul.slide li:last-child {margin-bottom: 0}
+.main_cont04 .space_result .space_slider ul.slide li a {display: block}
+.main_cont04 .space_result .space_slider ul.slide li a:after {content: ''; display: block; clear: both}
+.main_cont04 .space_result .space_slider ul.slide li .img {float: left; position: relative; width: 137px; height: 134px; overflow: hidden}
+.main_cont04 .space_result .space_slider ul.slide li .img span {position: absolute; text-align: center; font-weight: 500; color: #fff}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_name {top: 0; width: 100%; padding: 0 5px; height: 28px; font-size: 14px; background: rgba(0,0,0,0.7); line-height: 27px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_addr {top: 28px; right: 0; width: 40px; height: 38px; line-height: 16px; padding: 3px 2px 0; font-size: 13px; background: #0a6648; box-sizing: border-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; word-break: break-all}
+.main_cont04 .space_result .space_slider ul.slide li .img img {position: absolute} 
+.main_cont04 .space_result .space_slider ul.slide li .img.mih >img {max-width: 100%; height: auto; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%)}
+.main_cont04 .space_result .space_slider ul.slide li .img.miw >img {max-height: 100%; max-width: none; width: auto; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%)}
+.main_cont04 .space_result .space_slider ul.slide li .txt {float: left; width: calc(100% - 163px); padding: 12px 10px 0 16px; border-left: 0}
+.main_cont04 .space_result .space_slider ul.slide li .txt span {position: relative; display: inline-block; margin-bottom: 7px; font-size: 14px; font-weight: 700; color: #333}
+.main_cont04 .space_result .space_slider ul.slide li .txt span:before {display: none !important; content: ''; position: absolute; top: 50%; right: -9px; width: 6px; height: 13px; margin-top: -6px; background: url(../images/main/img_slash.png) no-repeat 0 0; background-size:  6px 13px}
+.main_cont04 .space_result .space_slider ul.slide li .txt .info {height: 76px; line-height: 19px; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; word-break: break-all}
+.main_cont04 .space_result .space_slider .dots_wrap {margin-top: 24px}
+.main_cont04 .space_result .space_slider li {position: relative}
+.main_cont04 .space_result .space_slider a {position: absolute; top: 0; left: 0; width: 100%; height: 100%}
+.main_cont04 .slick-arrow {display: none !important;}
+.main_cont04 .space_result .no_data {border: 1px solid #dee3eb; padding: 90px 0 20px; background: #f8f8f8 url(../images/common/img_no_data.png) no-repeat 50% 20px; background-size: 102px; text-align: center}
+.main_cont04 .space_result .no_data p {font-family: 'BMDOHYEON'; color: #333}
+
+@media screen and (min-width: 768px){
+
+.main_tit {padding: 32px 0 28px; font-size: 24px}
+.main_tit span {font-size: 27px}
+.btn_more {width: 100px; height: 28px; background: url(../images/main/more_plus.png) no-repeat right 12px bottom 50%; border: 2px solid #222; border-radius: 30px}
+.btn_more span {display: block; padding-left: 12px; font-size: 13px; font-weight: 500; line-height: 27px; color: #333}
+
+.main_board {margin-top: 12px}
+.main_board .tit {padding: 13px 0 13px 20px; font-size: 19px}
+.main_board .btn_more {top: 13px; right: 20px}
+.main_board > div {height: 209px}
+.main_board ul {padding: 26px 22px 26px 26px}
+.main_board ul li {margin-bottom: 8px}
+.main_board ul li a {display: inline-block; height: 15px; max-width: calc(100% - 105px); margin: 5px 0; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0; vertical-align: middle}
+.main_board ul li a:hover, .main_board ul li a:focus {font-weight: 500; color: #333}
+.main_board ul li strong {display: inline-block; width: 15px; height: 16px; margin-left: 3px; background: url(../images/main/icon_new.gif) no-repeat 0 0; background-size: 100%; text-indent: -9999px; vertical-align: middle}
+.main_board ul li .date {float: right; display: block; margin-top: 5px}
+.main_board .coming_soon {height: 100%; padding: 0;}
+.main_board .coming_soon span {font-size: 28px; vertical-align: middle} 
+.main .slick-dots {margin-right: 12px}
+.main .slick-dots li {margin-right: 12px}
+.main .slick-dots button {width: 16px; height: 16px; border-radius: 16px}
+.main .slick-dots .slick-active button {width: 32px}
+.main .btn_play {width: 15px; height: 16px; margin-right: 9px; background-size: 15px 16px}
+.main .btn_stop {width: 14px; height: 16px; background: url(../images/main/btn_stop.png) no-repeat; background-size: 14px 16px}
+
+.main_cont01 .quick_menu ul {left: 25%; width: 50%}
+.main_cont01 .quick_menu ul li a span {bottom: 10%; font-size: 16px}
+.main_cont01 .quick_menu ul li a span:before {width: 32px; margin-left: -16px}
+.main_cont01 .quick_menu ul li a.active span, .main_cont01 .quick_menu ul li a:focus span {bottom: 68%}
+.main_cont01 .quick_menu ul li:nth-child(1) a {background-position: 50% 25%; background-size: 29.48%}
+.main_cont01 .quick_menu ul li:nth-child(2) a {background-position: 50% 25%; background-size: 25.64%}
+.main_cont01 .quick_menu ul li:nth-child(3) a {background-position: 50% 24%; background-size: 35.35%}
+.main_cont01 .quick_menu ul li:nth-child(1) a.active, .main_cont01 .quick_menu ul li:nth-child(1) a:focus {background-position: right 50% bottom 24%; background-size: 29.48%}
+.main_cont01 .quick_menu ul li:nth-child(2) a.active, .main_cont01 .quick_menu ul li:nth-child(2) a:focus {background-position: right 50% bottom 24%; background-size: 25.64%}
+.main_cont01 .quick_menu ul li:nth-child(3) a.active, .main_cont01 .quick_menu ul li:nth-child(3) a:focus {background-position: right 50% bottom 24%; background-size: 35.35%}
+
+.main_cont01 .dots_wrap {top: 7.54%}
+.main_cont01 .slick-arrow {top: 50%; width: 50px; height: 50px; margin-top: -25px}
+.main_cont01 .visual_slider .m_cont {display: none}
+.main_cont01 .visual_slider .t_cont {display: block}
+
+.main_cont04 .inner:after {content: ''; display: block; clear: both}
+.main_cont04 .space_search {float: right; width: calc(35% - 5px); padding-top: 55px; margin-bottom: 0}
+.main_cont04 .space_search .tab_btn {padding: 7px 0; font-size: 15px}
+.main_cont04 .space_search .tab_cont .btn_search {padding: 3px 0}
+.main_cont04 .space_search .tab_cont > div select, .main_cont04 .space_search .tab_cont > div input {font-size: 13px}
+.main_cont04 .space_search .tab02 .tab_cont {position: relative; padding: 15px}
+.main_cont04 .space_search .tab02 .tab_cont ul li a {font-size: 14px}
+.main_cont04 .space_search .tab02 .tab_cont ul li a:before {top: 13px}
+.main_cont04 .space_result {float: left; width: calc(65% - 5px); margin-right: 10px}
+.main_cont04 .space_result .space_slider ul.slide li {float: left; width: calc(50% - 5px); height: 123px; box-sizing: border-box}
+.main_cont04 .space_result .space_slider ul.slide li:nth-child(odd) {margin-right: 10px}
+.main_cont04 .space_result .space_slider ul.slide li .img {width: 110px; height: 121px}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_name {height: 32px; font-size: 16px; line-height: 31px}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_addr {top: 32px; width: 44px; height: 44px; padding-top: 4px; font-size: 14px; line-height: 19px; box-sizing: border-box}
+.main_cont04 .space_result .space_slider ul.slide li .txt {float: left; width: calc(100% - 136px); padding: 12px 10px 0 16px; border-left: 0}
+.main_cont04 .space_result .space_slider ul.slide li .txt span {margin-bottom: 9px; font-size: 16px}
+.main_cont04 .space_result .space_slider ul.slide li .txt span:before {right: -14px; width: 8px; height: 15px; margin-top: -6px; background-size: 8px 15px}
+.main_cont04 .space_result .space_slider ul.slide li .txt .info {height: 66px; line-height: 22px; font-size: 14px; -webkit-line-clamp: 3}
+.main_cont04 .space_result .space_slider .dots_wrap {margin-top: 24px}
+.main_cont04 .space_result .no_data {height: 258px; padding: 0; background: #f8f8f8 url(../images/common/img_no_data.png) no-repeat 50% 60px; background-size: 120px}
+.main_cont04 .space_result .no_data p {padding-top: 150px; font-size: 19px}
+
+}
+
+@media screen and (min-width: 1070px){
+
+.main_tit {padding: 73px 0 42px; font-size: 35px; font-weight: 500; color: #333; font-family: 'BMDOHYEON'; text-align: center; letter-spacing: -0.05em}
+.main_tit span {font-size: 40px}
+.btn_more {width: 120px; height: 36px; background: url(../images/main/more_plus.png) no-repeat right 12px bottom 50%; border-radius: 40px}
+.btn_more span {padding-left: 17px; font-size: 15px; line-height: 36px}
+.btn_more.position {position: absolute; top: 158px; right: 0}
+.main_board {margin-top: 0}
+.main_board .tit {padding: 19px 0 19px 22px; font-size: 25px}
+.main_board .btn_more {top: 19px; right: 17px}
+.main_board ul {padding: 26px 22px 26px 26px}
+.main_board ul li {margin-bottom: 8px}
+.main_board ul li a {height: 16px; max-width: calc(100% - 113px); margin: 6px 0; font-size: 16px}
+.main_board ul li a:hover, .main_board ul li a:focus {font-weight: 500; color: #333}
+.main_board ul li strong {width: 18px; height: 19px}
+.main_board ul li .date {float: right; display: block; margin-top: 5px}
+.main_board > div {height: 224px}
+.main_board .coming_soon span {font-size: 34px}
+.main .slick-dots {margin-right: 13px}
+.main .slick-dots li {margin-right: 10px}
+.main .slick-dots button {width: 14px; height: 14px; border-radius: 14px}
+.main .slick-dots .slick-active button {width: 32px}
+.main .btn_play {width: 13px; height: 14px; margin-right: 9px; background-size: 13px 14px}
+.main .btn_stop {width: 12px; height: 14px; background-size: 12px 14px}
+
+.main_cont01 .visual_slider .slick-slide {position: relative; height: 582px; overflow: hidden}
+.main_cont01 .visual_slider .slick-slide .pc_cont {position: absolute; top: 0; left: 50%; margin-left: -1000px; width: auto; max-width: none}
+.main_cont01 .quick_menu ul {left: 50%; width: 620px; margin-left: -310px}
+.main_cont01 .quick_menu ul li a {transition: none}
+.main_cont01 .quick_menu ul li a span {bottom: 25px; font-size: 25px}
+.main_cont01 .quick_menu ul li a span:before {top: -12px;  width: 68px; margin-left: -34px}
+.main_cont01 .quick_menu ul li a.active, .main_cont01 .quick_menu ul li a.focus {}
+.main_cont01 .quick_menu ul li a.active span, .main_cont01 .quick_menu ul li a:focus span {bottom: 68%}
+.main_cont01 .quick_menu ul li:nth-child(1) a {background-image: url(../images/main/icon_quick01_pc.png); background-position: 50% 41px; background-size: auto}
+.main_cont01 .quick_menu ul li:nth-child(2) a {background-image: url(../images/main/icon_quick02_pc.png); background-position: 50% 38px; background-size: auto}
+.main_cont01 .quick_menu ul li:nth-child(3) a {background-image: url(../images/main/icon_quick03_pc.png); background-position: 50% 43px; background-size: auto}
+.main_cont01 .quick_menu ul li a.active, .main_cont01 .quick_menu ul li a:focus {background-image: none !important}
+
+.main_cont01 .quick_menu ul li a p {display: none; position: absolute; bottom: 33px; left: 23px; font-size: 17px; font-weight: 300; letter-spacing: -0.05em; line-height: 1.52; text-align: left; transition: 0.5s}
+.main_cont01 .quick_menu ul li a.active p, .main_cont01 .quick_menu ul li a:focus p {display: block}
+.main_cont01 .dots_wrap {display: block; top: 40px}
+.main_cont01 .slick-arrow {top: 50%; width: 70px; height: 70px; margin-top: -35px}
+.main_cont01 .visual_slider .t_cont {display: none}
+.main_cont01 .visual_slider .pc_cont {display: block}
+
+.main_cont04 {padding: 0 0 90px 0}
+.main_cont04 .main_tit {padding: 73px 0 82px}
+.main_cont04 .inner {position: relative}
+.main_cont04 .slick-arrow {display: block !important; position: absolute; top: 50%; width: 70px; height: 70px; margin-top: -60px; z-index: 1}
+.main_cont04 .slick-prev {left: 0; background: url(../images/main/arrow_prev01.png) no-repeat; background-size: 100%}
+.main_cont04 .slick-prev:hover {background: url(../images/main/arrow_prev01_over.png) no-repeat; background-size: 100%}
+.main_cont04 .slick-next {right: 0px; background: url(../images/main/arrow_next01.png) no-repeat; background-size: 100%}
+.main_cont04 .slick-next:hover {background: url(../images/main/arrow_next01_over.png) no-repeat; background-size: 100%}
+.main_cont04 .space_search {width: 500px; padding-top: 66px;left:240px; height:500px;}
+.main_cont04 .space_search .tab_btn {padding: 10px 0; font-size: 22px}
+.main_cont04 .space_search .tab_btn.active:before {bottom: -10px; margin-left: -7px; border-top: 10px solid #2d7c62; border-right: 7px solid transparent; border-left: 7px solid transparent}
+.main_cont04 .space_search .tab_cont {padding: 70px 32px 39px; }
+.main_cont04 .space_search .tab01 {height:500px;}
+.main_cont04 .space_search .tab_cont > div select, .main_cont04 .space_search .tab_cont > div input {height: 33px; font-size: 15px}
+.main_cont04 .space_search .tab_cont .btn_search {margin-top: 35px; padding: 20px 0; font-size: 30px}
+.main_cont04 .space_search .tab_cont .btn_search span:before {left: -57px; width: 39px; height: 39px; background-size: 35px; vertical-align: -2px}
+.main_cont04 .space_result {float: left; width: calc(100% - 510px)}
+.main_cont04 .space_result .space_slider ul.slide li {height: 193px}
+.main_cont04 .space_result .space_slider ul.slide li .img {width: 180px; height: 191px}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_name {height: 40px; font-size: 16px; line-height: 39px}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_addr {top: 40px; width: 62px; height: 60px; padding: 10px 8px; font-size: 16px}
+.main_cont04 .space_result .space_slider ul.slide li .img .space_addr:before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-width: 10px 8px; border-color: #0a6648; border-style: solid; box-sizing: border-box}
+.main_cont04 .space_result .space_slider ul.slide li .txt {float: left; width: calc(100% - 213px); padding: 8px 13px 0 20px}
+.main_cont04 .space_result .space_slider ul.slide li .txt span {margin-bottom: 9px; font-size: 18px}
+.main_cont04 .space_result .space_slider ul.slide li .txt span:before {right: -11px; width: 7px; height: 18px; margin-top: -9px; background-size: 7px 18px}
+.main_cont04 .space_result .space_slider ul.slide li .txt .info {height: 120px; line-height: 24px; -webkit-line-clamp: 5; font-size: 14px}
+.main_cont04 .space_result .space_slider .dots_wrap {margin-top: 24px}
+.main_cont04 .space_result .no_data {height: 394px; background: #f8f8f8 url(../images/common/img_no_data.png) no-repeat 50% 100px; background-size: auto}
+.main_cont04 .space_result .no_data p {padding-top: 246px; font-size: 25px}
+
+.main_cont04 .space_search .tab_cont form > div select, .main_cont04 .space_search .tab_cont form > div input {height: 32px; float:center;}
+}
+
+/* @media screen and (min-width: 1300px){
+   
+.main_cont02 {padding: 20px 0; width: 1280px; margin: 0 auto}
+.main_cont02 .tit {padding-left: 28px}
+.main_cont02 .news {width: 880px}
+
+} */
+
+@media screen and (max-width: 359px){
+   
+.main_tit {font-size: 16px}
+.main_tit span {font-size: 19px}
+.main_cont05 .kakao:after {width: 40px; height: 40px; margin-left: 10px}
+
+}
+
+@media screen and (min-width: 1350px){
+   
+.main_cont01 .slick-prev {left: 30px; }
+.main_cont01 .slick-next {left: 900px; }
+}
+
+/* @media screen and (min-width: 900px) and (max-width: 1069px){
+   
+.main_cont03 .banner_slider {width: 408px}
+.main_cont03 .banner_slider img {width: 406px; height: 257px}
+.main_cont03 .rank {float: left; width: calc(100% - 417px)}
+.main_cont03 .rank .tit {padding: 14px 0 14px 20px}
+.main_cont03 .rank ol {padding: 20px}
+.main_cont03 .rank ol li {margin-bottom: 13px}
+.main_cont03 .rank .date_choice {top: 11px; right: 13px}
+
+} */
+
+@media screen and (min-width: 1070px) and (max-width: 1300px){
+.main_cont04 .space_search {width: 400px}
+.main_cont04 .space_result {width: calc(100% - 410px)}
+
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_seoul {left: 157px; top: 53px; width: 22px; height: 18px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_busan {left: 258px; top: 206px; width: 25px; height: 20px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_daegu {left: 229px; top: 160px; width: 24px; height: 26px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_incheon {left: 129px; top: 38px; width: 30px; height: 36px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_gwangju {left: 142px; top: 214px; width: 21px; height: 13px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_daejeon {left: 172px; top: 133px; width: 17px; height: 22px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_ulsan {left: 268px; top: 175px; width: 28px; height: 28px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_sejong {left: 169px; top: 115px; width: 15px; height: 18px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_gyeonggido {left: 132px; top: 16px; width: 80px; height: 82px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_gangwondo {left: 198px; top: 0; width: 87px; height: 91px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_chungcheongbukdo {left: 191px; top: 97px; width: 46px; height: 62px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_chungcheongnamdo {left: 122px; top: 97px; width: 66px; height: 60px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_Jeollabukdo {left: 149px; top: 158px;  width: 65px; height: 48px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_Jeollanamdo {left: 106px; top: 201px; width: 89px; height: 66px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_gyeongsangbukdo {left: 222px; top: 107px; width: 73px; height: 80px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_gyeongsangnamdo {left: 195px; top: 187px; width: 93px; height: 60px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_jeju {left: 93px; top: 286px; width: 38px; height: 20px}
+.main_cont04 .space_search .tab02 .tab_cont .map_area .map_jeju span.active {top: -19px; left: -94px}
+
+.main_cont04 .space_search .tab02 .tab_cont .tit {font-size: 13px}
+.main_cont04 .space_result .space_slider ul.slide li .img {width: 150px}
+.main_cont04 .space_result .space_slider ul.slide li .txt {width: calc(100% - 183px)}
+
+}
+
+@media screen and (max-width: 1069px){
+   .main_cont04 .space_search .tab02 .tab_cont ul li a {display: block !important}
+   .main_cont04 .space_search .tab02 .tab_cont ul li a span {display: block !important}
+}
+/* 
+@media screen and (max-width: 1520px){
+   
+   .main_cont06 .slick-prev {left: 5px}
+   .main_cont06 .slick-next {right: 5px}
+
+}
+
+@media screen and (min-width: 1070px) and (max-width: 1240px){
+
+   .main_board .tit {padding: 22px 0 22px 22px; font-size: 20px}
+   .main_cont05 .btn_more {width: 88px}
+
+}
+
+@media screen and (max-width: 400px){
+   
+   .main_cont05 .kakao:after, .main_cont05 .call:after {display: none}
+
+} */
