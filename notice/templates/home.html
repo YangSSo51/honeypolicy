@@ -1,304 +1,245 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-   <title>정책꿀단지</title>
-   <meta name="_csrf_parameter" content="_csrf" /><meta name="_csrf_header" content="X-CSRF-TOKEN" /><meta name="_csrf" content="b6b13630-b4ee-4f78-8eea-0353d42fc207" />
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-   <meta name="format-detection" content="telephone=no, address=no, email=no">
-   <meta name="description" content="고용노동부 -청년 대상 정책 안내, 공간 정보, 상담서비스 등 유익한 정보 제공">
-   <meta property="og:title" content="">
-   <meta property="og:description" content="">
-   <meta property="og:url" content="">
-   <meta property="og:image" content="https://www.youthcenter.go.kr/images/common/sns_logo.png">
-   <link rel="stylesheet" href="../static/css/reset.css?v=1.0">
-   <link rel="stylesheet" href="../static/css/common.css?v=1.0">
-   <link rel="stylesheet" href="../static/css/jquery-ui.css?v=1.0">
-   <link rel="stylesheet" href="../static/css/seon.css?v=1.0">
-   <link rel="stylesheet" href="../static/css/style.css?v=1.0">
-   <script src="../static/js/jquery-1.11.2.min.js?v=1.0"></script>
-   <script src="../static/js/jquery-ui.js?v=1.0"></script>
-   <script src="../static/js/ui.js?v=1.0"></script>
-   <script type="text/javascript" src="../static/js/keis.import.min.js?v=1.0"></script>
-   <script type="text/javascript"></script> 
-   <link rel="stylesheet" href="../static/css/main.css?v=1.0">
-   <link rel="stylesheet" href="../static/css/slick.css?v=1.0">
-   <script src="../static/js/slick.js?v=1.0"></script>
-   <script src="../static/js/main.js?v=1.0"></script>
+	<title>정책꿀단지</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/util.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+<!--===============================================================================================-->
+
 </head>
-<body class="main">
-   	<div id="wrap" class="wrap">   
-      	<script type="text/javascript" src="../static/js/youthcenter.snsLogin.js"></script>
-      	<script type="text/javascript">
-         	$(document).ready(function () {
-				$("#searchWordInput").keypress(function(event) {
-				if(event.which == 13) {
-					searchSubmit();
-				}
-				});
-			});      
-         	var f_logout = function() {
-            	if(!confirm("로그아웃 하시겠습니까?")) {
-               		return;            
-            	}
-            	f_logout2();
-         	};
-        	var f_logout2 = function() {
-            	$.ajax({
-				'url'      : '/member/login/logOutAjax.do',
-				'method'   : 'post',
-				'beforeSend': function(request){
-						var token = $("meta[name='_csrf']").attr("content");
-						var header = $("meta[name='_csrf_header']").attr("content");
-						if(token != null && token != 'undefinded'){
-							request.setRequestHeader(header, token);
-						}else if(oThis.header != null && oThis.token != null ){
-							request.setRequestHeader(oThis.header, oThis.token);
-						}
-					},         
-				'complete'   : function () {   
-						var url = "/main.do";   
-						alert("로그아웃 되었습니다.");
-						location.href = url;            
-					}
-            	});
-        	};   
-			function searchSubmit(){
-				var input = $('#searchWordInput').val();
-				if(input == ''){
-				alert("검색어를 입력해주세요!");
-				}else{
-					$('#searchWord').val(input);
-					$('#jynSearchFrm').attr("action", "/jynSearch/jynSearch.do");
-					$('#jynSearchFrm').submit();
-				}
-			};
-      	</script>
-      	<!-- header -->
-		<div class="skip_nav">
-        	<a href="#content" class="go_content">본문 바로가기</a>
-        	<a href="#gnb" class="go_gnb">주메뉴 바로가기</a>
-      	</div>
-      	<div class="header">
-         	<div class="header_main">
-				<h1 class="logo"><a href="/main.do">온라인청년센터</a></h1>
-				<button type="button" class="btn_gnb">메인메뉴열기</button>
-				<button type="button" class="btn_search">검색영역펼치기</button>   
-				<div class="search_wrap">
-					<span>검색</span>
-					<div class="search_field">
-						<input type="text" name="searchWordInput" id="searchWordInput" class="txt_search" title="검색어 입력" placeholder="정책을 검색해보자!" value="">
-						<button type="button" class="btn" onclick="searchSubmit()">검색버튼</button>
-						<form id="jynSearchFrm" name="jynSearchFrm" action="">
-							<input type="hidden" name="searchWord" id="searchWord"/>
-						</form>
-					</div>
-					<button type="button" class="btn_search_close">검색영역닫기</button>
-				</div>
-					<ul class="utill_list">
-						<li><a href="..static/member/bodyLogin.do" class="utill01">로그인</a></li>
-						<li><a href="..static/member/custJoin/retrieveIndivCustClauseAgree.do?memType=member" class="utill04">회원가입</a></li>
-					</ul>
-       		</div>
-        <!-- pc에서 보여지는 gnb -->
-        <div class="pc_gnb_wrap">
-            <div class="gnb_wrap">
-				<div id="pc_gnb" class="gnb">
-                	<ul class="gnb_list">
-                    	<li class="gnb01">
-                        	<a href="/jynEmpSptNew/jynEmpSptList.do">정책보기</a>
-                        	<ul class="dep2">
-								<li><a href="#">맞춤검색</a></li>
-								<li><a href="{%url 'policyList'%}">정책상세보기</a></li>
+<body class="animsition">
+		<!-- Header -->
+		<header>
+			<!-- Header desktop -->
+			<div class="container-menu-desktop">
+				<!--  -->
+				<div class="wrap-logo container">
+					<!-- Logo desktop -->		
+					<div class="logo">
+						<a href="index.html"><img src="../static/images/logo.jpg" alt="LOGO"></a>
+					</div>	
+					<!-- Banner -->
+					<div class="banner-header">
+						<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+							<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="정책 검색하기">
+							<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+								<i class="zmdi zmdi-search">
+								<img src="../static/images/search.png">
+								</i>
+							</button>
+						</div>
+						<div class="member">
+							<ul>
+							<li><img src="../static/images/login.png"><a>로그인</a></li>
+							<li><img src="../static/images/join.png"><a>회원가입</a></li>
 							</ul>
-                     	</li>
-                    	<li class="gnb02">
-                        	<a href="/jynSpc/jynSpcList.do">HOT&NEW</a>
-                        	<ul class="dep2">
-                    			<li><a href="/jynSpc/jynSpcList.do">HOT정책</a></li>
-                    			<li><a href="/jynSpc/jynSpcList.do">New정책</a></li>
-                    			<li><a href="/jynSpc/jynSpcList.do">신청기간알림</a></li>
-               		    	</ul>
-                    	</li>
-	                    <li class="gnb03">
-                        	<a href="/jobConslt/jobConsltMain.do">정책뉴스</a>
-                        	<ul class="dep2">
-                        		<li><a href="/jobConslt/jobConsltMain.do">뉴스 및 보도자료</a></li>
-                        	</ul>
-                    	</li>
-                        <li class="gnb04">
-							<a href="/board/boardList.do?bbsNo=3&pageUrl=board/board">정책청원</a>
-	                        <ul class="dep2">           
-                        		<li><a href="/board/boardList.do?bbsNo=3&pageUrl=board/board">정책청원 및 의견통합</a></li>
-	                        </ul>        
-                    	</li>           
-                    	<li class="gnb05">
-                        	<a href="/seekActvSptfndAppl/aboutThis.do">커뮤니티</a>        
-	                        <ul class="dep2">           
-                        		<li><a href="{%url 'read'%}">공지사항</a></li>
-				        		<li><a href="/seekActvSptfndAppl/idifClctAgreForm.do">FAQ</a></li>      
-                        	</ul>
-	            	    </li>      
-		    		    <li class="gnb06">
-                    	    <a href="/intro/centerIntro.do">소개</a>
-	                        <ul class="dep2">
-                               <li><a href="/intro/centerIntro.do">정책꿀단지란?</a></li>
-	                        </ul>      
-                    	</li>
-                	</ul>
-                  	<div class="allmenu_wrap">
-                    	<button type="button" class="btn_allmenu">
-							<strong>전체메뉴열기</strong>
-							<span class="line01"></span>
-							<span class="line02"></span>
-							<span class="line03"></span>
-                    	</button>
-                    	<div class="allmenu">
-                        	<ul>
-    	                 		<li class="gnb01">
-	     	                   		<a href="/jynEmpSptNew/jynEmpSptList.do">정책보기</a>
-                        			<ul>
-									    <li><a href="../static/jynEmpSptNew/jynEmpSptList.do">맞춤검색</a></li>
-                           				<li><a href="{%url 'policyList'%}">정책상세보기</a></li>            
-                        			</ul>       
-                    			</li>
-                    			<li class="gnb02">
-									<a href="/jynSpc/jynSpcList.do">HOT&NEW</a>
-									<ul>
-										<li><a href="/jynSpc/jynSpcList.do">HOT정책</a></li>
-               							<li><a href="/jynSpc/jynSpcList.do">NEW정책</a></li>
-               							<li><a href="/jynSpc/jynSpcList.do">신청기간알림</a></li>
-			                        </ul>
-                                </li>
-								<li class="gnb03">
-                        			<a href="/jobConslt/jobConsltMain.do">정책뉴스</a>     
-                        			<ul>
-										<li><a href="/jobConslt/jobConsltMain.do">뉴스 및 보도자료</a></li>
-                      	            </ul>
-            					</li>     
-								<li class="gnb04">
-									<a href="/board/boardList.do?bbsNo=3&pageUrl=board/board">정책청원</a>
-									<ul>   
-										<li><a href="/board/boardList.do?bbsNo=3&pageUrl=board/board">정책청원 및 의견통합</a></li>
-									</ul>         
-								</li>
-								<li class="gnb05">
-									<a href="/seekActvSptfndAppl/aboutThis.do">커뮤니티</a>        
-									<ul>
-										<li><a href="/seekActvSptfndAppl/aboutThis.do">공지사항</a></li>
-										<li><a href="/seekActvSptfndAppl/idifClctAgreForm.do">FAQ</a></li>
-										<li><a href="/seekActvSptfndAppl/idifClctAgreForm.do">Q&A</a></li>
-									</ul>   
-								</li>
-								<li class="gnb06">
-									<a href="/intro/centerIntro.do">소개</a>
-									<ul>
-									<li><a href="/intro/centerIntro.do">정책꿀단지는?</a></li>          
+						</div>
+					</div>
+				</div>	
+				<!--  -->
+				<div class="wrap-main-nav">
+					<div class="main-nav">
+						<!-- Menu desktop -->
+						<nav class="menu-desktop">
+							<ul class="main-menu">
+								<li class="main-menu-active">
+									<a href="#">소개</a>
+									<ul class="sub-menu">
+										<li><a href="#">정책꿀단지는?</a></li>
+									</ul>
+								</li>					
+								<li class="main-menu-active">
+									<a href="#">정책보기</a>
+									<ul class="sub-menu">
+										<li><a href="#">맞춤검색</a></li>
+										<li><a href="#">정책상세보기</a></li>
+									</ul>
+								</li>							
+								<li class="main-menu-active">
+									<a href="#">HOT&NEW</a>
+									<ul class="sub-menu">
+										<li><a href="#">HOT정책</a></li>
+										<li><a href="#">NEW정책</a></li>
+										<li><a href="#">신청기간알림</a></li>
+									</ul>
+								</li>			                            
+								<li class="main-menu-active">
+									<a href="#">정책뉴스</a>
+									<ul class="sub-menu">
+										<li><a href="#">뉴스 및 보도자료</a></li>
+									</ul>
+								</li>                            
+								<li class="main-menu-active">
+									<a href="#">커뮤니티</a>
+									<ul class="sub-menu">
+										<li><a href="#">공지사항</a></li>
+										<li><a href="#">FAQ</a></li>
+										<li><a href="#">Q&A</a></li>
 									</ul>
 								</li>
-                        	</ul>
-						</div>
-	                    <button type="button" class="btn_allmenu_close"style="display: inline-block;">전체메뉴닫기</button>
-                	</div>
+							</ul>
+						</nav>
+					</div>
+				</div>	
+			</div>
+		</header>
+
+		<!-- main -->
+		<div class="container">
+			<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+				<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+					<span class="text-uppercase cl2 p-r-8">
+					<img src="../static/images/hot.png">	
+						지금 뜨고 있는 정책
+					</span>
+
+					<span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
+						<span class="dis-inline-block slide100-txt-item animated visible-false">
+							취업성공패키지
+						</span>
+						
+						<span class="dis-inline-block slide100-txt-item animated visible-false">
+							국가장학금
+						</span>
+
+						<span class="dis-inline-block slide100-txt-item animated visible-false">
+							국가근로장학금
+						</span>
+					</span>
 				</div>
-            </div>
-        </div>
-    	<!-- pc에서 보여지는 gnb -->
-    	</div>
-      	<!-- //header -->
-      	<div class="container">
-        	<div id="content" class="content">
-				<!-- main_cont01 -->
-				<div class="main_cont01">
-					<div class="visual_slider">
-						<div>
-							<img src="../static/images/main/main_visual01_m.jpg" alt="#취업준비,#주거복지,#청년정책,#청년공간,#청년상담 뭘 좋아할지 몰라서 다 준비했어! 여기는 정책꿀단지" class="m_cont">
-							<img src="../static/images/main/main_visual01_t.jpg" alt="#취업준비,#주거복지,#청년정책,#청년공간,#청년상담 뭘 좋아할지 몰라서 다 준비했어! 여기는 정책꿀단지" class="t_cont">
-							<img src="../static/images/main/main_visual01_pc.jpg" alt="#취업준비,#주거복지,#청년정책,#청년공간,#청년상담 뭘 좋아할지 몰라서 다 준비했어! 여기는 정책꿀단지" class="pc_cont">
+			</div>	
+			<section class="bg00">
+				<div class="container2">
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+							<img src="../static/images/1.jpg" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../static/images/2.jpg" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+							<img src="../static/images/3.jpg" class="d-block w-100" alt="...">
+							</div>
 						</div>
-						<div>
-							<img src="../static/images/main/main_visual02_m.jpg" alt="#취업준비,#주거복지,#청년정책,#청년공간,#청년상담 뭘 좋아할지 몰라서 다 준비했어! 여기는 정책꿀단지" class="m_cont">
-							<img src="../static/images/main/main_visual02_t.jpg" alt="#취업준비,#주거복지,#청년정책,#청년공간,#청년상담 뭘 좋아할지 몰라서 다 준비했어! 여기는 정책꿀단지" class="t_cont">
-							<img src="../static/images/main/main_visual02_pc.jpg" alt="#취업준비,#주거복지,#청년정책,#청년공간,#청년상담 뭘 좋아할지 몰라서 다 준비했어! 여기는 정책꿀단지" class="pc_cont">
-						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+					<div class="policy_search">
+						<li><a href="#n" class="tab_btn active">정 책   맞 춤 검 색</a>
+								<form class="form_search">
+									<div>
+										<select id="srchAreaCpvn" name="srchAreaCpvn" title="정책 검색(키워드 입력)" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
+											<option value="">정책 검색(키워드 입력)</option>
+											<option value="11000">서울</option>
+											<option value="26000">부산</option> 
+										</select>
+									</div>
+									<div>
+										<select id="srchAreaCpvn" name="srchAreaCpvn" title="카테고리" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
+											<option value="">카테고리</option>
+											<option value="1">서울</option>
+											<option value="2">부산</option>
+										</select>
+									</div>
+									<div>
+										<select id="srchAreaCpvn" name="srchAreaCpvn" title="지역 검색" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
+											<option value="">지역 검색</option>
+											<option value="1">서울</option>
+											<option value="2">인천</option>
+											<option value="3">경기</option>
+											<option value="4">강원</option>
+											<option value="5">부산</option>
+											<option value="6">대전</option>                                                            
+											<option value="7">울산</option>
+											<option value="8">세종</option>
+											<option value="9">경기</option>
+											<option value="10">강원</option>            
+											<option value="11">충북</option>
+											<option value="12">충남</option>   
+											<option value="13">전북</option>
+											<option value="14">전남</option>
+										</select>
+									</div>                   
+									<div>
+										<select id="srchAreaCpvn" name="srchAreaCpvn" title="연령대" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
+											<option value="">연령대</option>
+											<option value="10">10대</option>
+											<option value="20">20대</option>
+											<option value="30">30대</option>
+											<option value="40">40대</option>
+										</select>
+									</div>
+									<button type="button" class="snip1535" onclick="fn_spcSearchSubmit()"><span>검 색</span></button>
+								</form>
+							
+						</li>
 					</div>
 				</div>
-	            <!-- //main_cont01 -->
-    	        <!--space_search-->
-            	<div class="main_cont04">
-					<div class="inner">
-						<ul class="space_search">
-							<li class="tab01"> 
-								<a href="#n" class="tab_btn active">정 책   맞 춤 검 색</a>
-								<div class="tab_cont">
-									<form id="mainSpcSearch" name="mainSpcSearch" action="/main.do">
-										<div>
-											<select id="srchAreaCpvn" name="srchAreaCpvn" title="정책 검색(키워드 입력)" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-												<option value="">정책 검색(키워드 입력)</option>
-												<option value="11000">서울</option>
-												<option value="26000">부산</option> 
-											</select>
-										</div>
-										<div>
-											<select id="srchAreaCpvn" name="srchAreaCpvn" title="카테고리" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-												<option value="">카테고리</option>
-												<option value="11000">서울</option>
-												<option value="26000">부산</option>
-											</select>
-										</div>
-										<div>
-											<select id="srchAreaCpvn" name="srchAreaCpvn" title="지역 검색" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-												<option value="">지역 검색</option>
-												<option value="11000">서울</option>
-												<option value="26000">부산</option>
-												<option value="27000">대구</option>
-												<option value="28000">인천</option>
-												<option value="29000">광주</option>
-												<option value="30000">대전</option>                                                            
-												<option value="31000">울산</option>
-												<option value="36110">세종</option>
-												<option value="41000">경기</option>
-												<option value="42000">강원</option>            
-												<option value="43000">충북</option>
-												<option value="44000">충남</option>   
-												<option value="45000">전북</option>
-												<option value="46000">전남</option>
-												<option value="47000">경북</option>
-												<option value="48000">경남</option>
-												<option value="50000">제주</option>   
-											</select>
-										</div>                   
-										<div>
-											<select id="srchAreaCpvn" name="srchAreaCpvn" title="연령대" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-												<option value="">연령대</option>
-												<option value="11000">서울</option>
-												<option value="26000">부산</option>
-												<option value="27000">대구</option>
-												<option value="28000">인천</option>
-											</select>
-										</div>
-										<button type="button" class="btn_search" onclick="fn_spcSearchSubmit()"><span>검색</span></button>
-									</form>
-								</div>
-							</li>
-						</ul>
-					</div>
-               	</div> 
-            	<!--space_search-->         
-				<script type="text/javascript" >
-					function fn_goBoardDtl(ntceStno ,bbsNo){
-						$('#bbsNo').val(bbsNo);
-						$('#ntceStno').val(ntceStno);
-						$('#boardForm').submit();
-					}
-				</script>
-				<form name="boardForm" id="boardForm" action="/board/boardDetail.do">
-					<input type="hidden" name="bbsNo" id="bbsNo">
-					<input type="hidden" name="ntceStno" id="ntceStno">
-					<input type="hidden" name="pageUrl"   value="/board/board"/>
-				</form>
-         	</div>
-      	</div>   
-   	</div>
-</body>   
+			</section>
+		</div>
+		<!-- Footer -->
+		<footer>
+			<div class="bg11">
+				<div class="container size-h-4 flex-c-c p-tb-15">
+					<span class="f1-s-1 cl0 txt-center">
+						<a href="#" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</span>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Back to top -->
+		<div class="btn-back-to-top" id="myBtn">
+			<span class="symbol-btn-back-to-top">
+				<span class="fas fa-angle-up"></span>
+			</span>
+		</div>
+
+<!--===============================================================================================-->	
+	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/js/main.js"></script>
+<!--===============================================================================================-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+
+</body>
+</html>

@@ -1,240 +1,267 @@
-$(document).ready(function(){
 
-	/* header fixed
-	var header_offset = $(".header").offset().top;
-	console.log(header_offset)
-	if($(window).width()<1070){
-		$(window).scroll(function(){
-			if($(window).scrollTop() > header_offset){
-				$(".header").addClass("fixed");
-				$(".wrap").addClass("pd");
-			} else {
-				$(".header").removeClass("fixed")
-				$(".wrap").removeClass("pd");
-			}
-		})
-	}
-	*/
+(function ($) {
+    "use strict";
 
-	// 퀵메뉴
-	$(".quick_menu ul li").eq(0).find("a").addClass("active")
-	$(".quick_menu ul li a").hover(function(){
-		$(".quick_menu ul li a").removeClass("active");
-		$(this).addClass("active");
-	}, function(){
-		//$(".quick_menu ul li a").removeClass("active");
-	});
+    /*==================================================================
+    [ Load page ]*/
+    try {
+        $(".animsition").animsition({
+            inClass: 'fade-in',
+            outClass: 'fade-out',
+            inDuration: 1500,
+            outDuration: 800,
+            linkElement: '.animsition-link',
+            loading: true,
+            loadingParentElement: 'html',
+            loadingClass: 'animsition-loading-1',
+            loadingInner: '<div class="loader05"></div>',
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: [ 'animation-duration', '-webkit-animation-duration'],
+            overlay : false,
+            overlayClass : 'animsition-overlay-slide',
+            overlayParentElement : 'html',
+            transition: function(url){ window.location.href = url; }
+        });
+    } catch(er) {console.log(er);}
 
-	// 비쥬얼 슬라이더
-	$(".visual_slider").slick({
-		autoplay: true,
-		autoplaySpeed: 7000,
-		speed: 1000,
-		infinite: true,
-		arrows: true,
-		dots: true
-	});
+    
+    /*==================================================================
+    [ Back to top ]*/
+    try {
+        var windowH = $(window).height()/2;
 
-	// 청년정책 슬라이더
-	$(".policy_list .slider-for").slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		infinite: false,
-		arrows: true,
-		adaptiveHeight:true,
-		asNavFor: '.policy_list .slider-nav'
-	});
+        $(window).on('scroll',function(){
+            if ($(this).scrollTop() > windowH) {
+                $("#myBtn").addClass('show-btn-back-to-top');
+            } else {
+                $("#myBtn").removeClass('show-btn-back-to-top');
+            }
+        });
 
-	$(".policy_cont ul li").eq(0).find("a").addClass("active")
-	$(".policy_list .slider-for").on("afterChange", function(event, slick, currentSlide, nextSlide){
-		$(".policy_cont.slick-active ul li").eq(0).find("a").addClass("active")
-	});
-
-	$(".policy_list .slider-nav").slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		infinite: false,
-		arrows: false,
-		asNavFor: '.policy_list .slider-for',
-		focusOnSelect: true
-	});
-
-	// 청년정책
-	$(".main_cont03 .policy_cont ul li a").hover(function() {
-		$(this).addClass("active");
-	}, function() {
-		$(this).removeClass("active");
-	}
-	);
-
-	// 배너 슬라이더
-	$(".banner_slider").slick({
-		autoplay: true,
-		autoplaySpeed: 5000,
-		speed: 1000,
-		infinite: true,
-		arrows: true,
-		dots: true
-	});
-
-	// 청년공간 Tab
-	$(".space_search .tab01 .tab_btn").addClass("active");
-	$(".space_search .tab_btn").on("click", function(){
-		$(".space_search .tab_btn").removeClass("active")
-		$(this).addClass("active")
-	})
-
-	// 청년공간 img 위치 조절
-	$(".main_cont04 .space_result .space_slider ul li .img").find("img").each(function(){
-		var w = $(this).width();
-		var	h = $(this).height();
-
-		if (w < h) {
-			$(this).parent().addClass("mih")
-		} else {
-			$(this).parent().addClass("miw")
-		}
-	});
-
-	// 청년공간 > 공간간편검색
-	$(".main_cont04 .space_search .btn_search").on("click", function(){
-		//$(".main_cont04 .space_result").attr("tabindex",0).focus();
-	})
-
-	// 청년공간 > 전국청년공간지도
-	$(".main_cont04 .space_search .tab01 .tab_cont ul li a").on("click", function(){
-		//var area_name = $(this).text();
-		//$(".main_cont04 .space_search .tab02 .tab_cont .tit .area_name").text(area_name)
-		//$(".main_cont04 .space_result").attr("tabindex",0).focus();
-	})
+        $('#myBtn').on("click", function(){
+            $('html, body').animate({scrollTop: 0}, 300);
+        });
+    } catch(er) {console.log(er);}
 
 
-	$(".main_cont04 .map_area a").mouseenter(function(){
-		if($(window).width()>1050){
-			var map_a = $(this).attr("class");
-			$(this).find("span").addClass("active")
-			$(".main_cont04 .map_area img").attr("src","images/main/"+map_a+".png")
-		}
-	})
+    /*==================================================================
+    [ Fixed menu ]*/
+    try {
+        var posNav = $('.wrap-main-nav').offset().top;
+        var menuDesktop = $('.container-menu-desktop');
+        var mainNav = $('.main-nav');
+        var lastScrollTop = 0;
+        var st = 0;
+        
+        $(window).on('scroll',function(){
+            fixedHeader();     
+        });
+        
+        $(window).on('resize',function(){ 
+            fixedHeader();
+        });
 
-	$(".main_cont04 .map_area a").focusin(function(){
-		if($(window).width()>1050){
-			var map_a = $(this).attr("class");
-			$(this).find("span").addClass("active")
-			$(".main_cont04 .map_area img").attr("src","images/main/"+map_a+".png")
-		}
-	})
+        $(window).on('load',function(){ 
+            fixedHeader();
+        });
 
-	$(".main_cont04 .map_area a").mouseleave(function(){
-		if($(window).width()>1050){
-			$(".main_cont04 .map_area a").find("span").removeClass("active")
-		}
-	})
+        var fixedHeader = function() {
+            st = $(window).scrollTop();
 
-	$(".main_cont04 .map_area a").focusout(function(){
-		if($(window).width()>1050){
-			$(".main_cont04 .map_area a").find("span").removeClass("active")
-		}
-	})
+            if(st > posNav + mainNav.outerHeight()) {
+                $(menuDesktop).addClass('fix-menu-desktop');
+            } 
+            else if(st <= posNav) {
+                $(menuDesktop).removeClass('fix-menu-desktop');
+            }   
 
-	$(".main_cont04 .map_area a").on("click", function(){
-		if($(window).width()>1050){
-			var map_a = $(this).attr("class");
-		}
-	})
+            if (st > lastScrollTop){
+                $(mainNav).removeClass('show-main-nav');
+            } 
+            else {
+                $(mainNav).addClass('show-main-nav');
+            }
 
-	// 청년공간 슬라이더
-	$(".space_slider").slick({
-		autoplay: true,
-		autoplaySpeed: 3500,
-		speed: 1000,
-		infinite: true,
-		arrows: true,
-		dots: true
-	});
+            lastScrollTop = st;
+        };
+            
+    } catch(er) {console.log(er);}
 
-	// 동영상 리스트 슬라이더
-	$(".video_slider").slick({
-		autoplay: true,
-		autoplaySpeed: 3500,
-		speed: 1000,
-		slidesToShow: 4,
-		slidesToScroll: 4,
-		infinite: true,
-		arrows: true,
-		dots: true,
-		responsive: [
-			{
-			  breakpoint: 1070,
-			  settings: {
-				slidesToShow: 3,
-				slidesToScroll: 3,
-				infinite: true,
-				dots: true
-			  }
-			},
-			{
-			  breakpoint: 768,
-			  settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
-			  }
-			}
-		  ]
-	});
+    /*==================================================================
+    [ Menu mobile ]*/
+    try {
+        $('.btn-show-menu-mobile').on('click', function(){
+            $(this).toggleClass('is-active');
+            $('.menu-mobile').slideToggle();
+        });
 
-	// 메인비주얼 정지,재생 버튼 생성
-	$(".main_cont01 .slick-dots, .main_cont03 .slick-dots, .main_cont04 .slick-dots").wrap("<div class=\"dots_wrap\">");
-	$(".dots_wrap").append("<button type=\"button\" class=\"btn_play\" onclick=\"SliderPlay(this);\"><span class=\"blind\">재생</button>");
-	$(".dots_wrap").append("<button type=\"button\" class=\"btn_stop\" onclick=\"SliderStop(this);\"><span class=\"blind\">정지</button>");
+        var arrowMainMenu = $('.arrow-main-menu-m');
 
-	// 동영상 슬라이더 재생,정지버튼 위치
-	$(window).load(function(){
-		var arrow_wrap_wid = $(".main_cont06 .slick-dots").width()
-		var arrow_wrap_top = $(".main_cont06 .slick-dots button").position().top;
-		$(".main_cont06 .play_btn_wrap").css({"margin-left":arrow_wrap_wid / 2, "top":arrow_wrap_top})
-	})
+        for(var i=0; i<arrowMainMenu.length; i++){
+            $(arrowMainMenu[i]).on('click', function(){
+                $(this).parent().find('.sub-menu-m').slideToggle();
+                $(this).toggleClass('turn-arrow-main-menu-m');
+            })
+        }
 
-})
+        $(window).on('resize',function(){
+            if($(window).width() >= 992){
+                if($('.menu-mobile').css('display') === 'block') {
+                    $('.menu-mobile').css('display','none');
+                    $('.btn-show-menu-mobile').toggleClass('is-active');
+                }
 
-// 슬라이더 재생
-function SliderPlay(obj){
-	var t = $(obj).parents(".slick-slider");
-	t.slick("slickPlay");
-}
+                $('.sub-menu-m').each(function(){
+                    if($(this).css('display') === 'block') { 
+                        $(this).css('display','none');
+                        $(arrowMainMenu).removeClass('turn-arrow-main-menu-m');
+                    }
+                });
+                    
+            }
+        });
+    } catch(er) {console.log(er);}
 
-// 슬라이더 정지
-function SliderStop(obj){
-	var t = $(obj).parents(".slick-slider");
-	t.slick("slickPause");
-}
 
-// 슬라이더 재생 - 동영상슬라이더
-function SliderPlay2(obj){
-	var t2 = $(obj).parent(".play_btn_wrap").prev(".slick-slider");
-	t2.slick("slickPlay");
-}
+    /*==================================================================
+    [ Respon tab01 ]*/
+    try {
+        $('.tab01').each(function(){
+            var tab01 = $(this);
+            var navTabs = $(this).find('.nav-tabs');
+            var dropdownMenu = $(tab01).find('.nav-tabs>.nav-item-more .dropdown-menu');
+            var navItem = $(tab01).find('.nav-tabs>.nav-item');
 
-// 슬라이더 정지 - 동영상슬라이더
-function SliderStop2(obj){
-	var t2 = $(obj).parent(".play_btn_wrap").prev(".slick-slider");
-	t2.slick("slickPause");
-}
+            var navItemSize = [];
+            var size = 0;
+            var wNavItemMore = 0;
+            
+            $(window).on('load', function(){
+                navItem.each(function(){
+                    size += $(this).width();
+                    navItemSize.push(size);
+                });
 
-// 리사이즈시
-$(window).resize(function () {
-	if (this.resizeTO) {
-		clearTimeout(this.resizeTO);
-	}
-	this.resizeTO = setTimeout(function () {
-		$(this).trigger("resizeEnd");
-	}, 100);
-});
+                responTab01();
+            });
+                
+            $(window).on('resize', function(){
+                responTab01();              
+            })
 
-$(window).on("resizeEnd", function () {
-	$(document).ready(function(){
-		var arrow_wrap_wid = $(".main_cont06 .slick-dots").width()
-		var arrow_wrap_top = $(".main_cont06 .slick-dots button").position().top;
-		$(".main_cont06 .play_btn_wrap").css({"margin-left":arrow_wrap_wid / 2, "top":arrow_wrap_top})
-	})
-});
+            var responTab01 = function() {
+                if(navTabs.width() <= navItemSize[navItemSize.length - 1] + 1) { 
+                    $(tab01).find('.nav-tabs>.nav-item-more').removeClass('dis-none');
+                }
+                else {
+                    $(tab01).find('.nav-tabs>.nav-item-more').addClass('dis-none');
+                }
+
+                wNavItemMore = $(tab01).find('.nav-tabs>.nav-item-more').hasClass('dis-none')? 0 : $(tab01).find('.nav-tabs>.nav-item-more').width();
+
+                for(var i=0 ; i<navItemSize.length ; i++) {
+
+                    if(navTabs.width() - wNavItemMore <= navItemSize[i] + 1) {
+                        $(tab01).find('.nav-tabs .nav-item').remove();
+
+                        for(var j=i-1 ; j >= 0 ; j--) {
+                            $(navTabs).prepend($(navItem[j]).clone());
+                        }
+
+                        for(var j=i ; j < navItemSize.length ; j++) {
+                            $(dropdownMenu).append($(navItem[j]).clone());
+                        }
+
+                        break;
+                    }
+                    else {
+                        $(tab01).find('.nav-tabs .nav-item').remove();
+
+                        for(var j=i ; j >= 0 ; j--) {
+                            $(navTabs).prepend($(navItem[j]).clone());
+                        }
+                    }
+                }
+            };
+        });
+    } catch(er) {console.log(er);}
+        
+
+    /*==================================================================
+    [ Play video 01 ]*/
+    try {
+        var srcOld = $('.video-mo-01').children('iframe').attr('src');
+
+        $('[data-target="#modal-video-01"]').on('click',function(){
+            $('.video-mo-01').children('iframe')[0].src += "&autoplay=1";
+
+            setTimeout(function(){
+                $('.video-mo-01').css('opacity','1');
+            },300);      
+        });
+
+        $('[data-dismiss="modal"]').on('click',function(){
+            $('.video-mo-01').children('iframe')[0].src = srcOld;
+            $('.video-mo-01').css('opacity','0');
+        });
+    } catch(er) {console.log(er);}
+   
+
+    /*==================================================================
+    [ Tab mega menu ]*/
+    try {
+        $(window).on('load', function(){
+            $('.sub-mega-menu .nav-pills > a').hover(function() {
+                $(this).tab('show');
+            });
+        });
+    } catch(er) {console.log(er);}
+
+    /*==================================================================
+    [ Slide100 txt ]*/
+
+    try {
+        $('.slide100-txt').each(function(){
+            var slideTxt = $(this);
+            var itemSlideTxt = $(this).find('.slide100-txt-item'); 
+            var data = [];
+            var count = 0;
+            var animIn = $(this).data('in');
+            var animOut = $(this).data('out');
+
+            for(var i=0; i<itemSlideTxt.length; i++) {
+                data[i] = $(itemSlideTxt[i]).clone();
+                $(data[i]).addClass('clone');
+            }
+
+            $(window).on('load', function(){
+                $(slideTxt).find('.slide100-txt-item').remove();
+                $(slideTxt).append($(data[0]).clone());
+                $(slideTxt).find('.slide100-txt-item.clone').addClass(animIn + ' visible-true');
+                count = 0;
+            });
+            
+            setInterval(function(){
+                $(slideTxt).find('.slide100-txt-item.ab-t-l.' + animOut).remove();
+                $(slideTxt).find('.slide100-txt-item').addClass('ab-t-l ' + animOut);
+
+                
+                if(count >= data.length-1) {
+                    count = 0;
+                }
+                else {
+                    count++;
+                }
+
+                console.log($(data[count]).text());
+
+                $(slideTxt).append($(data[count]).clone());
+                $(slideTxt).find('.slide100-txt-item.clone').addClass(animIn + ' visible-true');
+            },5000); 
+        });
+    } catch(er) {console.log(er);}
+            
+
+})(jQuery);

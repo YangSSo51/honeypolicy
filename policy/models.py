@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 
 class PolicyList(models.Model):
+
+    # 글 번호 - 필요할거같아유 
+    # id = models.AutoField(primary_key=True)
+
     # 제목
     title = models.CharField(max_length=100)
     # 내용
@@ -19,6 +23,18 @@ class PolicyList(models.Model):
     
     # 첨부파일 - 미구현
     #upload_file = models.FileField()
+
+    REGION_CATEGORY = (
+        ('서울','서울'),
+        ('인천','인천'),
+        ('경기','경기')
+    )
+    # 지역
+    region = models.CharField(max_length=20, choices=REGION_CATEGORY)
+
+    # 조회수 기준으로 내림차순 정렬 하기 
+    class Meta:
+        ordering = ['-hits']
 
     def hits_counter(self):
         self.hits += 1

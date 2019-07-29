@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from django.conf.urls import url
 
+app_name='notice'
+
 urlpatterns=[
     path('',views.read,name="read"),
     path('notice/<int:notice_id>/',views.detail,name="detail"),

@@ -19,7 +19,7 @@ def create(request):
         form = NewPolicyList(request.POST)
         if form.is_valid:
             post = form.save(commit=False)
-            #post.pub_date = timezone.now()
+            # post.pub_date = timezone.now()
             post.save()
             return redirect('policyList')
     # 글쓰기 페이지 띄우기 == GET
@@ -31,21 +31,31 @@ def create(request):
 # 게시글 읽어와유~
 def read(request):
 
-    policyCount = PolicyList.objects.count()
+    # policyCount = PolicyList.objects.count()
 
     policies = PolicyList.objects.all()
 
-    page = request.GET.get('page',1)
-    paginator = Paginator(policies,10)
+    # 검색을 할 경우를 나눈것!
+    # posts 로 변수 통일 함 -> 템플릿에서 값 하나만 사용해서 나타내다 보니..ㅠ
+    q = request.GET.get('q','')
+    if q:
+        # 조회수로 내림차순 정렬하면서 검색  
+        posts = policies.filter(title__contains=q).order_by('-hits')
+        policyCount = policies.filter(title__contains=q).count()
+    else:
+        policyCount = PolicyList.objects.count()
+        page = request.GET.get('page',1)
+        paginator = Paginator(policies,10)
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
 
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
-
+    
     return render(request,'policyList.html' , {'policies':policies, 'posts':posts, 'policyCount':policyCount})
+    
 
 def update(request,pk):
     # 어떤 게시글을 수정할지 가져오기

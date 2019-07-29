@@ -32,8 +32,10 @@
                 <a href="{% url 'newPost' %}">글쓰기</a>
                 <br>
                 <h3>총 게시글 수 : {{ policyCount }}</h3>
+                
                 <tr>
                     <th>번호</th>
+                    <th>지역</th>
                     <th>제목</th>
                     <th>작성자</th>
                     <th>등록일</th>
@@ -41,9 +43,11 @@
                 </tr>
             </thead>
             <tbody>
+
                 {% for policy in posts %}
                 <tr>
                     <td>{{policy.id}}</td>
+                    <td>{{policy.region}}</td>
                     <td><a href="{% url 'detail' policy.id %}">{{policy.title}}</a></td>
                     <td>{{policy.writer}}</td>
                     <td>{{policy.pub_date | date:"Y-m-d"}}</td>
@@ -87,6 +91,14 @@
         </ul>
     </nav>
     {% endif %}
+    <hr>
+    <div class="search_form ">
+        <form class="form-inline my-2 my-lg-0 justify-content-center" action="" method="get">
+            {# name 속성 : 변수 이름?  #}
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ q }}">
+            <input type="submit" class="btn btn-primary" value="검색">
+        </form>
+    </div>
 
 
 

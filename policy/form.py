@@ -8,6 +8,6 @@ class NewPolicyList(forms.ModelForm):
         model = PolicyList
 
         # 모든 항목 입력받으려묜...
-        # fields = '__all__'
+        #fields = '__all__'
         
-        fields = ['title','body']
+        fields = ['title','body','writer','region']
