@@ -4,34 +4,58 @@
 	<title>정책꿀단지</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/css/util.min.css">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
 <!--===============================================================================================-->
-<style>
-footer{
-  padding:30px;
-  text-align: center;
-  background-color: rgb(247, 236, 201);
-}
-a{
-	padding:10px;
-}
-</style>
+	<style>
+
+		.intro_title{
+			font-family:Binggrae-Bold;
+			margin-top: 20px;
+			padding: 67px 0 52px;
+    		font-size: 40pt;
+			text-align: center;
+			text-color: #635D4A;
+		}
+		.intro_title2{
+			font-family:Binggrae-Bold;
+			margin-top: 10px;
+			padding: 67px 0 52px;
+    		font-size: 20pt;
+			text-color: #635D4A;
+		}
+		.intro_content{
+			font-family:Binggrae-Bold;
+			width:1000px;
+			margin:auto;
+		}
+		.intro_member >img{
+			width:100%;
+			margin:auto;
+		}
+		.intro_filed{
+			text-align: center;
+			font-size: 15pt;
+		}
+		.col-8 col-sm-4 {
+			width:100%;
+			item-align:center;
+		}
+	</style>
 </head>
 <body class="animsition">
 		<!-- Header -->
@@ -42,7 +66,7 @@ a{
 				<div class="wrap-logo container">
 					<!-- Logo desktop -->		
 					<div class="logo">
-						<a href="{%url 'home'%}"><img src="../static/images/logo.jpg" alt="LOGO"></a>
+						<a href="index.html"><img src="../static/images/logo.jpg" alt="LOGO"></a>
 					</div>	
 					<!-- Banner -->
 					<div class="banner-header">
@@ -55,14 +79,10 @@ a{
 							</button>
 						</div>
 						<div class="member">
-							{%if user.is_authenticated%}
 							<ul>
-							<li><a href="{%url 'login'%}"><img src="../static/images/login.png">로그인</a></li>
-							<li><a href="{%url 'signup'%}"><img src="../static/images/join.png">회원가입</a></li>
+							<li><img src="../static/images/login.png"><a>로그인</a></li>
+							<li><img src="../static/images/join.png"><a>회원가입</a></li>
 							</ul>
-							{%else%}
-							<li><a href="{%url 'logout'%}"><img src="../static/images/login.png">로그아웃</a></li>
-							{% endif %}
 						</div>
 					</div>
 				</div>	
@@ -73,7 +93,7 @@ a{
 						<nav class="menu-desktop">
 							<ul class="main-menu">
 								<li class="main-menu-active">
-									<a href="{% url 'intro'%}">소개</a>
+									<a href="#">소개</a>
 									<ul class="sub-menu">
 										<li><a href="#">정책꿀단지는?</a></li>
 									</ul>
@@ -82,7 +102,7 @@ a{
 									<a href="#">정책보기</a>
 									<ul class="sub-menu">
 										<li><a href="#">맞춤검색</a></li>
-										<li><a href="{% url 'policyread'%}">정책상세보기</a></li>
+										<li><a href="#">정책상세보기</a></li>
 									</ul>
 								</li>							
 								<li class="main-menu-active">
@@ -102,7 +122,7 @@ a{
 								<li class="main-menu-active">
 									<a href="#">커뮤니티</a>
 									<ul class="sub-menu">
-										<li><a href="{% url 'noticeread'%}">공지사항</a></li>
+										<li><a href="#">공지사항</a></li>
 										<li><a href="#">FAQ</a></li>
 										<li><a href="#">Q&A</a></li>
 									</ul>
@@ -114,21 +134,102 @@ a{
 			</div>
 		</header>
 
-
-		{% block content %}
-
-		{% endblock %}
-
+		<!-- main -->
+		<div class="container">
+			<!-- intro-->
+			<div class="content">
+				<div class="intro_content">
+					<h2 class="intro_title">  정책꿀단지는?  </h2>
+					<div class="intro_main">
+						<div class="intro_img">
+						<img src="" alt="정책꿀단지 소개이미지 넣기">
+						</div>
+						<div class="intro_member">
+							<div class="row">
+								<div class="col-sm-9">
+								<h2 class="intro_title2">정책꿀단지 멤버들</h2>
+									<div class="row">
+										<div class="col-8 col-sm-4">
+											<img src="../static/images/yj.png" alt="..." class="rounded-left">
+										</div>
+										<div class="col-4 col-sm-6">
+											<ul class="intro_filed">
+												<li>이름: </li>
+												<li>소개: </li>
+												<li>역할: </li>
+											</ul>
+										</div>
+										<div class="col-8 col-sm-4">
+											<img src="../static/images/yj.png" alt="..." class="rounded-left">
+										</div>
+										<div class="col-4 col-sm-6">
+											<ul class="intro_filed">
+												<li>이름: </li>
+												<li>소개: </li>
+												<li>역할: </li>
+											</ul>
+										</div>
+										<div class="col-8 col-sm-4">
+											<img src="../static/images/yj.png" alt="..." class="rounded-left">
+										</div>
+										<div class="col-4 col-sm-6">
+											<ul class="intro_filed">
+												<li>이름: </li>
+												<li>소개: </li>
+												<li>역할: </li>
+											</ul>
+										</div>
+										<div class="col-8 col-sm-4">
+											<img src="../static/images/yj.png" alt="..." class="rounded-left">
+										</div>
+										<div class="col-4 col-sm-6">
+											<ul class="intro_filed">
+												<li>이름: </li>
+												<li>소개: </li>
+												<li>역할: </li>
+											</ul>
+										</div>
+										<div class="col-8 col-sm-4">
+											<img src="../static/images/yj.png" alt="..." class="rounded-left">
+										</div>
+										<div class="col-4 col-sm-6">
+											<ul class="intro_filed">
+												<li>이름: </li>
+												<li>소개: </li>
+												<li>역할: </li>
+											</ul>
+										</div>
+										<div class="col-8 col-sm-4">
+											<img src="../static/images/yj.png" alt="..." class="rounded-left">
+										</div>
+										<div class="col-4 col-sm-6">
+											<ul class="intro_filed">
+												<li>이름: </li>
+												<li>소개: </li>
+												<li>역할: </li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- intro_end-->
+		</div>
 		<!-- Footer -->
-		<footer class="footer mt-auto py-3 " >
-			<div>
-			  <img id="img" src="../static/images/honey.png"
-				width="50" height="50"><br>
-			  <br>
-			  <p id="copyright">Copyright &copy; 2019.honeypolicy<br>
-				all rights reserved.</p>
+		<footer>
+			<div class="bg11">
+				<div class="container size-h-4 flex-c-c p-tb-15">
+					<span class="f1-s-1 cl0 txt-center">
+						<a href="#" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</span>
+				</div>
+			</div>
 		</footer>
-		
 
 		<!-- Back to top -->
 		<div class="btn-back-to-top" id="myBtn">

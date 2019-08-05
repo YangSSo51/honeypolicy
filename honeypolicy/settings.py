@@ -69,8 +69,8 @@ TEMPLATES = [
     },
 ]
 
+#WSGI_APPLICATION = 'honeypolicy.wsgi.application'
 WSGI_APPLICATION = 'honeypolicy.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

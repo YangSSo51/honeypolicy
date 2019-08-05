@@ -16,17 +16,19 @@ def policyList(request):
 def create(request):
     # 새로운 데이터 저장하는 하기 == POST
     if request.method == 'POST':
-        form = NewPolicyList(request.POST)
-        if form.is_valid:
-            post = form.save(commit=False)
-            # post.pub_date = timezone.now()
-            post.save()
-            return redirect('policyList')
+        policy = PolicyList(
+            title = request.POST["title"], body = request.POST["body"],
+            region = request.POST["region"], age= request.POST["age"],
+            start_date = request.POST["start_date"], end_date=request.POST["end_date"],
+            regist_way = request.POST["regist_way"], educated = request.POST["educated"],
+            url = request.POST["url"])
+        policy.save()
+        return redirect("policyread")
     # 글쓰기 페이지 띄우기 == GET
     else:
         # 입력받을 수 있는 걸 띄우기
-        form = NewPolicyList()
-        return render(request, 'newPolicyList.html', {'form':form})
+        birth = range(1900,2019)
+        return render(request, 'newPolicyList.html',{"birth":birth})
     
 # 게시글 읽어와유~
 def read(request):
@@ -66,7 +68,7 @@ def update(request,pk):
     form = NewPolicyList(request.POST, instance=policy)
     if form.is_valid():
         form.save()
-        return redirect('policyList')
+        return redirect('policyread')
     
     # 다른 request 인경우??
     return render(request, 'newPolicyList.html', {'form':form})
@@ -74,7 +76,7 @@ def update(request,pk):
 def delete(request,pk):
     policy = get_object_or_404(PolicyList, pk = pk)
     policy.delete()
-    return redirect('policyList')
+    return redirect('policyread')
 
 def detail(request, policy_id):
     policyDetail = get_object_or_404(PolicyList, pk=policy_id)

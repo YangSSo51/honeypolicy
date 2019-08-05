@@ -9,7 +9,7 @@ class PolicyList(models.Model):
 
     # 제목
     title = models.CharField(max_length=100)
-    # 내용
+    # 설명
     body = models.TextField()
 
     # 작성자 
@@ -32,6 +32,31 @@ class PolicyList(models.Model):
     # 지역
     region = models.CharField(max_length=20, choices=REGION_CATEGORY)
 
+    # 연령
+    age = models.IntegerField(default=20)
+
+    # 정책 시작 기간
+    start_date = models.DateField(null=True)
+
+    # 정책 끝 기간
+    end_date = models.DateField(null=True)
+
+    educate_category = (
+        ("중졸 이상", "중졸 이상"),
+        ("고졸 이상", "고졸 이상"),
+        ("대졸 이상", "대졸 이상"),
+        ("무관", "무관"),
+        ("정보 없음","정보 없음")
+    )
+    # 학력
+    educated = models.CharField(null=True, max_length=120, choices=educate_category)
+
+    # 신청 방법
+    regist_way = models.TextField(null=True)
+
+    # 홈페이지 url
+    url = models.TextField(default="https://www.youthcenter.go.kr")
+
     # 조회수 기준으로 내림차순 정렬 하기 
     class Meta:
         ordering = ['-hits']
@@ -43,4 +68,3 @@ class PolicyList(models.Model):
 
     def __str__(self):
         return self.title
-

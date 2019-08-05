@@ -1,33 +1,155 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>미눅's Workspace</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <style>
+        #content .sub_tit {
+            margin-bottom: 25px
+        }
+
+        #content .sub_tit h3 {
+            margin-bottom: 27px;
+            font-size: 30px;
+            line-height: 30px;
+            color: #282e34;
+            font-weight: 600;
+            letter-spacing: -0.05em
+        }
+
+        #content .sub_tit p {
+            color: #fae77d;
+            font-size: 13px;
+            line-height: 14px;
+            padding: 15px 17px;
+            background: #f0f3fa url(../../images/layout/bg_st_exp.jpg) right center no-repeat
+        }
+        #content .txt {}
+
+        .mt_20 {
+            margin-top: 20px
+        }
+
+        .ml_20 {
+            margin-left: 20px
+        }
+
+        .ml_30 {
+            margin-left: 30px
+        }
+
+        .po_view {
+            overflow: hidden;
+            border-bottom: 1px solid #d5d5db
+        }
+
+        .po_tit {
+            background: #fae77d;
+            font-weight: 600;
+            text-align: center;
+            font-size: 16px;
+            color: #282e34;
+            padding: 12px 0
+        }
+
+        .po_content {
+            padding: 30px 20px
+        }
+
+        .list {
+            margin: 10px 0;
+            line-height: 1.6
+        }
+
+        .list li {
+            margin-left: 21px;
+            padding-left: 10px;
+            background: url(http://www.moel.go.kr/images/common/bul_list.gif) left 10px no-repeat
+        }
+
+        .tbl {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 2px solid #fae77d;
+            line-height: 20px
+        }
+        h4{padding:15px 0;background:url(http://www.moel.go.kr/images/common/bul_h4.gif) left top no-repeat;font-weight:600;font-size:19px;line-height:19px;color:#282e34}
+        h5{padding:15px 0 10px 22px;background:url(http://www.moel.go.kr/images/common/bul_h5.gif) left 16px no-repeat;font-weight:600;font-size:15px;line-height:15px;color:#0d4488}
+        h6{padding:10px 0 10px 21px;background:url(http://www.moel.go.kr/images/common/bul_h6.gif) 11px 15px no-repeat;font-size:14px;line-height:14px;font-weight:600}
+    </style>
 </head>
+
 <body>
+
     <div class="container">
-        <h1>policy Detail</h1>
-    </div>
-    <hr>
-    <br>
-    <div class="container">
-        <h1>{{ policyDetail.title }}</h1>
-        <br>
-        <h6>조회수 : {{ policyDetail.hits_counter }}</h6>
-        {# policyDetail.hits_counter 사용하면 다시 게시글 페이지로 돌아가면 바로 적용이 안됨..ㅠ #}
-        <a href="{% url 'update' policy_id %}">수정</a>
-        <a href="{% url 'delete' policy_id %}">삭제</a>
-        
-        <hr>
-        <h5>{{ policyDetail.body }}</h5>
-        <p>{{ policyDetail.pub_date}}</p>
-    </div>
-    
+        {# 소제목 영역?? #}
+        <div class="sub_tit">
+            {# ex) [인천][청년] #}
+            <h3>[{{policyDetail.region}}][청년]</h3>
+            <a href="{% url 'policyupdate' policy_id %}">수정</a>
+            <a href="{% url 'policydelete' policy_id %}">삭제</a>
+            <span>등록일 : {{ policyDetail.pub_date | date:"Y-m-d"}}</span>
+        </div>
+
+        {# 내용 부분 #}
+        <div id="content">
+            <div id="txt">
+                <h4>청년, 일할 기회 늘리기</h4>
+                <div class="po_view mt_20">
+                    <div class="po_tit">청년 추가고용 장려금 지원사업</div>
+                    <div class="po_content">
+                        <p class="mt_20 ml_20">내용 : {{policyDetail.body}}</p>
+                        <h5>사업목적</h5>
+                        <h6>청년을 정규직으로 추가로 고용한 중소・중견기업에 인건비를 지원함으로써, 양질의 청년일자리 창출</h6>
+
+                        <h5>사업내용</h5>
+                        <h6>지원대상</h6>
+                        <ul class="list">
+                            <li>청년(만15세 이상 34세 이하)을 정규직으로 신규 채용한 5인 이상 중소‧중견기업(성장유망업종, 벤처기업 등은 5인 미만도 가능)
+                                <p class="ml_20">* 단, 사행‧유흥업 등 일부 업종은 지원제외</p>
+                            </li>
+                        </ul>
+                        <h6>지원요건 : ①청년 정규직 신규채용, ②기업전체 근로자수(피보험자수) 증가</h6>
+                        <p class="ml_20">① (청년 정규직 신규채용) 기업 규모*에 따라 다음과 같이 청년을 정규직으로 신규 채용하여야 함</p>
+
+                        <p class="ml_20 mt_20" style="text-align:center;"><b>[기업규모별 청년 최저고용 요건]</b></p>
+
+                        <p class="ml_30">* 기업규모는 전년 연평균 기준 고용보험 피보험자수. ’19년 신규 성립사업장의 경우 보험관계성립일이 속한 달의 말일 기준 피보험자수로 함
+                        </p>
+                        <p class="mt_20 ml_20">② (근로자수 증가) ‘기업규모별 청년 최저고용 요건’ 이상 청년을 추가 채용하여, 전년 연평균 기준 피보험자수(’19년
+                            신규성립기업의
+                            경우 성립일이 속한 달의 말일 기준 피보험자수) 보다 기업 전체 근로자수(피보험자수)가 증가해야 함</p>
+
+                        <h5>지원수준 및 지원한도</h5>
+                        <h6>지원 수준</h6>
+                        <ul class="list">
+                            <li>청년 추가채용 1명당 연 최대 900만원을 3년간 지원</li>
+                        </ul>
+                        <h6>지원 한도</h6>
+                        <ul class="list">
+                            <li>기업당 최대 90명까지</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 </body>
+
 </html>

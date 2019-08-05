@@ -11,6 +11,9 @@ from .forms import NewNotice,SearchForm
 def home(request):
     return render(request,'home.html')
 
+def base(request):
+    return render(request,'base.html')
+
 def detail(request, notice_id):
     notice_detail = get_object_or_404(Notice, pk=notice_id)
     return render(request, 'notice/detail.html', {'notice': notice_detail})
@@ -22,7 +25,7 @@ def read(request):
     paginator=Paginator(notice_list,10)
     page=request.GET.get('page')
     posts=paginator.get_page(page)
-    return render(request,'notice/home.html',{'notice':notice,'posts':posts,'counts':counts})
+    return render(request,'notice/board.html',{'posts':posts})
 
 def create(request):
     if request.method=='POST':
@@ -31,11 +34,11 @@ def create(request):
             post=form.save(commit=False)
             post.pub_date=timezone.now()
             post.save()
-            return redirect('home')
+            return redirect('noticeread')
     else:
         form=NewNotice()
         return render(request,'notice/new.html',{'form':form})
-    return
+    return redirect('noticeread')
     
 def update(request,pk):
     notice=get_object_or_404(Notice,pk = pk)
@@ -43,14 +46,14 @@ def update(request,pk):
 
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('noticeread')
 
     return render(request,'notice/new.html',{'form':form})        
 
 def delete(request,pk):
     notice=get_object_or_404(Notice,pk=pk)
     notice.delete()
-    return redirect('home')
+    return redirect('noticeread')
 
 class SearchFormView(FormView):
     # form_class를 forms.py에서 정의했던 PostSearchForm으로 정의
