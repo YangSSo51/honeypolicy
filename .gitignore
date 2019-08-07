@@ -6,3 +6,21 @@ __pycache__/
 local_settings.py
 db.sqlite3
 media
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Python ###
+# pyenv
+.python-version
+myvenv
