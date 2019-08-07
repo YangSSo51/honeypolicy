@@ -19,6 +19,7 @@ media
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+HONEYPOLICY.code-workspace
 
 ### Python ###
 # pyenv
