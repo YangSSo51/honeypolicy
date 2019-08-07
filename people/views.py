@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import auth
 from .models import People
 
-def intro(request):
-    return render(request,"intro.html")
     
 def signup(request):
     if request.method == 'POST':

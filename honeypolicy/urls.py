@@ -22,10 +22,13 @@ import policy.urls
 import policy.views
 import people.urls
 import people.views
+import question.urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',notice.views.home,name="home"),
     path('notice/',include(notice.urls)),
     path('policy/',include(policy.urls)),
     path('people/',include(people.urls)),
+    path('question/',include(question.urls)),
 ]

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+    {% comment %} {% for blog in blogs.all %} {% endcomment %}
+	<br>
+			<!-- intro-->
+			<div class="content2">
+				<div class="intro_content">
+					<h2 class="intro_title"><img src="{% static '/images/intro/logolg.png' %}" alt="">  정책꿀단지는?  <img src="{% static '/images/intro/logolg.png' %}"alt=""></h2>
+					<div class="intro_main">
+						<div class="intro_img">
+							<img src="{% static '/images/intro/banner.png'%}" alt="정책꿀단지 소개이미지 넣기">
+						</div>
+						<div class="intro_member">
+							<div class="row">								
+								<h2 class="intro_title2"><img src="{% static '/images/intro/logosm.png' %}" alt="">꿀단지들</h2>
+								<div class="column">
+									<div class="card">
+										<img src="{% static '/images/intro/yj.jpg' %}" alt="정예진">
+										<div class="container">
+											<h4><b>정예진, 꿀단지 팀장</b></h4> 
+											<p> #프론트엔드개발 </p> 
+										</div>
+									</div>
+								</div>
+								<div class="column">
+									<div class="card">
+										<img src="{% static '/images/intro/사진없음.jpg' %}" alt="">
+										<div class="container">
+											<h4><b>양소영, </b></h4> 
+											<p>#프론트 #백엔드 #총괄</p> 
+										</div>
+									</div>
+								</div>
+								<div class="column">
+									<div class="card">
+										<img src="{% static '/images/intro/사진없음.jpg' %}" alt="">
+										<div class="container">
+											<h4><b>오지숙,</b></h4> 
+											<p>#프론트엔드개발 </p> 
+										</div>
+									</div>
+								</div>
+								<div class="column">
+									<div class="card">
+										<img src="{% static '/images/intro/사진없음.jpg' %}" alt="">
+										<div class="container">
+											<h4><b>고주원, </b></h4> 
+											<p>#백엔드개발 #DB마스터</p> 
+										</div>
+									</div>
+								</div>
+								<div class="column">
+									<div class="card">
+										<img src="{% static '/images/intro/사진없음.jpg' %}" alt="">
+										<div class="container">
+											<h4><b>송민욱,</b></h4> 
+											<p>#백엔드개발 </p> 
+										</div>
+									</div>
+								</div>
+								<div class="column">
+									<div class="card">
+										<img src="{% static '/images/intro/사진없음.jpg' %}" alt="">
+										<div class="container">
+											<h4><b>김재광,</b></h4> 
+											<p>#백엔드개발</p> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="intro_title2"></div>
+					</div>
+				</div>
+			</div>
+			<!-- intro_end-->
+	{% comment %} {% endfor %} {% endcomment %}
+{% endblock %}

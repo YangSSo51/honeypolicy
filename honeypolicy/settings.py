@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'notice',
     'policy',
     'people',
+    'question',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'honeypolicy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['honeypolicy/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

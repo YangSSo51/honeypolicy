@@ -11,8 +11,9 @@ from .forms import NewNotice,SearchForm
 def home(request):
     return render(request,'home.html')
 
-def base(request):
-    return render(request,'base.html')
+def intro(request):
+    return render(request,'notice/intro.html')
+
 
 def detail(request, notice_id):
     notice_detail = get_object_or_404(Notice, pk=notice_id)

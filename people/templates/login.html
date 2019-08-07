@@ -1,21 +1,199 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>n</title>
-</head>
+    <meta charset="UTF-8">  
+    <title>로그인</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+      /* BASIC */
+      
+      html {
+        background-color: white;
+      }
+      
+      body {
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+      }
+      
+      a {
+        color: white#92badd;
+        display:inline-block;
+        text-decoration: none;
+        font-weight: 400;
+      }
+      
+      h2 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        display:inline-block;
+        margin: 40px 8px 10px 8px; 
+        color: #cccccc;
+      }
+      
+      
+      
+      /* STRUCTURE */
+      
+      .main {
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 25%;
+        padding-right: 25%;
+      }
+      
+     
+      
+      
+      /* TABS */
+      
+      h2.inactive {
+        color: #cccccc;
+      }
+      
+      h2.active {
+        color: #0d0d0d;
+        border-bottom: 2px solid #5fbae9;
+      }
+      
+      
+      
+      /* FORM TYPOGRAPHY*/
+      
+      input[type=button], input[type=submit], input[type=reset]  {
+        background-color: #FFF0BD ;
+        border: 1.5px solid rgb(184, 184, 184);
+        color: rgb(32, 32, 32);
+        padding: 15px 80px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+      }
+      
+      input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+        background-color:#FFDE71 ;
+       
+        border: 2px solid rgb(184, 184, 184);
+      }
+      
+      input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+        -moz-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -o-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        transform: scale(0.95);
+      }
+      
+      input[type=text] {
+        background-color: white;
+        border: 1px solid;
+        color: #0d0d0d;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        border: 1.5px solid rgb(184, 184, 184);
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+      }
+      input[type=password] {
+        background-color: white;
+        border: 1px solid;
+        color: #0d0d0d;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        width: 85%;
+        border: 1.5px solid rgb(184, 184, 184);
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+      }
+      
+      input[type=text]:focus {
+        background-color: white;
+        border-bottom: 2px solid white;
+      }
+      
+      input[type=text]:placeholder {
+        color: white;
+      }
+      
+      
+      
+      
+      /* OTHERS */
+      
+      *:focus {
+          outline: none;
+      } 
+      
+      #icon {
+        height: 100px;
+        widows: 120px;
+
+      }
+      </style>
+  </head>
 <body>
+    <div class="main">
     <p>{{ error }}</p>
-    <form class="form-signin" method="POST" action="{% url 'login' %}">
+  <div  method="POST" action="{% url 'login' %}"></div>
+    <div id="formContent">
         {% csrf_token %}
-        <h1 class="h3 mb-3 font-weight-normal">로그인</h1>
-        <label for="inputEmail">ID</label>
-        <input type="text" name="username">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox mb-3">
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="{% static '/images/logo.jpg'%}" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" class="" name="username" placeholder="ID">
+        <input type="password" name="passowrd" id="" class=""  placeholder="PASSWORD" required="">
+        <input type="submit" class="fadeIn fourth" value="로그인">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="signup.html">회원가입</a>
+      </div>
+  
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,182 @@
+
+html { 
+    -webkit-text-size-adjust: none; 
+}
+
+.header_cont{
+    margin-left:100px;
+}
+
+.nav{
+    align-content: center;
+}
+
+.carousel{
+    width:66%;
+    float:left;
+}
+
+.policy_search{
+    font-family: Binggrae-Bold;
+    width: 330px;
+    margin-left: 16px;
+    margin-top: 3px;
+    float: left;
+    height: 495px;
+}
+
+.policy_search > li {
+    height:100%;
+}
+
+.form_search{
+    border: 1px solid black;
+    margin-top:7px;
+    height:432px;
+    color:#635D4A;
+}
+
+.form_search > div{
+    font-family: Eoe_Zno_L;
+    height: 10%;
+    margin: 35px 20px;
+}
+
+.tab_btn {height: 50px;
+    align-items: center;
+    display: block;
+    top: 0;
+    padding: 4px 0;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.tab_btn.active {
+    text-align: center;
+    background: #FFF0BD;
+    border-color: #0a0b0b;
+    font-weight: 500;
+    font-size: 20pt;
+    color: #0a0b0b;
+}
+
+.tab_btn.active + .tab_cont {
+    display: block
+}
+
+.tab_btn > a {
+    text-align: center;
+}
+
+.snip1535 {
+    margin-left:100px;
+    background-color: #635D4A;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Binggrae-Bold', Arial, sans-serif;
+    font-size: 1em;
+    font-size: 22px;
+    line-height: 1em;
+    margin: 15px 90px;
+    outline: none;
+    padding: 12px 40px 10px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.snip1535:before,
+.snip1535:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.snip1535:before {
+  border-color: rgb(255, 222, 113);
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.snip1535:after {
+  border-bottom-width: 2px;
+  border-color: rgb(255, 222, 113);
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.snip1535:hover,
+.snip1535.hover {
+  background-color: rgb(255, 222, 113);
+}
+.snip1535:hover:before,
+.snip1535.hover:before,
+.snip1535:hover:after,
+.snip1535.hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* 소개페이지 */
+.intro_title{
+    font-family:Binggrae-Bold;
+    margin-top: 20px;
+    padding: 67px 0 52px;
+    font-size: 40pt;
+    text-align: center;
+    text-color: #635D4A;
+}
+.intro_title2{
+    font-family:Binggrae-Bold;
+    margin-top: 10px;
+    padding: 67px 0 52px;
+    font-size: 20pt;
+    text-color: #635D4A;
+    width:800px;
+    margin-left: 20px;
+}
+.intro_content{
+    font-family:Binggrae-Bold;
+    width:900px;
+    margin:auto;
+}
+.column{
+    margin-right:15px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:10px;
+    float: left;
+    width: 30%;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card > img{
+    width:100%;
+    padding:5px;
+}
+.card > div > h4,p {
+    text-align:center
+}
+.container {
+    padding: 2px 16px;
+}
+/* 소개페이지끝 */

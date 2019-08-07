@@ -1,15 +1,16 @@
-{%extends 'base.html'%}
+{% extends 'base.html'%}
 
 {% block content %}
-		<!-- main -->
+{% load staticfiles %}
+    {% comment %} {% for blog in blogs.all %} {% endcomment %}
+	<br>
 		<div class="container">
 			<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
 				<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
 					<span class="text-uppercase cl2 p-r-8">
-					<img src="../static/images/hot.png">	
+					<img src="{% static '/images/hot.png'%}">	
 						지금 뜨고 있는 정책
 					</span>
-
 					<span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
 						<span class="dis-inline-block slide100-txt-item animated visible-false">
 							취업성공패키지
@@ -24,7 +25,7 @@
 						</span>
 					</span>
 				</div>
-			</div>	
+			</div>
 			<section class="bg00">
 				<div class="container2">
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -35,13 +36,13 @@
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-							<img src="../static/images/1.jpg" class="d-block w-100" alt="...">
+							<img src="{% static '/images/1.jpg'%}" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-							<img src="../static/images/2.jpg" class="d-block w-100" alt="...">
+							<img src="{% static '/images/2.jpg'%}" class="d-block w-100" alt="...">
 							</div>
 							<div class="carousel-item">
-							<img src="../static/images/3.jpg" class="d-block w-100" alt="...">
+							<img src="{% static '/images/3.jpg'%}" class="d-block w-100" alt="...">
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -100,9 +101,11 @@
 									</div>
 									<button type="button" class="snip1535" onclick="fn_spcSearchSubmit()"><span>검 색</span></button>
 								</form>
+							
 						</li>
 					</div>
 				</div>
 			</section>
 		</div>
-{%endblock%}
+	{% comment %} {% endfor %} {% endcomment %}
+{% endblock %}
