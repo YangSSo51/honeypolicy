@@ -1,0 +1,125 @@
+
+{% extends 'base.html'%}
+
+{% block content %}
+<body>
+    <hr>
+    <br>
+    <div class="container" style="height: 300px;">
+        <table class="table table-striped">
+            <thead>
+                <br>
+                <h3>총 게시글 수 : {{counts}}</h3>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>등록일</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for question in posts %}
+                    <tr>
+                        <td>{{question.id }} </td>
+                        <td><a style="margin-left:20px" href="{% url 'questiondetail' question.id %}" title="{{question.body}}">{{question.title}}</a></td>
+                        </div>
+                        <td>{{question.writer}}</td>
+                        <td>{{question.pub_date}}</td>
+                        <td >{{question.hit}}</td>
+                    </tr>
+                    {%endfor%}
+    
+            </tbody>
+        </table>
+        <div class="card-body text-dark">
+            <div class="float-right">
+                <form class="form-inline" action="" method="post">
+                    <div id="d">
+                        <div class="form-group">
+                            &emsp;&emsp;&emsp;
+                            <select class="form-control">
+                                <option selected>속성</option>
+                                <option>제목</option>
+                                <option>내용</option>
+                                <option>이름</option>
+                            </select>
+                            &emsp;
+                            <input type="text" id="searchTxt" name="searchTxt"
+                                class="form-control" placeholder="검색어를 입력하세요">&emsp;
+    
+                            <button type="submit" class="btn btn-primary">
+                                <b>검색</b>
+                            </button>&emsp;
+    
+                            <a type="submit" class="btn btn-primary" href="{% url 'newquestion' %}">
+                                <b>글 작성</b>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+
+ 
+
+    {# 게시판 형식 및 페이지네이션 구현 #}
+
+    {% if posts.has_other_pages %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if posts.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">&lt;</a></li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            <li class="page-item disabled"><span class="page-link">&lt;</span></li>
+            {% endif %}
+
+            {% for i in posts.paginator.page_range %}
+            {% if posts.number == i %}
+            <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span>
+            </li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if posts.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">&gt;</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{posts.paginator.num_pages}}">&raquo;</a></li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">&gt;</span></li>
+            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+
+
+
+    <!--     <div class="container">
+        <h1>게시글</h1>
+        {# 글쓰기 버튼 #}
+        <a href="{% url 'newquestion' %}">글쓰기</a>
+        <br>
+
+        {# 글 띄우는 부분 #}
+        {% for policy in policies %}
+            <h2><a href="{% url 'detail' policy.id %}">{{ policy.title}}</a></h2>
+            <h4>{{ policy.pub_date }}</h4>
+            <p>{{ policy.body }}</p>
+            <a href="{% url 'update' policy.id %}">수정</a>
+            <a href="{% url 'delete' policy.id %}">삭제</a>
+            <hr>
+        {% endfor %}
+
+    </div> -->
+
+</body>
+
+</html>
+{% endblock %}
