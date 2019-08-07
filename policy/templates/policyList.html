@@ -20,14 +20,19 @@ a{
   <div class = "col-sm-12 col-md-6 col-xl-3">
     <div class="card h-card">
       <div class="card-body h-card-body">
-        <a href="{% url 'policydetail' policy.id %}">{{policy.title}}</a>
-        <p class="h-card-text">{{policy.region}}</p>
-        <p class="h-card-text">{{policy.body}}</p>
+        <a href="{% url 'policydetail' policy.id %}"><h2>{{policy.title}}</h2></a>
+        <p class="h-card-text"><h4>[{{policy.region}}]</h4></p>
+        <p class="h-card-text"><h5>{{policy.summary}}....</h5></p>
       </div>
     </div>
   </div>
 {% endfor %}
-  <br><br>
+  <br>
+  {# 로그인 하면 글쓰기 가능... #}
+  {% if user.is_authenticated %}
+  <a href="{% url 'newPost'%}">글쓰기</a>
+  {% endif %}
+  <br>
   </div>
 </div>
     <hr>
@@ -70,6 +75,12 @@ a{
     <div class="search_form ">
         <form class="form-inline my-2 my-lg-0 justify-content-center" action="" method="get">
             {# name 속성 : 변수 이름?  #}
+            <select class="form-control" title="지역" name="region">
+                <option value="">지역</option>
+                <option value="서울">서울</option>
+                <option value="경기">경기</option>
+                <option value="인천">인천</option>
+            </select>
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ q }}">
             <input type="submit" class="btn btn-primary" value="검색">
         </form>

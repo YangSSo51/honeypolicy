@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'policy',
     'people',
     'question',
+    'cal',
 ]
 
 MIDDLEWARE = [

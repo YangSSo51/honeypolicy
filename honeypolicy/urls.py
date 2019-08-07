@@ -17,13 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
 import notice.urls
-import notice.views
 import policy.urls
-import policy.views
 import people.urls
-import people.views
 import question.urls
-
+import cal.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',notice.views.home,name="home"),
@@ -31,4 +28,5 @@ urlpatterns = [
     path('policy/',include(policy.urls)),
     path('people/',include(people.urls)),
     path('question/',include(question.urls)),
+    path('calendar/',include(cal.urls)),
 ]

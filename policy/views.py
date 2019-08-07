@@ -8,6 +8,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import PolicyList
 from .form import NewPolicyList
 
+from django.db.models import Q
+
 # 처음 보여지는 화면
 def policyList(request):
     return render(request, 'home.html')
@@ -42,7 +44,11 @@ def read(request):
     q = request.GET.get('q','')
     if q:
         # 조회수로 내림차순 정렬하면서 검색  
-        posts = policies.filter(title__contains=q).order_by('-hits')
+        r = request.GET.get('region','')
+        if r:
+            posts = policies.filter(title__contains=q, region__contains=r).order_by('-hits')
+        else:
+            posts = policies.filter(title__contains=q).order_by('-hits')
         policyCount = policies.filter(title__contains=q).count()
     else:
         policyCount = PolicyList.objects.count()

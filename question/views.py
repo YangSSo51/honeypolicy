@@ -58,17 +58,17 @@ def read(request):
     return render(request,'question/home.html',{'question':question,'posts':posts,'counts':counts,'page_range':page_range})
 
 def create(request):
-    if request.method=='POST':
-        form=NewQuestion(request.POST)
-        if form.is_valid:
-            post=form.save(commit=False)
-            post.pub_date=timezone.now()
-            post.save()
+    if request.user.is_staff:
+        if request.method=='POST':
+            question = Question(title = request.POST["title"],body = request.POST["body"],
+                                pub_date=timezone.now(),writer = request.POST["writer"])
+            question.save()
             return redirect('home')
+        else:
+            return render(request,'newQuestion.html')
     else:
-        form=NewQuestion()
-        return render(request,'question/new.html',{'form':form})
-    return
+        return render(request,'home.html',{"error":"스태프가 아닙니다"})
+
 
 
 def update(request,pk):
