@@ -36,7 +36,7 @@ class CalendarView(generic.ListView):
         context['next_month'] = next_month(d)
        
         return context
-
+    
 def prev_month(d): # 이전 달 url return 
     first = d.replace(day=1)
     prev_month = first - timedelta(days=1)
@@ -48,7 +48,7 @@ def next_month(d): # 다음 달 url return
     last = d.replace(day=days_in_month)
     next_month = last + timedelta(days=1)
     month = 'month=' + str(next_month.year) + '-' + str(next_month.month) 
-    return month    
+    return month      
 
 def get_date(req_month):
     if req_month:

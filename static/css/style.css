@@ -18,11 +18,11 @@ html {
 
 .policy_search{
     font-family: Binggrae-Bold;
-    width: 330px;
-    margin-left: 16px;
-    margin-top: 3px;
+    width: 30%;
+    padding-left: 30px;
+    margin:auto;
     float: left;
-    height: 630px;
+    height: 100%;
 }
 
 .policy_search > li {
@@ -127,3 +127,34 @@ html {
   height: 100%;
   width: 100%;
 }
+
+/* policyList */
+
+.policy_date{
+    font-family:Binggrae-Bold;
+    margin-top: 30px;
+    font-size: 9pt;
+    color: #635D4A;
+    text-align: right;
+    margin-right:20px;
+    border-bottom: 1px solid rgb(255, 222, 113);
+}
+.policy_title{
+    font-family:Binggrae-Bold;
+    font-size: 20pt;
+    color: #635D4A;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.policy_body{
+    font-family: Eoe_Zno_L;
+    font-size: 13pt;
+    color:#635D4A;
+    margin-left: 30px;
+    margin-right: 30px;
+    height:150px;
+    
+}
+
+/* policyList 끝 */

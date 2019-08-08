@@ -1,11 +1,67 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load staticfiles %}
+<html>
+<head>
+        <style>
+        @font-face { 
+            font-family: Binggrae-Bold; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        h1{
+            font-size: 22px;
+        }
+        .main{
+              text-align: center;
+              font-family: Binggrae-Bold;
+            }
+        table {
+            margin: 19px 0px 8px;
+            font-weight: 700;
+            margin-left: 20%;
+            margin-right: 10%;
+            padding-left: 25%;
+            padding-right: 25%;
+            font-size: 15px; 
+            font-family: Binggrae-Bold;
+        }
+        input[type=submit] {
+              background-color: #FFF0BD ;
+              border: 1.5px solid rgb(184, 184, 184);
+              color: rgb(32, 32, 32);
+            
+            }
+        input[type=submit]:hover  {
+            background-color:#FFDE71 ;
+            border: 1.5px solid rgb(184, 184, 184);
+        }
+        .button { 
+            margin: 19px 0px 8px;
+            font-weight: 400;
+            padding-left: 25%;
+            padding-right: 25%;
+            font-family: Binggrae-Bold;
+            font-size: 18px;
+            width: 10px;
+            height: 30px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        .ad{
+              font-family: Binggrae-Bold;
+              text-align: center; 
+            }
+        </style>
+    </head>
 <body>
+    <div class="main">
     <div class="container">
-        <h1>policyList 페이지</h1>
+            <img src="{% static '/images/intro/logosm.png'%}" id="icon" ><h1>정책추가하기</h1>
     </div>
-    <hr>
-    <br>
+    </div>
+   
 
     <div class="container">
         <div class="form-group col-8">
@@ -72,9 +128,12 @@
                 </tr>
             </table>
             <br>
-            <input type="hidden" name="writer" value="{{user.username}}">
-            <input type="submit" class="btn btn-primary" value="제출하기">
         </form>
+            <div class="ad">
+            <input type="hidden" name="writer" value="{{user.username}}">
+            <input type="submit" class="button" value="제출하기">
+            </div>
+        
         </div>
     </div>
     

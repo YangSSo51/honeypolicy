@@ -21,6 +21,7 @@ import policy.urls
 import people.urls
 import question.urls
 import cal.urls
+import cal.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',notice.views.home,name="home"),

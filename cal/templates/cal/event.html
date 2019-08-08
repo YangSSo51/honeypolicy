@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+.btn{
+  background-color:#FFDE71;
+  margin: 1px;
+}
+.btn:hover{
+  background-color:  #FFF0BB;
+}
+</style>
+
 <body>
     <div class="container">
         <div class="form-group col-4">
@@ -27,9 +37,8 @@
 
             </table>
             <br>
-            <h1>{{user.username}}</h1>
             <input type="hidden" name="user" value="{{user.username}}">
-            <input type="submit" class="btn btn-primary" value="제출하기">
+            <input type="submit" class="btn btn-light" value="제출하기">
         </form>
         </div>
     </div>
