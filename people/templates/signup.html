@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <title>회원가입</title>
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <title>회원가입</title>
     <style>
         @font-face { 
           font-family: Binggrae-Bold; 
@@ -69,18 +69,18 @@
 </head>
 <body>
 
-<div class="main">
+  <div class="main">
     <div class="fadeIn first">
-    <img style= "justify-content: center; text-align: center;" src="{% static '/images/logo.jpg'%}" id="icon" alt="User Icon">
+   <img style= "justify-content: center; text-align: center;" src="{% static '/images/logo.jpg'%}" id="icon" alt="User Icon">
     </div>
     <div class="as">
 
     </div>
     <div class="ad">
-    <form method="POST" action="{% url 'signup'%}"class="form-group">
+      <form method="POST" action="{% url 'signup'%}" class="form-group">
         {% csrf_token %}
         이름 <br>
-        <input class="form-control" type="text"  name="username">
+        <input class="form-control" type="text" name="username">
         <br>
         비밀번호 <br>
         <input class="form-control" type="password" name="password1">
@@ -89,19 +89,19 @@
         <input class="form-control" type="password" name="password2">
         <br>
         성별 <br>
-        <input class="form-control" type="text" name = "gender">
+        <input class="form-control" type="text" name="gender">
         <br>
         전화번호 <br>
-        <input class="form-control" type="text" name = "phone">
+        <input class="form-control" type="text" name="phone">
         <br>
         생년월일<br>
         <input class="form-control" type="date" name="birth">
         <br>
-        
-        <input type="submit" class="button" value="가입하기">
-    </form>
 
-  </div>
+        <input type="submit" class="button" value="가입하기">
+      </form>
+
+    </div>
   </div>
 </body>
 </html>
