@@ -1,16 +1,36 @@
-
+{% extends 'base.html' %}
+{% block content %}
 <body>
-    <br><br>
     <div class="container">
-        <form method="POST">
-            <div class-"form-group">
-            {%csrf_token%}
-            <table>
-                {{form.as_table}}
+        <h1>new 공지사항</h1>
+    </div>
+    <hr>
+    <br>
+
+    <div class="container">
+        <div class="form-group col-8">
+        <form action="{% url "newPost" %}" method="POST">
+            {% csrf_token %}
+            <table class = "table">
+                <tr>
+                    <td>Title</td>
+                    <td><input type="text" class="form-control" name="title"></td>
+                </tr>
+                <tr>
+                    <td>Body</td>
+                    <td><textarea name="body" class="form-control" cols="30" rows="10">
+                    </textarea>
+                    </td>
+                </tr>
+                
             </table>
             <br>
-            </div>
-            <input class="btn btn-outline-dark" type="submit" value="제출하기">
+            <input type="hidden" name="writer" value="{{user.username}}">
+            <input type="submit" class="btn btn-primary" value="제출하기">
         </form>
+        </div>
     </div>
+    
 </body>
+</html>
+{% endblock %}
