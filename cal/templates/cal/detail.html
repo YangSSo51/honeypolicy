@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<div class="container">
+        <div class="form-group col-4">
+        <form action="{% url 'cal:event_new' %}" method="POST">
+            {% csrf_token %}
+            <table class = "table">
+                <tr>
+                    <td>정책명</td>
+                    <td><h2>{{ plan.title }}</h2></td>
+                </tr>
+                <tr>
+                    <td>시작일</td>
+                    <td>{{ plan.start_date }}</td>
+                </tr>
+                <tr>
+                    <td>종료일</td>
+                    <td>{{ plan.end_date }}</td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td>{{plan.description}}</td>
+                </tr>
+            </table>
+            <br>
+            <a class="btn btn-light right " href="{% url 'cal:event_edit' plan.pk %}"> 수정 </a>
+            <a class="btn btn-light right" href="{% url 'cal:event_delete' plan.pk %}"> 삭제 </a>
+        </form>
+        </div>
+    </div>
+{% endblock %}

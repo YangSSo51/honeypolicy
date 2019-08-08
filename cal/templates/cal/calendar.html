@@ -46,20 +46,14 @@ ul {
   float: right;
 }
 
-.btn {
-  outline: none;
-  color: black;
-  background-color: transparent;
-  box-shadow: 0 0 0 0;
-}
 
 .clearfix {
   margin: 15px;
 }
 </style>
 <div class="clearfix">
-	<a class="btn btn-info left" href="{'% url 'cal:calendar' %}?{'{ prev_month }}"> Previous Month </a>
-  <a class="btn btn-info left" href="{'% url 'cal:calendar' %}?{'{ next_month }}"> Next Month </a>
+	<a class="btn btn-light left" href="{'% url 'cal:calendar' %}?{'{ prev_month }}"> Previous Month </a>
+  <a class="btn btn-light left" href="{'% url 'cal:calendar' %}?{'{ next_month }}"> Next Month </a>
   <a class="btn btn-light right" href="{% url 'cal:event_new' %}"> 일정 추가 </a>
   <a class="btn btn-light right" href="{% url 'cal:event_total' %}"> 전체 일정</a>
 </div>

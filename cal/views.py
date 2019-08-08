@@ -60,14 +60,23 @@ def event(request, event_id=None): # 일정 추가 & 수정
     if event_id:
         instance = get_object_or_404(Event, pk=event_id)
     else:
-        instance = Event()
-    
-    form = EventForm(request.POST or None, instance=instance)
-    if request.POST and form.is_valid():
-        plan = form.save(commit=False)
-        plan.save()
+        instance = Event()   
+    #변경
+    if request.method == 'POST':
+        event=Event(
+            title = request.POST["title"], description = request.POST["description"],
+            start_date = request.POST["start_date"], end_date= request.POST["end_date"])
+        event.save()
         return HttpResponseRedirect(reverse('cal:calendar'))
-    return render(request, 'cal/event.html', {'form': form})
+    return render(request,'cal/event.html')
+
+    #return render(request, 'cal/event.html')
+
+    #form = EventForm(request.POST or None, instance=instance)
+    #if request.POST and form.is_valid():
+    #    plan = form.save(commit=False)
+    #    plan.save()
+    #    return HttpResponseRedirect(reverse('cal:calendar'))
 
 
 # 일정을 삭제하는 함수

@@ -14,5 +14,5 @@ class Event(models.Model):
     end_date = models.DateField()
     @property
     def get_html_url(self):
-        url = reverse('cal:event_edit', args=(self.id,))
+        url = reverse('cal:event_detail', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
