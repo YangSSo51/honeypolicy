@@ -6,8 +6,10 @@ from django.utils import timezone
 # from django.contrib.auth.models import User
 from django.conf import settings
 from django.db import models
+from people.models import People
 
 class Event(models.Model):
+    user = models.CharField(max_length=15, blank=True, default='') 
     title = models.CharField(max_length=200)
     description = models.TextField()
     start_date = models.DateField()

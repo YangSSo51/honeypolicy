@@ -110,7 +110,7 @@
                            <ul class="sub-menu">
                               {% comment %} <li><a href="#">HOT정책</a></li>
                               <li><a href="#">NEW정책</a></li> {% endcomment %}
-                              <li><a href="#">내 정책</a></li>
+                              <li><a href="{% url 'cal:calendar'%}">내 정책</a></li>
                               <li><a href="#">내 정보</a></li>
                            </ul>
                         </li>          
@@ -125,6 +125,13 @@
 
         {% endblock %}
 
+		
+		<!-- Back to top -->
+		<div class="btn-back-to-top" id="myBtn">
+			<span class="symbol-btn-back-to-top">
+				<span class="fas fa-angle-up"></span>
+			</span>
+		</div>
 		<!-- Footer -->
 		<footer class="footer mt-auto py-3 " >
 			<div>
@@ -133,13 +140,6 @@
 			  <p id="copyright">Copyright &copy; 2019.honeypolicy<br>
 				all rights reserved.</p>
 		</footer>
-
-		<!-- Back to top -->
-		<div class="btn-back-to-top" id="myBtn">
-			<span class="symbol-btn-back-to-top">
-				<span class="fas fa-angle-up"></span>
-			</span>
-		</div>
 
 <!--===============================================================================================-->	
 	<script src="{% static '/vendor/jquery/jquery-3.2.1.min.js'%}"></script>

@@ -23,11 +23,12 @@ class CalendarView(generic.ListView):
     def get_context_data(self, **kwargs):
 
         context = super().get_context_data(**kwargs)
+        user = self.request.user
 
         # d = get_date(self.request.GET.get('day', None))
         d = get_date(self.request.GET.get('month',None))
         cal = Calendar(d.year, d.month)
-        html_cal = cal.formatmonth(withyear=True)
+        html_cal = cal.formatmonth(withyear=True,user=user)
         # html_cal = html_cal.replace('<td','<td width="50"')
     
         context['calendar'] = mark_safe(html_cal)
@@ -35,7 +36,7 @@ class CalendarView(generic.ListView):
         context['next_month'] = next_month(d)
        
         return context
-    
+
 def prev_month(d): # 이전 달 url return 
     first = d.replace(day=1)
     prev_month = first - timedelta(days=1)
@@ -66,6 +67,7 @@ def event(request, event_id=None): # 일정 추가 & 수정
         event=Event(
             title = request.POST["title"], description = request.POST["description"],
             start_date = request.POST["start_date"], end_date= request.POST["end_date"])
+        event.user = request.user.username 
         event.save()
         return HttpResponseRedirect(reverse('cal:calendar'))
     return render(request,'cal/event.html')
@@ -92,7 +94,6 @@ def detail(request, event_id=None):
     plan = get_object_or_404(Event, pk=event_id)
 
     return render(request, 'cal/detail.html', {'plan':plan })
-    
 # 전체 일정을 불러오는 함수
 def total(request):
     plans = Event.objects.order_by('start_date') # 시간 오름차순 정렬
