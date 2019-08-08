@@ -8,7 +8,7 @@ class PolicyList(models.Model):
     # id = models.AutoField(primary_key=True)
 
     # 제목
-    title = models.CharField(max_length=100)
+    title = models.TextField()
     # 설명
     body = models.TextField()
 
@@ -24,16 +24,11 @@ class PolicyList(models.Model):
     # 첨부파일 - 미구현
     #upload_file = models.FileField()
 
-    REGION_CATEGORY = (
-        ('서울','서울'),
-        ('인천','인천'),
-        ('경기','경기')
-    )
     # 지역
-    region = models.CharField(max_length=20, choices=REGION_CATEGORY)
+    region = models.CharField(max_length=20)
 
     # 연령
-    age = models.IntegerField(default=20)
+    age = models.CharField(max_length=120)
 
     # 정책 시작 기간
     start_date = models.DateField(null=True)
@@ -41,18 +36,8 @@ class PolicyList(models.Model):
     # 정책 끝 기간
     end_date = models.DateField(null=True)
 
-    educate_category = (
-        ("중졸 이상", "중졸 이상"),
-        ("고졸 이상", "고졸 이상"),
-        ("대졸 이상", "대졸 이상"),
-        ("무관", "무관"),
-        ("정보 없음","정보 없음")
-    )
     # 학력
-    educated = models.CharField(null=True, max_length=120, choices=educate_category)
-
-    # 신청 방법
-    regist_way = models.TextField(null=True)
+    educated = models.CharField(null=True, max_length=120)
 
     # 홈페이지 url
     url = models.TextField(default="https://www.youthcenter.go.kr")
