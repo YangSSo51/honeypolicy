@@ -9,5 +9,5 @@ urlpatterns = [
     path('update/<int:pk>', views.update, name="policyupdate"),
     path('delete/<int:pk>', views.delete, name="policydelete"),
     path('detail/<int:policy_id>', views.detail, name="policydetail"),
-    
+    path('search/', views.search , name="policysearch"), 
 ]

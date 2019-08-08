@@ -33,7 +33,7 @@ def create(request):
         return render(request, 'newPolicyList.html',{"birth":birth})
     
 # 게시글 읽어와유~
-def read(request):
+''' def read(request):
 
     # policyCount = PolicyList.objects.count()
 
@@ -62,8 +62,33 @@ def read(request):
             posts = paginator.page(paginator.num_pages)
 
     
-    return render(request,'policyList.html' , {'policies':policies, 'posts':posts, 'policyCount':policyCount})
-    
+    return render(request,'policyList.html' , {'policies':policies, 'posts':posts, 'policyCount':policyCount}) '''
+def read(request):
+
+    # policyCount = PolicyList.objects.count()
+
+    policies = PolicyList.objects.all()
+
+    # 검색을 할 경우를 나눈것!
+    # posts 로 변수 통일 함 -> 템플릿에서 값 하나만 사용해서 나타내다 보니..ㅠ
+    q = request.GET.get('q','')
+
+    r = request.GET.get('region','')
+
+    if q and not r:
+        policies = policies.filter(title__contains=q)
+        policyCount = policies.filter(title__contains=q).count()
+    elif not q and r:
+        policies = policies.filter(region__contains=r)
+        policyCount = policies.filter(region__contains=r).count()
+    else:
+        policies = policies.filter(title__contains=q, region__contains=r)
+        policyCount = policies.filter(title__contains=q, region__contains=r).count()
+
+    # policies = policies.filter(title__contains=q, region__contains=r).order_by('-hits')   
+    # policyCount = policies.filter(title__contains=q).count()
+
+    return render(request,'policyList.html' , {'policies':policies, 'policyCount':policyCount})
 
 def update(request,pk):
     # 어떤 게시글을 수정할지 가져오기
@@ -87,3 +112,51 @@ def delete(request,pk):
 def detail(request, policy_id):
     policyDetail = get_object_or_404(PolicyList, pk=policy_id)
     return render(request, 'detailPolicy.html', {'policyDetail':policyDetail, 'policy_id' : policy_id})
+
+def search(request):
+    policies = PolicyList.objects.all()
+
+    # 상단에 검색하는 부분 
+    searchTop = request.GET.get('searchTop','')
+    
+    # 지역 - 서울 인천 경기 
+    region = request.GET.get('region','')
+
+    # 대상 - 청년 여성 중장년 무관
+    target = request.GET.get('target','')
+
+    # 학력 - 중졸 고졸 대졸 무관
+    educated = request.GET.get('educated','')
+
+
+    if search:
+        # policies = policies.filter(title__contains=region)   
+        policies = PolicyList.objects.filter(Q(title__icontains=searchTop) | Q(body__icontains=searchTop)) 
+    else:
+        # 지역
+        if region and not target and not educated:
+            policies = policies.filter(region__contains=region)   
+        # 지역 + 대상
+        elif region and target and not educated:
+            policies = policies.filter(region__contains=region, target__contains=target)
+        # 지역 + 학력 
+        elif region and not target and educated:
+            policies = policies.filter(region__contains=region, educated__contains=educated)
+        # 지역 + 대상 + 학력
+        elif region and target and educated:
+            policies = policies.filter(region__contains=region, target__contains=target, educated__contains=educated)
+        # 대상
+        elif not region and target and not educated:
+            policies = policies.filter(target__contains=target)
+        # 대상 + 학력 
+        elif not region and target and educated:
+            policies = policies.filter(target__contains=target, educated__contains=educated)
+        # 학력
+        elif not region and not target and educated:
+            policies = policies.filter(educated__contains=educated)
+        # 아무것도 선택 안함    
+        else:
+            # 그냥 써놓은....
+            pass
+
+    return render(request, 'policyList.html', {'policies':policies})

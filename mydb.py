@@ -21,11 +21,11 @@ def strTimeProp(start, end, format, prop):
 
 
 def randomDate(start, end, prop):
-    return strTimeProp(start, end, '%B %d, %Y', prop)
+    return strTimeProp(start, end, '%Y-%m-%d', prop)
 
-start_date = randomDate("January 1, 2019", "June 30, 2019", random.random())
-end_date = randomDate("July 1, 2019","December 31, 2020", random.random())
-pub_date = randomDate("January 1, 2019", "June 30, 2019", random.random())
+start_date = randomDate("2019-01-01", "2019-6-30", random.random())
+end_date = randomDate("2019-7-1","2020-12-31", random.random())
+pub_date = randomDate("2019-01-01", "2019-6-30", random.random())
 print(start_date,end_date)
 conn = sqlite3.connect("db.sqlite3")
 cur = conn.cursor()

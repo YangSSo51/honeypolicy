@@ -55,56 +55,44 @@
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
+
+
 					<div class="policy_search">
-						<li><a href="#n" class="tab_btn active">정 책   맞 춤 검 색</a>
-								<form class="form_search">
+							<li><a href="#n" class="tab_btn active">정 책 맞 춤 검 색</a>
+								<form class="form_search" action="{% url 'policysearch' %}" method="GET">
 									<div>
-										<select id="srchAreaCpvn" name="srchAreaCpvn" title="정책 검색(키워드 입력)" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-											<option value="">정책 검색(키워드 입력)</option>
-											<option value="11000">서울</option>
-											<option value="26000">부산</option> 
+										<select id="region" name="region" title="지역" style="width:100%;margin-bottom:30px;">
+											<option value="">지역</option>
+											<option value="서울">서울</option>
+											<option value="인천">인천</option>
+											<option value="경기">경기</option>
 										</select>
 									</div>
 									<div>
-										<select id="srchAreaCpvn" name="srchAreaCpvn" title="카테고리" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-											<option value="">카테고리</option>
-											<option value="1">서울</option>
-											<option value="2">부산</option>
+										<select id="target" name="target" title="대상" style="width:100%;margin-bottom:30px;">
+											<option value="">대상</option>
+											<option value="청년">청년</option>
+											<option value="여성">여성</option>
+											<option value="중장년">중장년</option>
+											<option value="중장년">중장년</option>
 										</select>
 									</div>
 									<div>
-										<select id="srchAreaCpvn" name="srchAreaCpvn" title="지역 검색" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-											<option value="">지역 검색</option>
-											<option value="1">서울</option>
-											<option value="2">인천</option>
-											<option value="3">경기</option>
-											<option value="4">강원</option>
-											<option value="5">부산</option>
-											<option value="6">대전</option>                                                            
-											<option value="7">울산</option>
-											<option value="8">세종</option>
-											<option value="9">경기</option>
-											<option value="10">강원</option>            
-											<option value="11">충북</option>
-											<option value="12">충남</option>   
-											<option value="13">전북</option>
-											<option value="14">전남</option>
-										</select>
-									</div>                   
-									<div>
-										<select id="srchAreaCpvn" name="srchAreaCpvn" title="연령대" style="width:100%;margin-bottom:30px;" onchange="f_subRegion(this.value)">
-											<option value="">연령대</option>
-											<option value="10">10대</option>
-											<option value="20">20대</option>
-											<option value="30">30대</option>
-											<option value="40">40대</option>
+										<select id="educated" name="educated" title="학력" style="width:100%;margin-bottom:30px;">
+											<option value="">학력</option>
+											<option value="중졸 이상">중졸 이상</option>
+											<option value="고졸 이상">고졸 이상</option>
+											<option value="대졸 이상">대졸 이상</option>
+											<option value="무관">무관</option>
 										</select>
 									</div>
-									<button type="button" class="snip1535" onclick="fn_spcSearchSubmit()"><span>검 색</span></button>
+									{# 기간 넣어야 하는건강... #}
+									{# <input  type="date" name="date" title="기간" value="기간"> #}
+									<button type="submit" class="snip1535"><span>검 색</span></button>
 								</form>
-							
-						</li>
-					</div>
+							</li>
+						</div>
+			
 				</div>
 			</section>
 		</div>

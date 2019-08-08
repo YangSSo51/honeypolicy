@@ -12,8 +12,8 @@ class Event(models.Model):
     user = models.CharField(max_length=15, blank=True, default='') 
     title = models.CharField(max_length=200)
     description = models.TextField()
-    start_date = models.DateField()
-    end_date = models.DateField()
+    start_date = models.DateField(null=True)
+    end_date = models.DateField(null=True)
     @property
     def get_html_url(self):
         url = reverse('cal:event_detail', args=(self.id,))
