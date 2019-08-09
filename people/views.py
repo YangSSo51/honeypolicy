@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth
+from django.contrib.auth.models import User
 from .models import People
-
     
 def signup(request):
     if request.method == 'POST':
@@ -35,3 +35,18 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request,'login.html')
+
+def mypage(request):
+    return render(request, 'mypage.html')
+
+def modify(request):
+    if request.method == 'POST':
+        user = request.user
+        if request.POST['password1'] == request.POST['password2']:
+            user.set_password(request.POST['password1'])
+        user.gender = request.POST['gender']
+        user.birth = request.POST['birth']
+        user.phone = request.POST['phone']
+        user.save()
+
+    return redirect('home')

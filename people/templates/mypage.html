@@ -77,28 +77,29 @@
 
     </div>
     <div class="ad">
-      <form method="POST" action="{% url 'signup'%}" class="form-group">
+      <form method="POST" action="{% url 'modify'%}" class="form-group">
         {% csrf_token %}
+        <input type="hidden" name="object_id" value="{{ user.id }}">
         이름 <br>
-        <input class="form-control" type="text" name="username">
+        <input class="form-control" type="text" name="username" placeholder="{{ request.user.username }}">
         <br>
         비밀번호 <br>
-        <input class="form-control" type="password" name="password1">
+        <input class="form-control" type="password" name="password1" placeholder="{{ '비밀번호를 입력하세요' }}">
         <br>
         비밀번호 확인 <br>
-        <input class="form-control" type="password" name="password2">
+        <input class="form-control" type="password" name="password2" placeholder="{{ '비밀번호를 입력하세요' }}">
         <br>
         성별 <br>
-        <input class="form-control" type="text" name="gender">
+        <input class="form-control" type="text" name="gender" placeholder="{{ request.user.gender }}">
         <br>
         전화번호 <br>
-        <input class="form-control" type="text" name="phone">
+        <input class="form-control" type="text" name="phone" placeholder="{{ request.user.phone }}">
         <br>
         생년월일<br>
-        <input class="form-control" type="date" name="birth">
+        <input class="form-control" type="date" name="birth" placeholder="{{ request.user.birth }}">
         <br>
 
-        <input type="submit" class="button" value="가입하기">
+        <input type="submit" class="button" value="수정하기">
       </form>
 
     </div>
