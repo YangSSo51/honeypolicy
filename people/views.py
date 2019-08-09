@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
+from django.contrib.auth.models import User
 from .models import People
 
     
@@ -35,3 +36,9 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request,'login.html')
+
+def mypage(request):
+    return render(request, 'mypage.html')
+
+def modify(request):
+    pass
