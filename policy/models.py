@@ -28,7 +28,7 @@ class PolicyList(models.Model):
     region = models.CharField(max_length=20)
 
     # 연령
-    age = models.CharField(max_length=300)
+    age = models.CharField(max_length=280)
 
     # 정책 시작 기간
     start_date = models.DateField(null=True)

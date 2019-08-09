@@ -34,8 +34,6 @@ with open('db_column.csv','r',encoding="utf-8-sig") as fin: # `with` statement a
     pub_date = randomDate("2019-1-1", "2019-6-30", random.random())
     to_db = [(i['title'], i['body'], i['age'],i['educated'],i['region'],i["url"],pub_date,start_date,end_date,0,"admin") for i in dr]
 
-print(to_db)
-cur.execute("delete from policy_policylist")
 cur.executemany("insert into policy_policylist(title,body,age,educated,region,url,pub_date,start_date,end_date,hits,writer) values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",to_db)
 
 conn.commit()
