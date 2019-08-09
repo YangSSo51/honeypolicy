@@ -53,3 +53,9 @@ class PolicyList(models.Model):
 
     def __str__(self):
         return self.title
+
+    def summary_body(self):
+        return self.body[:25]
+
+    def summary_title(self):
+        return self.title[:6]+"..."

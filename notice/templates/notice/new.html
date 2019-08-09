@@ -47,7 +47,6 @@
         font-size: 18px;
         width: 50px;
         height: 30px;
-
         -webkit-border-radius: 5px 5px 5px 5px;
         border-radius: 5px 5px 5px 5px;
     }
@@ -64,7 +63,7 @@
     </div>
     <div class="container">
         <div class="form-group col-8">
-        <form action="{% url "newPost" %}" method="POST">
+        <form action="{% url 'newnotice' %}" method="POST">
             {% csrf_token %}
             <table class = "table">
                 <tr>

@@ -47,7 +47,6 @@
         font-size: 18px;
         width: 50px;
         height: 30px;
-
         -webkit-border-radius: 5px 5px 5px 5px;
         border-radius: 5px 5px 5px 5px;
     }
@@ -60,11 +59,11 @@
 <body>
     <div class="main">
     <div class="container">
-        <img src="{% static '/images/intro/logosm.png'%}" id="icon" ><h1>Q&A</h1>
+        <img src="{% static '/images/intro/logosm.png'%}"><h1>공지사항 업데이트</h1>
     </div>
     <div class="container">
         <div class="form-group col-8">
-        <form action="{% url 'newquestion' %}" method="POST">
+            <form action="{% url 'noticeupdate' notice.id %}" method="POST">
             {% csrf_token %}
             <table class = "table">
                 <tr>
