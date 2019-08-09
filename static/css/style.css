@@ -159,3 +159,141 @@ html {
 }
 
 /* policyList 끝 */
+
+
+/* detailPolicy */
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css); 
+.jejumyeongjo * { 
+    font-family: 'Jeju Myeongjo', serif; 
+}
+
+.detail_content{
+    font-family: Binggrae-Bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 800px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.detail_title{
+    font-family:Binggrae-Bold;
+    margin-top: 10px;
+    padding: 30px 0 0px;
+    font-size: 25pt;
+    color: #635D4A;
+    width:800px;
+    margin-left: 20px;
+}
+.detail_content2{
+    width: 800px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border: 1px solid black;
+}
+
+.detail_pub_date{
+    margin-bottom: 50px;
+    color: #635D4A;
+}
+.detail_pub_date > a {
+    border-bottom: 1px solid rgb(255, 222, 113);
+    color: #635D4A;
+}
+.policy_mark{
+    float:right;
+    border: 1px solid #635D4A;
+    padding: 5px;
+    margin-right: 8px;
+    background-color: rgb(255, 222, 113);
+}
+input[type=submit] {
+    font-family:Binggrae-Bold;
+    background-color: #FFF0BD ;
+    border: 1.5px solid rgb(184, 184, 184); 
+    color: #635D4A;       
+    }
+input[type=submit]:hover  {
+    font-family:Binggrae-Bold;
+    background-color:#FFDE71 ;
+    border: 1.5px solid rgb(184, 184, 184);
+    color: #635D4A;   
+}
+.button { 
+    margin: 19px 0px 8px;
+    font-weight: 400;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-family: Binggrae-Bold;
+    font-size: 18px;
+    width: 10px;
+    height: 30px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.ad2{
+    font-family: Binggrae-Bold;
+    text-align: center;          
+    margin-left: 550px;
+}
+.detail_date{
+    font-family: Jeju Myeongjo;   
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #635D4A;
+    font-size: 13pt;
+    text-align: left;
+    height: 100%;
+    width: 800px;
+}
+.detail_date > a {
+    border-bottom: 1px solid rgb(255, 222, 113);
+    color: #635D4A;
+}
+.detail_title2{
+    font-family:Binggrae-Bold;
+    margin-top: 10px;
+    font-size: 15pt;
+    color: #635D4A;
+    width:800px;
+    margin-left: 20px;
+}
+.detail_body{
+    font-family: Jeju Myeongjo;   
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #635D4A;
+    font-size: 13pt;
+    text-align: left;
+    height: 100%;
+    width: 800px;
+}
+/* detailPolicy 끝 */
+
+/* newPolicy */
+.new_title{
+    font-family:Binggrae-Bold;
+    margin-top: 10px;
+    padding: 67px 0 52px;
+    font-size: 20pt;
+    color: #635D4A;
+    width:800px;
+    margin-left: 10px;
+}
+/* newPolicy 끝 */
+
+/* updatePolicy */
+.update_title{
+    font-family:Binggrae-Bold;
+    margin-top: 10px;
+    padding: 67px 0 52px;
+    font-size: 20pt;
+    color: #635D4A;
+    width:800px;
+    margin-left: 170px;
+}
+
+/* updatePolicy 끝*/

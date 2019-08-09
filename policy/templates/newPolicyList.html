@@ -3,7 +3,7 @@
 {% load staticfiles %}
 <html>
 <head>
-        <style>
+    <style>
         @font-face { 
             font-family: Binggrae-Bold; 
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); 
@@ -14,11 +14,11 @@
             font-size: 22px;
         }
         .main{
-              text-align: center;
-              font-family: Binggrae-Bold;
+                text-align: center;
+                font-family: Binggrae-Bold;
             }
         table {
-            margin: 19px 0px 8px;
+            margin: auto;
             font-weight: 700;
             margin-left: 20%;
             margin-right: 10%;
@@ -28,10 +28,9 @@
             font-family: Binggrae-Bold;
         }
         input[type=submit] {
-              background-color: #FFF0BD ;
-              border: 1.5px solid rgb(184, 184, 184);
-              color: rgb(32, 32, 32);
-            
+            background-color: #FFF0BD ;
+            border: 1.5px solid rgb(184, 184, 184); 
+            color: #635D4A;       
             }
         input[type=submit]:hover  {
             background-color:#FFDE71 ;
@@ -40,7 +39,8 @@
         .button { 
             margin: 19px 0px 8px;
             font-weight: 400;
-            
+            padding-left: 25%;
+            padding-right: 25%;
             font-family: Binggrae-Bold;
             font-size: 18px;
             width: 10px;
@@ -49,87 +49,85 @@
             border-radius: 5px 5px 5px 5px;
         }
         .ad{
-              font-family: Binggrae-Bold;
-              margin-left: 400px;
-              text-align: center; 
-            }
-        </style>
+            font-family: Binggrae-Bold;
+            text-align: center;          
+            margin-left: 400px;
+        }
+
+
+    </style>
     </head>
 <body>
     <div class="main">
     <div class="container">
-            <h1><img src="{% static '/images/intro/logosm.png'%}" id="icon" >정책추가하기<img src="{% static '/images/intro/logosm.png'%}" id="icon" ></h1>
-    </div>
-    </div>
-   
-
-    <div class="container">
-        <div class="form-group col-8">
-        <form action="{% url 'newPost' %}" method="POST">
-            {% csrf_token %}
-            <table class = "table">
-                <tr>
-                    <td>Title</td>
-                    <td><input type="text" class="form-control" name="title"></td>
-                </tr>
-                <tr>
-                    <td>Body</td>
-                    <td><textarea name="body" class="form-control" cols="30" rows="10">
-                    </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Region</td>
-                    <td>
-                        <select class="form-control" name="region">
-                          <option value="서울">서울</option>
-                          <option value="경기">경기</option>
-                          <option value="인천">인천</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Birth</td>
-                    <td>
-                        <select name="age" class="form-control">
-                            {% for i in birth%}
-                            <option value="{{i}}" name ="age">{{i}}</option>
-                            {% endfor%}
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Start Date</td>
-                    <td><input type="date" class="form-control" name="start_date"></td>
-                </tr>
-                <tr>
-                    <td>End Date</td>
-                    <td><input type="date" class="form-control" name="end_date"></td>
-                </tr>
-                <tr>
-                    <td>Educated</td>
-                    <td>
-                        <select name="educated">
-                            <option value="중졸 이상">중졸 이상</option>
-                            <option value="고졸 이상">고졸 이상</option>
-                            <option value="대졸 이상">대졸 이상</option>
-                            <option value="무관">무관</option>
-                            <option value="정보 없음">정보 없음</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>url</td>
-                    <td><input type="text" name="url"></td>
-                </tr>
-            </table>
-            <br>
-            <div class="ad">
-                <input type="hidden" name="writer" value="{{user.username}}">
-                <input type="submit" class="button" value="제출하기">
+        <div class="content">
+            <h1 class="new_title"><img src="{% static '/images/intro/logosm.png'%}" id="icon" >정책추가하기</h1>
+            <div class="form-group col-8">
+            <form action="{% url 'newPost' %}" method="POST">
+                {% csrf_token %}
+                <table class = "table">
+                    <tr>
+                        <td>Title</td>
+                        <td><input type="text" class="form-control" name="title"></td>
+                    </tr>
+                    <tr>
+                        <td>Body</td>
+                        <td><textarea name="body" class="form-control" cols="30" rows="10">
+                        </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Region</td>
+                        <td>
+                            <select class="form-control" name="region">
+                            <option value="서울">서울</option>
+                            <option value="경기">경기</option>
+                            <option value="인천">인천</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Birth</td>
+                        <td>
+                            <select name="age" class="form-control">
+                                {% for i in birth%}
+                                <option value="{{i}}" name ="age">{{i}}</option>
+                                {% endfor%}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Start Date</td>
+                        <td><input type="date" class="form-control" name="start_date"></td>
+                    </tr>
+                    <tr>
+                        <td>End Date</td>
+                        <td><input type="date" class="form-control" name="end_date"></td>
+                    </tr>
+                    <tr>
+                        <td>Educated</td>
+                        <td>
+                            <select name="educated">
+                                <option value="중졸 이상">중졸 이상</option>
+                                <option value="고졸 이상">고졸 이상</option>
+                                <option value="대졸 이상">대졸 이상</option>
+                                <option value="무관">무관</option>
+                                <option value="정보 없음">정보 없음</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td><input type="text" class="form-control" name="url"></td>
+                    </tr>
+                </table>
+                <br>
+                <div class="ad">
+                    <input type="hidden" name="writer" value="{{user.username}}">
+                    <input type="submit" class="btn btn-primary" value="제출하기">
                 </div>
-        </form>
-        
+            </form>
+        </div>
         </div>
     </div>
     

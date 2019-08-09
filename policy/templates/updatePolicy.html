@@ -1,0 +1,129 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load staticfiles %}
+
+<head>
+    <style>
+        @font-face {
+            font-family: Binggrae-Bold;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        .main {
+            text-align: center;
+            font-family: Binggrae-Bold;
+        }
+
+        table {
+            margin: 19px 0px 8px;
+            font-weight: 700;
+            margin-left: 20%;
+            margin-right: 10%;
+            padding-left: 25%;
+            padding-right: 25%;
+            font-size: 15px;
+            font-family: Binggrae-Bold;
+        }
+
+        input[type=submit] {
+            background-color: #FFF0BD;
+            border: 1.5px solid rgb(184, 184, 184);
+            color: rgb(32, 32, 32);
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #FFDE71;
+            border: 1.5px solid rgb(184, 184, 184);
+        }
+
+        .button {
+            margin: 19px 0px 8px;
+            font-weight: 400;
+            padding-left: 25%;
+            padding-right: 25%;
+            font-family: Binggrae-Bold;
+            font-size: 18px;
+            width: 100px;
+            height: 30px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .ad {
+            font-family: Binggrae-Bold;
+            text-align: center;
+            margin-left:500px;
+            margin-right:500px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="update_title"><img src="{% static '/images/intro/logosm.png'%}" id="icon" >정책수정하기</h1>
+        <div class="form-group col-8">
+            <form action="{% url 'policymodify' %}" method="POST">
+                {% csrf_token %}
+                <table class="table">
+                    <tr>
+                        <td>Title</td>
+                        <td><input type="text" class="form-control" name="title" value="{{ policy.title}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Body</td>
+                        <td>
+                            <textarea name="body" class="form-control" cols="30" rows="10" >{{ policy.body }}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Region</td>
+                        <td><input type="text" class="form-control" name="region" value="{{ policy.region }}"></td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td><input type="text" class="form-control" name="age" value="{{ policy.age }}"></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date</td>
+                        <td><input type="date" class="form-control" name="start_date" value="{{ policy.start_date }}"></td>
+                    </tr>
+                    <tr>
+                        <td>End Date</td>
+                        <td><input type="date" class="form-control" name="end_date" value="{{ policy.end_date}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Educated</td>
+                        <td><input type="text" class="form-control" name="educated" value="{{ policy.educated }}"></td>
+                    </tr>
+                    <tr>
+                        <td>url</td>
+                        <td><input type="text" class="form-control" name="url" value="{{ policy.url }}"></td>
+                    </tr>
+                </table>
+                <br>
+
+                <div class="ad">
+                    <input type="hidden" name="id" value="{{policy.id}}">
+                    <input type="hidden" name="writer" value="{{policy.writer}}">
+                    <input type="submit" class="button" value="제출하기">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}
