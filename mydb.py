@@ -36,7 +36,7 @@ with open('db_column.csv','r',encoding="utf-8-sig") as fin: # `with` statement a
 
 print(to_db)
 cur.execute("delete from policy_policylist")
-cur.executemany("insert into policy_policylist(title,body,age,educated,region,url,pub_date,start_date,end_date,hits,writer) values (?,?,?,?,?,?,?,?,?,?,?)",to_db)
+cur.executemany("insert into policy_policylist(title,body,age,educated,region,url,pub_date,start_date,end_date,hits,writer) values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",to_db)
 
 conn.commit()
 conn.close()
