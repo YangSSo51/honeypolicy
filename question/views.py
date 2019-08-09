@@ -65,7 +65,7 @@ def create(request):
             question.save()
             return redirect('home')
         else:
-            return render(request,'newQuestion.html')
+            return render(request,'question/newQuestion.html')
     else:
         return render(request,'home.html',{"error":"스태프가 아닙니다"})
 
@@ -79,7 +79,7 @@ def update(request,pk):
         form.save()
         return redirect('home')
 
-    return render(request,'question/new.html',{'form':form})        
+    return render(request,'question/newQuestion.html',{'form':form})        
 
 def delete(request,pk):
     question=get_object_or_404(Question,pk=pk)

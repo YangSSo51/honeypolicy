@@ -1,20 +1,97 @@
 {% extends 'base.html' %}
-{% block content%}
+{% block content %}
+{% load staticfiles %}
+<html>
+
+<head>
+    <style>
+    @font-face { 
+        font-family: Binggrae-Bold; 
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; 
+    }
+    h1{
+        font-size: 22px;
+    }
+    .main{
+          text-align: center;
+          font-family: Binggrae-Bold;
+        }
+    table {
+        margin: 19px 0px 8px;
+        font-weight: 700;
+        margin-left: 20%;
+        margin-right: 10%;
+        padding-left: 25%;
+        padding-right: 25%;
+        font-size: 15px; 
+        font-family: Binggrae-Bold;
+    }
+    input[type=submit] {
+          background-color: #FFF0BD ;
+          border: 1.5px solid rgb(184, 184, 184);
+          color: rgb(32, 32, 32);
+        
+        }
+    input[type=submit]:hover  {
+        background-color:#FFDE71 ;
+        border: 1.5px solid rgb(184, 184, 184);
+    }
+    .button { 
+        margin: 19px 0px 8px;
+        font-weight: 400;
+        padding-left: 25%;
+        padding-right: 25%;
+        font-family: Binggrae-Bold;
+        font-size: 18px;
+        width: 50px;
+        height: 30px;
+
+        -webkit-border-radius: 5px 5px 5px 5px;
+        border-radius: 5px 5px 5px 5px;
+    }
+    .ad{
+          font-family: Binggrae-Bold;
+          text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
     <div class="container">
+        <img src="{% static '/images/intro/logosm.png'%}" id="icon" ><h1>Q&A</h1>
+    </div>
+    <div class="container">
+        <div class="form-group col-8">
         <form action="{% url 'newquestion' %}" method="POST">
             {% csrf_token %}
             <table class = "table">
                 <tr>
-                    <td>제목</td>
+                    <td>Title</td>
                     <td><input type="text" class="form-control" name="title"></td>
                 </tr>
                 <tr>
-                    <td>글 내용</td>
-                    <td><textarea id="" cols="30" rows="10" name="body" class="form-control"></textarea></td>
+                    <td>Body</td>
+                    <td><textarea name="body" class="form-control" cols="30" rows="13">
+                    </textarea>
+                    </td>
                 </tr>
+                
             </table>
+            <br>
+            <div class="ad">
             <input type="hidden" name="writer" value="{{user.username}}">
-            <input type="submit" value="등록" class="btn btn-primary">
+            <input type="submit" class="btn btn-primary" value="제출하기">
+
+            </div>
         </form>
+        </div>
     </div>
+    </div>
+
+    
+</body>
+
+</html>
 {% endblock %}
