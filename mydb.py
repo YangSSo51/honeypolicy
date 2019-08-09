@@ -23,7 +23,7 @@ def strTimeProp(start, end, format, prop):
 def randomDate(start, end, prop):
     return strTimeProp(start, end, '%Y-%m-%d', prop)
 
-conn = psycopg2.connect("postgres://tmqtzjopkkxczr:2c45bce41c4ad704e794a0aafa91da92d8efd6c4032855f95340ffd07580b651@ec2-174-129-29-101.compute-1.amazonaws.com:5432/dda195dv8gb98j")
+conn = psycopg2.connect("postgres://cpymjnxryasdef:7d2e21ecf6ff0096eb5da43fa82cfdcaa834b7d6324238d8da4f2dc2cf052c5a@ec2-50-16-197-244.compute-1.amazonaws.com:5432/d7a58cmju41hth")
 cur = conn.cursor()
 
 with open('db_column.csv','r',encoding="utf-8-sig") as fin: # `with` statement available in 2.5+
