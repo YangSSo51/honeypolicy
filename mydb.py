@@ -29,10 +29,7 @@ cur = conn.cursor()
 with open('db_column.csv','r',encoding="utf-8-sig") as fin: # `with` statement available in 2.5+
     # csv.DictReader uses first line in file for column headings by default
     dr = csv.DictReader(fin) # comma is default delimiter
-    start_date = randomDate("2019-1-1", "2019-6-30", random.random())
-    end_date = randomDate("2019-7-1", "2020-12-31", random.random())
-    pub_date = randomDate("2019-1-1", "2019-6-30", random.random())
-    to_db = [(i['title'], i['body'], i['age'],i['educated'],i['region'],i["url"],pub_date,start_date,end_date,0,"admin") for i in dr]
+    to_db = [(i['title'], i['body'], i['age'],i['educated'],i['region'],i["url"],randomDate("2019-1-1", "2019-6-30", random.random()),randomDate("2019-1-1", "2019-6-30", random.random()),randomDate("2019-7-1", "2020-12-31", random.random()),0,"admin") for i in dr]
 
 cur.executemany("insert into policy_policylist(title,body,age,educated,region,url,pub_date,start_date,end_date,hits,writer) values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",to_db)
 

@@ -79,7 +79,7 @@
     <div class="ad">
       <form method="POST" action="{% url 'signup'%}" class="form-group">
         {% csrf_token %}
-        이름 <br>
+        아이디 <br>
         <input class="form-control" type="text" name="username">
         <br>
         비밀번호 <br>
@@ -89,14 +89,10 @@
         <input class="form-control" type="password" name="password2">
         <br>
         성별 <br>
-<<<<<<< HEAD
-        <input class="form-control" type="text" name="gender">
-=======
         <select class="form-control" type="text" name = "gender">
           <option value="male">남성</option>
           <option value="female">여성</option>
         </select>
->>>>>>> 83fe350a979d31421d336770d8961e79d77b0fb1
         <br>
         전화번호 <br>
         <input class="form-control" type="text" name="phone">

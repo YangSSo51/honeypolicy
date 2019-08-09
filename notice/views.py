@@ -29,15 +29,15 @@ def read(request):
     return render(request,'notice/board.html',{'posts':posts})
 
 def create(request):
-    if request.method=='POST':
-        notice = get_object_or_404(Notice)
-        notice.title =request.POST['title']
-        notice.pub_date=timezone.now()
+    # 새로운 데이터 저장하는 하기 == POST
+    if request.method == 'POST':
+        notice = Notice(
+            title = request.POST["title"], body = request.POST["body"])
         notice.save()
         return redirect('noticeread')
+    # 글쓰기 페이지 띄우기 == GET
     else:
-        return render(request,'notice/new.html')
-    return redirect('noticeread')
+        return render(request, 'notice/new.html')
 
 #update에서 먼저 수정하기페이지를 보여주고 notice.id를 넘겨줌
 def update(request,notice_id):
