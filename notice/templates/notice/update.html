@@ -63,7 +63,8 @@
     </div>
     <div class="container">
         <div class="form-group col-8">
-            <form action="{% url 'noticeupdate' notice.id %}" method="POST">
+            <!--실질적인 수정은 modify에서 수행됨-->
+            <form action="{% url 'noticemodify'%}" method="POST">
             {% csrf_token %}
             <table class = "table">
                 <tr>
@@ -79,7 +80,9 @@
                 
             </table>
             <br>
+            {{notice.id}}
             <div class="ad">
+            <input type="hidden" name="id" value="{{notice.id}}">
             <input type="hidden" name="writer" value="{{user.username}}">
             <input type="submit" class="btn btn-primary" value="제출하기">
 
