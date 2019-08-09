@@ -79,6 +79,7 @@
     <div class="ad">
       <form method="POST" action="{% url 'modify'%}" class="form-group">
         {% csrf_token %}
+        <input type="hidden" name="object_id" value="{{ user.id }}">
         이름 <br>
         <input class="form-control" type="text" name="username" placeholder="{{ request.user.username }}">
         <br>
