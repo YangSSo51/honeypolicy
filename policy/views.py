@@ -22,8 +22,7 @@ def create(request):
             title = request.POST["title"], body = request.POST["body"],
             region = request.POST["region"], age= request.POST["age"],
             start_date = request.POST["start_date"], end_date=request.POST["end_date"],
-            regist_way = request.POST["regist_way"], educated = request.POST["educated"],
-            url = request.POST["url"])
+            educated = request.POST["educated"],url = request.POST["url"])
         policy.save()
         return redirect("policyread")
     # 글쓰기 페이지 띄우기 == GET
