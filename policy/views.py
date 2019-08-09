@@ -151,6 +151,7 @@ def delete(request,pk):
 
 def detail(request, policy_id):
     policyDetail = get_object_or_404(PolicyList, pk=policy_id)
+    policyDetail.hits_counter
     return render(request, 'detailPolicy.html', {'policyDetail':policyDetail, 'policy_id' : policy_id})
 
 

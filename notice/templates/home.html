@@ -5,28 +5,24 @@
 {% load staticfiles %}
     {% comment %} {% for blog in blogs.all %} {% endcomment %}
    <br>
-      <div class="container">
-         <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
-            <div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
-               <span class="text-uppercase cl2 p-r-8">
-               <img src="{% static '/images/hot.png'%}">   
-                  지금 뜨고 있는 정책
+   <div class="container">
+      <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+         <div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
+            <span class="text-uppercase cl2 p-r-8">
+            <img src="{% static '/images/hot.png'%}">   
+               지금 뜨고 있는 정책
+            </span>
+            
+            <span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
+               {% for result_hot_policy in result_hot_policies %}
+               <span class="dis-inline-block slide100-txt-item animated visible-false">
+                  <a href="{% url 'policydetail' result_hot_policy.id  %}" style="color: black;">{{result_hot_policy.title}}></a>
                </span>
-               <span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
-                  <span class="dis-inline-block slide100-txt-item animated visible-false">
-                     취업성공패키지
-                  </span>
-                  
-                  <span class="dis-inline-block slide100-txt-item animated visible-false">
-                     국가장학금
-                  </span>
-
-                  <span class="dis-inline-block slide100-txt-item animated visible-false">
-                     국가근로장학금
-                  </span>
-               </span>
-            </div>
+               {% endfor %}
+            </span>
          </div>
+      </div>
+
          <section class="bg00">
             <div class="container2">
                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

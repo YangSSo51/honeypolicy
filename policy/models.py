@@ -46,10 +46,13 @@ class PolicyList(models.Model):
     class Meta:
         ordering = ['-hits']
 
+    @property
     def hits_counter(self):
         self.hits += 1
         self.save()
-        return self.hits
+        # return self.hits
+    
+    
 
     def __str__(self):
         return self.title
