@@ -19,7 +19,7 @@ class Calendar(HTMLCalendar):
       for event in events_per_day:
          #if event.userid ==user.userid:
          if event.user ==user.username:    
-            d += f'<li> {event.get_html_url}</li>' # {event.groupid_id}그룹 : {group.groupid} -> 현재 그룹, 일정 그룹 확인용
+            d += f'<li>{event.get_html_url}</li>' # {event.groupid_id}그룹 : {group.groupid} -> 현재 그룹, 일정 그룹 확인용
 
       if day != 0:
          if datetime.today().day == day and datetime.today().month == self.month and datetime.today().year == self.year:
@@ -48,4 +48,3 @@ class Calendar(HTMLCalendar):
       for week in self.monthdays2calendar(self.year, self.month):
          cal += f'{self.formatweek(week, events, user)}\n'
       return cal
-   

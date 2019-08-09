@@ -6,8 +6,8 @@
             <h2>전체 일정 확인하기</h2>
             <br>
           <div class="row">
-            {% for plan in plans.all %}
-            {% if plan.user == user.username%}
+            {% for plan in plans %}
+            {% if plan.user_id.username == user.username%}
             <div class="col-md-4">
             <div class="rounded"style="border: 1px solid #EAE5DE; margin-bottom:20px" >
               <div class="card border-light mb-3" >

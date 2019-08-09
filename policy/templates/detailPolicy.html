@@ -102,6 +102,7 @@
             <h3>[{{policyDetail.region}}][청년]</h3>
             <a href="{% url 'policyupdate' policy_id %}">수정</a>
             <a href="{% url 'policydelete' policy_id %}">삭제</a>
+            <a href="{% url 'policyregist' policy_id %}">달력등록</a>
             <span>등록일 : {{ policyDetail.pub_date | date:"Y-m-d"}}</span>
         </div>
 

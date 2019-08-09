@@ -17,12 +17,23 @@ a{
   <div class="row">
 {% for policy in policies %}
   <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
-  <div class = "col-sm-12 col-md-6 col-xl-3">
+  <div class = "col-sm-12 col-md-6 col-xl-4" style="margin-bottom:20px;">
     <div class="card h-card">
       <div class="card-body h-card-body">
-        <a href="{% url 'policydetail' policy.id %}"><h3>{{policy.summary_title}}</h3></a>
-        <p class="h-card-text"><h4>[{{policy.region}}]</h4></p>
-        <p class="h-card-text"><h5>{{policy.summary_body}}....</h5></p>
+        <p class="policy_date">{{policy.start_date}}~{{policy.end_date}}　</p><br>
+        <a href="{% url 'policydetail' policy.id %}">
+          <h2 class="policy_title" style="margin-bottom:5px;">{{policy.summary_title}}</h2>
+        {% comment %} <h3>{{policy.summary_title}}</h3> {% endcomment %}
+        </a>
+        <p class="h-card-text" >
+          <h4 style="height:50px;margin-top:5px;margin-bottom:5px;">
+            <span class="label label-warning" style="margin-bottom:2px;">{{policy.region}}</span>  
+            <span class="label label-warning" style="margin-bottom:2px;">{{policy.age}}</span>  
+            {% comment %} <span class="label label-warning" style="margin-bottom:2px;">{{policy.educated}}</span> {% endcomment %}
+            {% comment %} <span class="label label-warning">{{policy.category}}</span> <!--카테고리 추가--> {% endcomment %}
+          </h4>
+        </p>
+        <p><h5 class="policy_body">{{policy.summary_body}}</h5></p>
       </div>
     </div>
   </div>
@@ -46,11 +57,11 @@ a{
     <div class="search_form ">
         <form class="form-inline my-2 my-lg-0 justify-content-center" action="" method="get">
             {# name 속성 : 변수 이름?  #}
-            <select class="form-control" title="지역" name="region">
-                <option value="">지역</option>
-                <option value="서울">서울</option>
-                <option value="경기">경기</option>
-                <option value="인천">인천</option>
+            <select class="form-control" title="검색" name="검색">
+                <option value="">구분</option>
+                <option value="category">대상</option>
+                <option value="educated">학력</option>
+                <option value="region">지역</option>
             </select>
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ q }}">
             <input type="submit" class="btn btn-primary" value="검색">

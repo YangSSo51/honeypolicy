@@ -59,12 +59,12 @@
 <body>
     <div class="main">
     <div class="container">
-        <img src="{% static '/images/intro/logosm.png'%}"><h1>공지사항 수정</h1>
+        <img src="{% static '/images/intro/logosm.png'%}"><h1>Q&A</h1>
     </div>
     <div class="container">
         <div class="form-group col-8">
             <!--실질적인 수정은 modify에서 수행됨-->
-            <form action="{% url 'noticemodify'%}" method="POST">
+            <form action="{% url 'questionmodify'%}" method="POST">
             {% csrf_token %}
             <table class = "table">
                 <tr>
@@ -80,9 +80,8 @@
                 
             </table>
             <br>
-            {{notice.id}}
             <div class="ad">
-            <input type="hidden" name="id" value="{{notice.id}}">
+            <input type="hidden" name="id" value="{{question.id}}">
             <input type="hidden" name="writer" value="{{user.username}}">
             <input type="submit" class="btn btn-primary" value="제출하기">
 

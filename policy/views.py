@@ -9,10 +9,13 @@ from .models import PolicyList
 from .form import NewPolicyList
 
 from django.db.models import Q
+from django.apps import apps
+
+
 
 # 처음 보여지는 화면
 def policyList(request):
-    return render(request, 'policyList.html')
+    return render(request, 'home.html')
 
 # 글쓰기~~
 def create(request):
@@ -102,6 +105,21 @@ def update(request,pk):
     
     # 다른 request 인경우??
     return render(request, 'newPolicyList.html', {'form':form})
+
+def regist(request,pk):
+    Cal = apps.get_model('cal', 'Event')
+    User = apps.get_model('people',"People")
+    user = get_object_or_404(User, pk=request.user.id)
+    policy = get_object_or_404(PolicyList, pk=pk)
+
+    calender = Cal(
+        user = user.username,
+        title = policy.title, description = policy.body,
+        start_date = policy.start_date, end_date = policy.end_date,
+        user_id = user,policy_id=policy)
+    calender.save()
+
+    return redirect('policyread')
 
 def delete(request,pk):
     policy = get_object_or_404(PolicyList, pk = pk)

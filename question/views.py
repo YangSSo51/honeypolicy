@@ -71,17 +71,20 @@ def create(request):
         return render(request,'home.html',{"error":"스태프가 아닙니다"})
 
 
+#update에서 먼저 수정하기페이지를 보여주고 question.id를 넘겨줌
+def update(request,question_id):
+    question = get_object_or_404(Question, pk = question_id)
+    return render(request, 'question/update.html',{'question':question})    
 
-def update(request,pk):
-    question=get_object_or_404(Question,pk = pk)
-    form=NewQuestion(request.POST, instance=question)
-
-    if form.is_valid():
-        form.save()
-        return redirect('home')
-
-    return render(request,'question/newQuestion.html',{'form':form})        
-
+#실질적인 수정은 여기서 동작,이때 pk값은 update에서 넘겨준 id(question.id)값으로 가짐    
+def modify(request):
+    if request.method == 'POST':
+        question = get_object_or_404(Question,pk = request.POST['id'])
+        question.title = request.POST['title']
+        question.body = request.POST['body']
+        question.save()
+    return redirect('questionread')  
+      
 def delete(request,pk):
     question=get_object_or_404(Question,pk=pk)
     question.delete()
