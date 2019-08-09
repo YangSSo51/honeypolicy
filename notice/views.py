@@ -41,14 +41,22 @@ def create(request):
         return render(request,'notice/new.html',{'form':form})
     return redirect('noticeread')
 
+#update에서 먼저 수정하기페이지를 보여주고 notice.id를 넘겨줌
 def update(request,notice_id):
     notice = get_object_or_404(Notice,pk = notice_id)
+    return render(request, 'notice/update.html',{'notice':notice})    
+
+#실질적인 수정은 여기서 동작,이때 pk값은 update에서 넘겨준 id(notice.id)값으로 가짐    
+def modify(request):
     if request.method == 'POST':
+        notice = get_object_or_404(Notice,pk = request.POST['id'])
         notice.title = request.POST['title']
         notice.body = request.POST['body']
+        notice.save()
         #notice.update(pk = notice_id)
-    return render(request, 'notice/update.html')    
-  
+    return redirect('noticeread')  
+
+
 
 def delete(request,pk):
     notice=get_object_or_404(Notice,pk=pk)
