@@ -30,15 +30,13 @@ def read(request):
 
 def create(request):
     if request.method=='POST':
-        form=NewNotice(request.POST)
-        if form.is_valid:
-            post=form.save(commit=False)
-            post.pub_date=timezone.now()
-            post.save()
-            return redirect('noticeread')
+        notice = get_object_or_404(Notice)
+        notice.title =request.POST['title']
+        notice.pub_date=timezone.now()
+        notice.save()
+        return redirect('noticeread')
     else:
-        form=NewNotice()
-        return render(request,'notice/new.html',{'form':form})
+        return render(request,'notice/new.html')
     return redirect('noticeread')
 
 #update에서 먼저 수정하기페이지를 보여주고 notice.id를 넘겨줌
