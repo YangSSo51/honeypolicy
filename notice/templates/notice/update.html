@@ -59,11 +59,11 @@
 <body>
     <div class="main">
     <div class="container">
-        <img src="{% static '/images/intro/logosm.png'%}" id="icon" ><h1>공지사항</h1>
+        <img src="{% static '/images/intro/logosm.png'%}"><h1>공지사항 업데이트</h1>
     </div>
     <div class="container">
         <div class="form-group col-8">
-        <form action="{% url 'newnotice' %}" method="POST">
+            <form action="{% url 'noticeupdate' notice.id %}" method="POST">
             {% csrf_token %}
             <table class = "table">
                 <tr>

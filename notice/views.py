@@ -40,41 +40,17 @@ def create(request):
         form=NewNotice()
         return render(request,'notice/new.html',{'form':form})
     return redirect('noticeread')
-    
-def update(request,pk):
-    notice=get_object_or_404(Notice,pk = pk)
-    form=NewNotice(request.POST, instance=notice)
 
-    if form.is_valid():
-        form.save()
-        return redirect('noticeread')
-
-    return render(request,'notice/new.html',{'form':form})        
+def update(request,notice_id):
+    notice = get_object_or_404(Notice,pk = notice_id)
+    if request.method == 'POST':
+        notice.title = request.POST['title']
+        notice.body = request.POST['body']
+        #notice.update(pk = notice_id)
+    return render(request, 'notice/update.html')    
+  
 
 def delete(request,pk):
     notice=get_object_or_404(Notice,pk=pk)
     notice.delete()
     return redirect('noticeread')
-
-class SearchFormView(FormView):
-    # form_class를 forms.py에서 정의했던 PostSearchForm으로 정의
-    form_class = SearchForm
-    template_name = 'notice/search.html'     #정보 보내고싶은 곳
-
-    # 제출된 값이 유효성검사를 통과하면 form_valid 메소드 실행
-    # 여기선 제출된 search_word가 PostSearchForm에서 정의한대로 Char인지 검사
-    def form_valid(self, form):
-        # 제출된 값은 POST로 전달됨
-        # 사용자가 입력한 검색 단어를 변수에 저장
-        search_word = self.request.POST['search_word']
-        # Post의 객체중 제목이나 설명이나 내용에 해당 단어가 대소문자관계없이(icontains) 속해있는 객체를 필터링
-        # Q객체는 |(or)과 &(and) 두개의 operator와 사용가능
-        post_list = Notice.objects.filter(Q(title__icontains=search_word) | Q(body__icontains=search_word)) 
-
-        context = {}
-        # context에 form객체, 즉 PostSearchForm객체 저장
-        context['form'] = form
-        context['search_term'] = search_word
-        context['object_list'] = post_list
-
-        return render(self.request, 'notice/search.html', context)

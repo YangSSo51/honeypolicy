@@ -57,6 +57,7 @@ def read(request):
     page_range = paginator.page_range[start_index:end_index]
     return render(request,'question/home.html',{'question':question,'posts':posts,'counts':counts,'page_range':page_range})
 
+    
 def create(request):
     if request.user.is_staff:
         if request.method=='POST':

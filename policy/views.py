@@ -12,7 +12,7 @@ from django.db.models import Q
 
 # 처음 보여지는 화면
 def policyList(request):
-    return render(request, 'home.html')
+    return render(request, 'policyList.html')
 
 # 글쓰기~~
 def create(request):

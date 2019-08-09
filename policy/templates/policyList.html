@@ -13,31 +13,16 @@ a{
 <body>
 <br>
 <div class="container">
-  <br><br><br>
+  <br>
   <div class="row">
-{% for policy in posts %}
+{% for policy in policies %}
   <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
-  <div class = "col-sm-12 col-md-6 col-xl-4" style="margin-bottom:20px;">
+  <div class = "col-sm-12 col-md-6 col-xl-3">
     <div class="card h-card">
       <div class="card-body h-card-body">
-        <p class="policy_date">{{policy.start_date}}~{{policy.end_date}}　</p><br>
-        <a href="{% url 'policydetail' policy.id %}">
-          <h2 class="policy_title">{{policy.title}}</h2>
-        </a>
-        <p class="h-card-text">
-          <h4>
-          <span class="label label-warning">{{policy.region}}</span>  
-          <span class="label label-warning">{{policy.age}}</span>  
-          <span class="label label-warning">{{policy.educated}}</span>
-          <span class="label label-warning">{{policy.category}}청년</span> <!--카테고리 추가-->
-          </h4>
-        </p><br>
-        <p>
-          <h5 class="policy_body">{{policy.body}}</h5>
-        </p>
-        {% comment %} <p>
-          <h5 class="policy_body">{{policy.summary}}<a href="{% url 'policydetail' policy.id %}">...더보기</a></h5>
-        </p> {% endcomment %}
+        <a href="{% url 'policydetail' policy.id %}"><h3>{{policy.summary_title}}</h3></a>
+        <p class="h-card-text"><h4>[{{policy.region}}]</h4></p>
+        <p class="h-card-text"><h5>{{policy.summary_body}}....</h5></p>
       </div>
     </div>
   </div>
@@ -56,48 +41,19 @@ a{
 
     {# 게시판 형식 및 페이지네이션 구현 #}
 
-    {% if posts.has_other_pages %}
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-            {% if posts.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">&lt;</a></li>
-            {% else %}
-            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
-            <li class="page-item disabled"><span class="page-link">&lt;</span></li>
-            {% endif %}
-
-            {% for i in posts.paginator.page_range %}
-            {% if posts.number == i %}
-            <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span>
-            </li>
-            {% else %}
-            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-            {% endif %}
-            {% endfor %}
-
-            {% if posts.has_next %}
-            <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">&gt;</a></li>
-            <li class="page-item"><a class="page-link" href="?page={{posts.paginator.num_pages}}">&raquo;</a></li>
-            {% else %}
-            <li class="page-item disabled"><span class="page-link">&gt;</span></li>
-            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+  
     <hr>
     <div class="search_form ">
         <form class="form-inline my-2 my-lg-0 justify-content-center" action="" method="get">
             {# name 속성 : 변수 이름?  #}
-            <select class="form-control" title="검색" name="검색">
-                <option value="">구분</option>
-                <option value="category">대상</option>
-                <option value="educated">학력</option>
-                <option value="region">지역</option>
+            <select class="form-control" title="지역" name="region">
+                <option value="">지역</option>
+                <option value="서울">서울</option>
+                <option value="경기">경기</option>
+                <option value="인천">인천</option>
             </select>
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ q }}">
-            <input type="submit" class="btn btn-warning" value="검색">
+            <input type="submit" class="btn btn-primary" value="검색">
         </form>
     </div>
     <br>
