@@ -1,10 +1,73 @@
 {% extends 'base.html' %}
 {% block content %}
-        <br><br>
-        <h1>{{question.title }}</h1>
-        <p>{{question.pub_date }}</p>
-        <p>{{question.body }}</p>
-        <a class="btn btn-outline-dark" href="{% url 'home' %}">돌아가기</a>
-        <a class="btn btn-outline-dark" href="{% url 'questionupdate' question.id %}">수정</a>
-        <a class="btn btn-outline-dark" href="{% url 'questiondelete' question.id %}">삭제</a>
+{% load staticfiles %}
+<style>
+        @font-face { 
+                font-family: Binggrae-Bold; 
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); 
+                font-weight: normal; 
+                font-style: normal; 
+        }
+        .main{
+                text-align: center;
+                font-family: Binggrae-Bold;
+        }
+        h1{
+                font-size: 25px;
+                text-align: center;
+                font-family: Binggrae-Bold;
+        }
+        .pp{
+                text-align: right ; 
+                margin-right: 150px;   
+                margin-left:150px;
+                border-bottom:1.5px solid rgb(184, 184, 184); 
+        } 
+        .form{    
+                margin: 0 auto;
+                width: 400px;
+                
+                padding: 1em;
+                border: 1px solid #CCC;
+                border-radius: 1em;
+                
+        }  
+        textarea{
+                margin-right: 150px;   
+                margin-left:205px;
+                border:1.5px solid rgb(184, 184, 184); 
+                
+                
+        } 
+        select.form-control:not([size]):not([multiple]) {
+                height: calc(3rem + 2px);
+                margin-right: 2px;
+        }
+        .btn33 {
+                margin-left: 800px;
+                color: #635D4A;
+        }
+                
+                
+</style>
+<body>
+<br>  
+<div class="container">     
+        <div class="main"> 
+                <h1><img src="{% static '/images/intro/logosm.png'%}" id="icon" >{{question.title }}<img src="{% static '/images/intro/logosm.png'%}" id="icon" ></h1>
+                <p class="pp">{{ question.pub_date }}</p>
+                <br>
+                <textarea  rows="22" cols="80">{{ question.body }}</textarea>
+                <div class="btn22">
+                        {# 꺄르르 #}
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'questionupdate' question.id %}"><input type="submit" class="btn btn-primary"  value="수정"></a>
+                        <a href="{% url 'questiondelete' question.id %}"><input type="submit" class="btn btn-primary"  value="삭제"></a>
+                        {% endif %}
+                        <a href="{% url 'questionread' %}"><input type="submit" class="btn btn-primary"  value="뒤로가기"></a>
+                </div>
+        </div>
+</div>   
+</body>
+
 {% endblock %}

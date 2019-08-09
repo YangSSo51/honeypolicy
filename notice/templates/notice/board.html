@@ -1,13 +1,81 @@
 {% extends 'base.html'%}
 
 {% block content %}
+{% load staticfiles %}
+<html>
+    <head>
+        <style>
+            @font-face { 
+                font-family: Binggrae-Bold; 
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff'); 
+                font-weight: normal; 
+                font-style: normal; 
+            }
+            h1{
+                font-size: 25px;
+                font-family: Binggrae-Bold;
+                font-weight: 400;
+                text-align: center;
+            }
+            h3{
+                font-size: 17px;
+                font-family: Binggrae-Bold;
+                font-weight: 100;
+                text-align: left;
+            }
+            .button_detail { 
+                    margin: 19px 0px 8px;
+                    font-weight: 300;
+                    text-decoration: none;
+                    font-family: Binggrae-Bold;
+                    font-size: 18px;
+                    padding-top: 1px;
+                    height: 30px;
+                    -webkit-border-radius: 5px 5px 5px 5px;
+                    border-radius: 5px 5px 5px 5px;
+                    background-color: #FFF0BD ;
+                    border: 1.5px solid rgb(184, 184, 184);
+                    color: rgb(32, 32, 32);
+                    
+            }
+            
+            
+            .button_detail:hover  {
+            background-color:#FFDE71 ;
+            color: rgb(32, 32, 32);
+            text-decoration: none
+            }
+                
+            input[type=submit] {
+            background-color: #FFF0BD ;
+            border: 1.5px solid rgb(184, 184, 184);
+            color: rgb(32, 32, 32);
+            
+            }
+            input[type=submit]:hover  {
+            background-color:#FFDE71 ;
+            border: 1.5px solid rgb(184, 184, 184);
+             }
+            option{
+                color:black;
+            }
+            select.form-control:not([size]):not([multiple]) {
+                height: calc(3rem + 2px);
+                margin-right: 2px;
+                }
+            .btn22 {
+                margin-left: 1050px;
+                color: #635D4A;
+            }
+        </style>
+    </head>
 <body>
-    <hr>
+<br>
+    <div class="container" style="color:#635D4A;">
     <br>
-    <div class="container" style="height: 300px;">
+    <h1><img src="{% static '/images/intro/logosm.png'%}" id="icon" >공지사항<img src="{% static '/images/intro/logosm.png'%}" id="icon" ></h1>
         <table class="table table-striped">
             <thead>
-                <br>
                 <h3>총 게시글 수 : {{counts}}</h3>
                 <tr>
                     <th>번호</th>
@@ -18,47 +86,22 @@
                 </tr>
             </thead>
             <tbody>
-                    {% for notice in posts %}
-                    <tr>
-                        <td>{{notice.id }} </td>
-                        <td><a style="margin-left:20px" href="{% url 'noticedetail' notice.id %}" title="{{notice.body}}">{{notice.title}}</a></td>
-                        </div>
-                        <td>{{notice.writer}}</td>
-                        <td>{{notice.pub_date}}</td>
-                        <td >{{notice.hit}}</td>
-                    </tr>
-                    {%endfor%}
-    
+                {% for notice in posts %}
+                <tr>
+                    <td>{{notice.id }} </td>
+                    <td><a style="margin-left:20px" href="{% url 'noticedetail' notice.id %}" title="{{notice.body}}">{{notice.title}}</a></td>
+                    <td>{{notice.writer}}</td>
+                    <td>{{notice.pub_date}}</td>
+                    <td >{{notice.hit}}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
-        <div class="card-body text-dark">
-            <div class="float-right">
-                <form class="form-inline" action="" method="post">
-                    <div id="d">
-                        <div class="form-group">
-                            &emsp;&emsp;&emsp;
-                            <select class="form-control">
-                                <option selected>속성</option>
-                                <option>제목</option>
-                                <option>내용</option>
-                                <option>이름</option>
-                            </select>
-                            &emsp;
-                            <input type="text" id="searchTxt" name="searchTxt"
-                                class="form-control" placeholder="검색어를 입력하세요">&emsp;
-    
-                            <button type="submit" class="btn btn-primary">
-                                <b>검색</b>
-                            </button>&emsp;
-    
-                            <a type="submit" class="btn btn-primary" href="{% url 'newnotice' %}">
-                                <b>글 작성</b>
-                            </a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'newnotice' %}" method="GET">
+            <div class="btn22"><input type="submit" class="btn btn-warning" value="글쓰기"></div>
+        </form>  
+        {% endif %}
     </div>
     <br>
 
@@ -96,27 +139,6 @@
         </ul>
     </nav>
     {% endif %}
-
-
-
-
-    <!--     <div class="container">
-        <h1>게시글</h1>
-        {# 글쓰기 버튼 #}
-        <a href="{% url 'newnotice' %}">글쓰기</a>
-        <br>
-        {# 글 띄우는 부분 #}
-        {% for policy in policies %}
-            <h2><a href="{% url 'detail' policy.id %}">{{ policy.title}}</a></h2>
-            <h4>{{ policy.pub_date }}</h4>
-            <p>{{ policy.body }}</p>
-            <a href="{% url 'update' policy.id %}">수정</a>
-            <a href="{% url 'delete' policy.id %}">삭제</a>
-            <hr>
-        {% endfor %}
-    </div> -->
-
+</div>
 </body>
-
-</html>
 {% endblock %}

@@ -16,7 +16,7 @@
             <span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
                {% for result_hot_policy in result_hot_policies %}
                <span class="dis-inline-block slide100-txt-item animated visible-false">
-                  <a href="{% url 'policydetail' result_hot_policy.id  %}" style="color: black;">{{result_hot_policy.title}}></a>
+                  <a href="{% url 'policydetail' result_hot_policy.id  %}" style="color: black;">{{result_hot_policy.title}}</a>
                </span>
                {% endfor %}
             </span>
@@ -53,9 +53,9 @@
                </div>
 
 
-               <div class="policy_search">
+               <div class="policy_search" >
                      <li><a href="#n" class="tab_btn active">정 책 맞 춤 검 색</a>
-                        <form class="form_search" action="{% url 'policysearch' %}" method="GET">
+                        <form class="form_search" action="{% url 'policysearch' %}" method="GET" style="height:480px;" >
                            <div>
                               <select id="region" name="region" title="지역" style="width:100%;margin-bottom:30px;">
                                  <option value="">지역</option>

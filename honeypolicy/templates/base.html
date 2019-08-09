@@ -91,27 +91,19 @@
                   <nav class="menu-desktop">
                      <ul class="main-menu">
                         <li class="main-menu-active">
-                           <a href="{% url 'home'%}">소개</a>
+                           <a href="{% url 'intro'%}">소개</a>
                            <ul class="sub-menu">
                               <li><a href="{% url 'intro'%}">정책꿀단지는?</a></li>
                            </ul>
                         </li>               
                         <li class="main-menu-active">
-                           <a href="#">정책보기</a>
+                           <a href="{% url 'policyread'%}">정책보기</a>
                            <ul class="sub-menu">
                               <li><a href="{% url 'policyread'%}">정책전체보기</a></li>
                            </ul>
                         </li>                     
-                        {% comment %}                            
-                        <li class="main-menu-active">6
-                           <a href="#">정책뉴스</a>
-                           <ul class="sub-menu">
-                              <li><a href="#">뉴스 및 보도자료</a></li>
-                           </ul>
-                        </li>                             
-                        {% endcomment %}
                         <li class="main-menu-active">
-                           <a href="#">커뮤니티</a>
+                           <a href="{% url 'noticeread'%}">커뮤니티</a>
                            <ul class="sub-menu">
                               <li><a href="{% url 'noticeread'%}">공지사항</a></li>
                               {% comment %} <li><a href="#">FAQ</a></li> {% endcomment %}
@@ -119,12 +111,15 @@
                            </ul>
                         </li>                        
                         <li class="main-menu-active">
-                           <a href="#">마이페이지</a>
+                           <a href="{% url 'cal:calendar'%}">마이페이지</a>
                            <ul class="sub-menu">
-                              {% comment %} <li><a href="#">HOT정책</a></li>
-                              <li><a href="#">NEW정책</a></li> {% endcomment %}
+                              {% if user.is_authenticated%}
                               <li><a href="{% url 'cal:calendar'%}">내 정책</a></li>
                               <li><a href="{% url 'mypage' %}">내 정보</a></li>
+                              {% else %}
+                              <li><a href="{% url 'login'%}">내 정책</a></li>
+                              <li><a href="{% url 'login' %}">내 정보</a></li>
+                              {% endif %}
                            </ul>
                         </li>          
                      </ul>

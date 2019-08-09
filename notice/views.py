@@ -56,17 +56,18 @@ def read(request):
     return render(request,'notice/board.html',{'posts':posts, 'counts':counts})
 
 
-
 def create(request):
-    # 새로운 데이터 저장하는 하기 == POST
-    if request.method == 'POST':
-        notice = Notice(
-            title = request.POST["title"], body = request.POST["body"])
-        notice.save()
-        return redirect('noticeread')
-    # 글쓰기 페이지 띄우기 == GET
+    if request.user.is_staff:
+        if request.method=='POST':
+            notice = Notice(title = request.POST["title"],body = request.POST["body"],
+                                pub_date=timezone.now())
+            question.save()
+            return redirect('noticeread')
+        else:
+            return render(request,'notice/new.html')
     else:
-        return render(request, 'notice/new.html')
+        return render(request,'home.html',{"error":"스태프가 아닙니다"})
+
 
 #update에서 먼저 수정하기페이지를 보여주고 notice.id를 넘겨줌
 def update(request,notice_id):

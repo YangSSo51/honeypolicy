@@ -35,12 +35,14 @@
    <div class="detail_content">                
       <div class="ad2">
          {# 꺄르르 #}
+         {% if user.is_authenticated %}
          <a href="{% url 'policyupdate' policy_id %}"><input type="submit" class="btn btn-primary"  value="정책수정"></a>
          <a href="{% url 'policydelete' policy_id %}"><input type="submit" class="btn btn-primary"  value="정책삭제"></a>
          <a href="{% url 'policyregist' policy_id %}"><input type="submit" class="btn btn-primary" value="정책담기"></a>
+         {% endif %}
       </div>
       <h2 class="detail_title"><img src="{% static '/images/intro/logosm.png' %}" alt="">{{policyDetail.title}}</h2>
-      <div class="detail_pub_date" style="text-align:right;"><a>　{{policyDetail.pub_date}}　</a></div>
+      <div class="detail_pub_date" style="text-align:right;"><a>　{{policyDetail.pub_date| date:"Y-m-d"}}　</a></div>
       
       <div class="detail_content2">   
          <br><h4 class="detail_title2"><img src="{% static '/images/logocheck.png' %}" alt="">정책기간</h4><br>
@@ -51,7 +53,7 @@
          <p class="detail_body">{{policyDetail.age}}</p>
          <p class="detail_body">{{policyDetail.educated}}</p>
          <br><h4 class="detail_title2"><img src="{% static '/images/logocheck.png' %}" alt="">정책바로가기</h4><br>
-         <p class="detail_body">{{policyDetail.url}}</p>
+         <p class="detail_body"><a href="{{policyDetail.url}}"></p>
       </div>
    </div>
 </div>
