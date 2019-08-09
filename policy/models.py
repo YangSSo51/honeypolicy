@@ -28,7 +28,7 @@ class PolicyList(models.Model):
     region = models.CharField(max_length=20)
 
     # 연령
-    age = models.CharField(max_length=120)
+    age = models.CharField(max_length=300)
 
     # 정책 시작 기간
     start_date = models.DateField(null=True)
@@ -37,7 +37,7 @@ class PolicyList(models.Model):
     end_date = models.DateField(null=True)
 
     # 학력
-    educated = models.CharField(null=True, max_length=120)
+    educated = models.CharField(null=True, max_length=250)
 
     # 홈페이지 url
     url = models.TextField(default="https://www.youthcenter.go.kr")
