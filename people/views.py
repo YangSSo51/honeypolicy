@@ -42,11 +42,25 @@ def mypage(request):
 def modify(request):
     if request.method == 'POST':
         user = request.user
+        if request.POST['username'] != '':
+            user.username = request.POST['username']
+        else:
+            user.username = request.user.username
         if request.POST['password1'] == request.POST['password2']:
             user.set_password(request.POST['password1'])
-        user.gender = request.POST['gender']
+        if request.POST['gender'] != '':
+            user.gender = request.POST['gender']
+        else:
+            user.gender = request.user.gender
+        #if request.POST['birth'] is None:
+            #user.birth = request.user.birth
+        #else:
         user.birth = request.POST['birth']
-        user.phone = request.POST['phone']
+
+        if request.POST['phone'] != '':
+            user.phone = request.POST['phone']
+        else:
+            user.phone = request.user.phone
         user.save()
 
     return redirect('home')
